@@ -1,7 +1,13 @@
 {
   "name": "eventjuicer-meetup",
-  "version": "1.2.3",
-  "private": true,
+  "private": false,
+  "description": "",
+  "version": "1.1.1",
+  "author": "adam zygadlewicz <adam.zygadlewicz@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eventjuicer/expojuicer.git"
+  },
   "devDependencies": {
     "babel-eslint": "^8.1.2",
     "babel-polyfill": "^6.26.0",
@@ -38,7 +44,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d public --branch gh-pages"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build --branch gh-pages"
   },
-  "homepage": ""
+  "homepage": "https://expojuicer.com"
 }
