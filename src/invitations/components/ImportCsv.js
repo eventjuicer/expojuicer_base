@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FileInput, FileField, translate } from 'admin-on-rest';
+import {  translate } from 'admin-on-rest';
 
 import Papa from 'papaparse';
 import Dropzone from 'react-dropzone';
@@ -8,126 +8,95 @@ import Dropzone from 'react-dropzone';
 import Mappings from './ImportCsvMappings';
 
 
-
-
-const styles = {
-    label: { width: '10em', display: 'inline-block' },
-    button: { margin: '1em' },
-};
-
-
-const mappings = ["skip","email","fname","lname","cname2"];
-
-
 class CsvImport extends React.Component {
+  state = { files: [], data: null, mappedData: null };
 
-state = { files: [], data : null, mappedData : null}
-
-
-handleMapping = (mappings) => {
-
-    const {input} = this.props;
-    const {data} = this.state;
+  handleMapping = mappings => {
+    const { input } = this.props;
+    const { data } = this.state;
     //we should now manipulate DATA!
 
     let newData = [];
 
-    if(data && Array.isArray(data))
-    {
-
+    if (data && Array.isArray(data)) {
       newData = data.map(row => {
-
         const newRow = {};
 
-        for (var key in mappings)
-        {
-          if (mappings.hasOwnProperty(key))
-          {
-              if(mappings[key] != "skip")
-              {
-                newRow[mappings[key]] = row[key];
-              }
+        for (var key in mappings) {
+          if (mappings.hasOwnProperty(key)) {
+            if (mappings[key] !== 'skip') {
+              newRow[mappings[key]] = row[key];
+            }
 
-              if(mappings[key] == "email")
-              {
-                //validating...?
-              }
-
-
+            if (mappings[key] === 'email') {
+              //validating...?
+            }
           }
         }
 
         return newRow;
-
       });
     }
 
-    input.onChange({data : newData, mappings : mappings});
-}
+    input.onChange({ data: newData, mappings: mappings });
+  };
 
+  parseTextToCsv(text) {
+    const { input } = this.props;
 
+    //reset!
+    input.onChange({ data: {}, mappings: {} });
 
-parseTextToCsv(text)
-{
-  const {input} = this.props;
+    const parsed = Papa.parse(text);
 
-  //reset!
-  input.onChange({data : {}, mappings : {}});
+    const data = parsed.data.filter(row => Array.isArray(row));
 
-  const parsed = Papa.parse(text);
+    this.setState({ data });
+  }
 
-  const data = parsed.data.filter(row => Array.isArray(row));
+  onDrop = (acceptedFiles, rejectedFiles) => {
+    this.setState({
+      files: acceptedFiles
+    });
 
-  this.setState({data});
-}
+    acceptedFiles.forEach(file => {
+      const reader = new FileReader();
 
+      reader.onload = event => this.parseTextToCsv(event.target.result);
 
+      reader.onabort = () => console.log('file reading was aborted');
+      reader.onerror = () => console.log('file reading has failed');
 
-onDrop = (acceptedFiles, rejectedFiles) => {
+      reader.readAsText(file);
+    }, this);
+  };
 
-  this.setState({
-      files : acceptedFiles
-  });
+  render() {
+    const { translate, input, meta } = this.props;
+    const { data } = this.state;
 
-  acceptedFiles.forEach(file => {
+    return (
+      <div>
+        <Dropzone
+          accept="text/csv"
+          accept="text/csv"
+          multiple={false}
+          onDrop={this.onDrop}
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+        </Dropzone>
 
-    const reader = new FileReader();
+        {meta.touched &&
+          meta.error && (
+            <div className="alert alert-important">{meta.error}</div>
+          )}
 
-    reader.onload = (event) => this.parseTextToCsv(event.target.result);
-
-    reader.onabort = () => console.log('file reading was aborted');
-    reader.onerror = () => console.log('file reading has failed');
-
-    reader.readAsText(file);
-
-  }, this);
-}
-
-
-
-render(){
-
-const { translate, input, meta } = this.props;
-const { data } = this.state;
-
-return (
-
-
-<div>
-
-<Dropzone accept="text/csv" accept="text/csv"  multiple={false} onDrop={this.onDrop}>
-   <p>Try dropping some files here, or click to select files to upload.</p>
-</Dropzone>
-
-{meta.touched && meta.error && <div className="alert alert-important">{meta.error}</div>}
-
-{data && <Mappings data={data} onMappingsChange={this.handleMapping} />}
-
-</div>
-
-);
-
-}
+        {data && <Mappings data={data} onMappingsChange={this.handleMapping} />}
+      </div>
+    );
+  }
 }
 
 export default translate(CsvImport);

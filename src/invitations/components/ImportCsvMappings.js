@@ -7,114 +7,100 @@ import {
   TableHeader,
   TableHeaderColumn,
   TableRow,
-  TableRowColumn,
+  TableRowColumn
 } from 'material-ui/Table';
 
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-const mappings = ["skip","email","fname","lname","cname2"];
+const mappings = ['skip', 'email', 'fname', 'lname', 'cname2'];
 
 class CsvImportMappings extends React.PureComponent {
+  state = { mappings: {} };
 
-state = { mappings : {}}
+  handleChange = (event, index, value, row) => {
+    //pass down mapping....
 
-handleChange = (event, index, value, row) => {
+    const { onMappingsChange } = this.props;
 
-  //pass down mapping....
+    //const key = "pos" + row;
 
-  const {onMappingsChange} = this.props;
+    const newItems = { ...this.state.mappings };
+    newItems[row] = value;
+    this.setState({ mappings: newItems });
 
-  //const key = "pos" + row;
+    onMappingsChange(newItems);
 
-  const newItems = { ...this.state.mappings };
-  newItems[row] = value;
-  this.setState({ mappings : newItems });
+    //    this.props.input.onChange(hex);
+  };
 
-  onMappingsChange(newItems);
+  getMappingFor(row, sampleValue) {
+    const { mappings } = this.state;
 
-//    this.props.input.onChange(hex);
+    if (row in mappings) {
+      return mappings[row];
+    }
 
-};
+    if (sampleValue.indexOf('@') > 0) {
+      return 'email';
+    }
 
-getMappingFor(row, sampleValue)
-{
-  const {mappings} = this.state;
-
-  if(row in mappings)
-  {
-    return mappings[row];
+    return 'skip';
   }
 
-  if(sampleValue.indexOf("@")>0)
-  {
-    return "email";
-  }
+  selectRowForSample() {}
 
-  return "skip";
-}
-
-selectRowForSample()
-{
-
-
-
-}
-
-
-renderMappings(row, sampleValue)
-{
-
-  const { translate } = this.props;
-
-  return (
-
-    <SelectField
-          floatingLabelText = "What is it?"
-          value = {this.getMappingFor(row, sampleValue)}
-        //  errorText={"asd"}
-          onChange = {(event,index,value) => this.handleChange(event,index,value,row)}>
-
-          {mappings.map((item,i) =>
-            <MenuItem key={i} value={item} primaryText={translate(`fields.${item}`)} />
-
-          )}
-    </SelectField>
-  );
-}
-
-
-
-render(){
-
-  const {data} = this.props;
-
-  if(data && typeof data[1] != "undefined" && Array.isArray(data[1]))
-  {
-
-    console.log("renderd");
+  renderMappings(row, sampleValue) {
+    const { translate } = this.props;
 
     return (
-
-      <Table selectable={false}>
-        <TableBody displayRowCheckbox={false}>
-          {data[1].map((cell,i)=>{
-
-          return cell.length && <TableRow key={i}>
-                  <TableRowColumn>{cell}</TableRowColumn>
-                  <TableRowColumn>{this.renderMappings(i, cell) }</TableRowColumn>
-           </TableRow>
-         })}
-      </TableBody>
-      </Table>
-    )
-
+      <SelectField
+        floatingLabelText="What is it?"
+        value={this.getMappingFor(row, sampleValue)}
+        //  errorText={"asd"}
+        onChange={(event, index, value) =>
+          this.handleChange(event, index, value, row)
+        }
+      >
+        {mappings.map((item, i) => (
+          <MenuItem
+            key={i}
+            value={item}
+            primaryText={translate(`fields.${item}`)}
+          />
+        ))}
+      </SelectField>
+    );
   }
 
-  return (<div></div>);
+  render() {
+    const { data } = this.props;
 
-}
-}
+    if (data && typeof data[1] != 'undefined' && Array.isArray(data[1])) {
+      console.log('renderd');
 
+      return (
+        <Table selectable={false}>
+          <TableBody displayRowCheckbox={false}>
+            {data[1].map((cell, i) => {
+              return (
+                cell.length && (
+                  <TableRow key={i}>
+                    <TableRowColumn>{cell}</TableRowColumn>
+                    <TableRowColumn>
+                      {this.renderMappings(i, cell)}
+                    </TableRowColumn>
+                  </TableRow>
+                )
+              );
+            })}
+          </TableBody>
+        </Table>
+      );
+    }
+
+    return <div />;
+  }
+}
 
 export default translate(CsvImportMappings);

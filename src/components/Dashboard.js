@@ -7,46 +7,35 @@ import restClient from '../api/restClient';
 
 import { Restricted } from 'admin-on-rest';
 
-
 const styles = {
-    welcome: { marginBottom: '2em' },
-    flex: { display: 'flex' },
-    leftCol: { flex: 1, marginRight: '1em' },
-    rightCol: { flex: 1, marginLeft: '1em' },
-    singleCol: { marginTop: '2em' },
+  welcome: { marginBottom: '2em' },
+  flex: { display: 'flex' },
+  leftCol: { flex: 1, marginRight: '1em' },
+  rightCol: { flex: 1, marginLeft: '1em' },
+  singleCol: { marginTop: '2em' }
 };
 
 class Dashboard extends Component {
+  state = {};
 
-    state = {};
-
-    render() {
-
-        const { width } = this.props;
-        return (
-            <div>
-                {width === 1 && <AppBarMobile title="meetup" />}
-                <Welcome style={styles.welcome} />
-                <div style={styles.flex}>
-                    <div style={styles.leftCol}>
-                        <div style={styles.flex}>
-
-
-                        </div>
-                        <div style={styles.singleCol}>
-
-
-                        </div>
-                    </div>
-                    <div style={styles.rightCol}>
-                        <div style={styles.flex}>
-
-                         </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    const { width } = this.props;
+    return (
+      <div>
+        {width === 1 && <AppBarMobile title="meetup" />}
+        <Welcome style={styles.welcome} />
+        <div style={styles.flex}>
+          <div style={styles.leftCol}>
+            <div style={styles.flex} />
+            <div style={styles.singleCol} />
+          </div>
+          <div style={styles.rightCol}>
+            <div style={styles.flex} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default withWidth()(Dashboard);

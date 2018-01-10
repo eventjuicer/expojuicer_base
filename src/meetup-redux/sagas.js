@@ -2,8 +2,7 @@
 
 import sagaAuth from './sagaAuth';
 
-
 export default [
-	sagaAuth,
-   // sagaExamples
+  sagaAuth
+  // sagaExamples
 ];
