@@ -15,16 +15,16 @@ const inviteListActionsStyle = {
 };
 
 
-const InviteListActions = ({ basePath, data, refresh }) => (
+const Actions = ({ basePath, data, refresh }) => (
     <CardActions style={inviteListActionsStyle}>
         <EditButton basePath={basePath} record={data} />
         <ListButton basePath={basePath} />
         <DeleteButton basePath={basePath} record={data} />
         <FlatButton primary label="Refresh" onClick={refresh} icon={<NavigationRefresh />} />
         {/* Add your custom actions */}
-        <FlatButton primary label="Custom Action" onClick={customAction} />
+        <FlatButton primary label="Custom Action" onClick={(test)=>console.log(test)} />
     </CardActions>
 );
 
 
-export default InviteListActions;
+export default Actions;

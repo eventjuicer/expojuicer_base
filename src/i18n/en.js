@@ -2,8 +2,23 @@ export default {
 
     auth : {
 
-        unauthorized : "Unauthorized"
+        unauthorized : "Unauthorized",
 
+        checkEmail : "Check e-mail for further instructions",
+
+        fields : {
+
+        email : "Your company email address",
+        password : "Password"
+
+      },
+
+      actions : {
+
+        loginWithPassword : "Sign In",
+        requestAccess : "Request an access"
+
+      }
     },
 
 
@@ -34,6 +49,8 @@ export default {
 
 
     pos: {
+
+        sros : "test",
         search: 'Search',
         configuration: 'Configuration',
         language: 'Language',
@@ -59,11 +76,56 @@ export default {
             },
         },
     },
+
+
     resources: {
+
+      scans : {
+
+          name : "Scans"
+
+
+      },
+
+      creatives : {
+
+          name : "Creatives"
+
+
+      },
+
+      newsletters : {
+
+          name : "Newsletters",
+
+          fields : {
+
+            name : "Internal name of newsletter",
+            sender_name : "Sender name",
+            sender_email : "Sender e-mail address",
+            template : "Custom message"
+
+          }
+
+      },
 
       meetups : {
 
-          name : "Meetups"
+          name : "Meetups",
+
+          fields : {
+
+            message : "Type your message",
+            creative_id : "Choose your template"
+
+          },
+
+          tabs : {
+
+            form : "Create new meeting request",
+            help : "Need help? "
+
+          }
 
 
       },
@@ -73,14 +135,10 @@ export default {
 
          name : "Invitations",
 
-         create : {
+         tabs : {
 
-            tabs : {
-
-              import_manually : "Import manually",
-              import_csv : "Upload CSV file"
-
-            }
+           import_manually : "Import manually",
+           import_csv : "Upload CSV file"
 
          }
 
@@ -96,6 +154,18 @@ export default {
                 invitation: "Send invitation",
                 subject : "Subject",
                 message : "Message"
+            },
+
+            actions : {
+
+              invite : "Send invitation"
+
+            },
+
+            fields : {
+
+              creative : "Select newsletter"
+
             }
 
         },

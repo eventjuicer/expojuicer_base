@@ -1,29 +1,43 @@
 import 'babel-polyfill';
 import React from 'react';
-import { Admin, Delete, Resource } from 'admin-on-rest';
+import { Admin, Resource } from 'admin-on-rest';
 
-import './App.css';
 
+import Dashboard from './components/Dashboard';
+import Logins from './components/Logins';
+
+
+import Logout from './components/Logout';
+import NotFound from './components/NotFound';
+import Menu from './components/Menu';
 
 import authClient from './api/authClient';
-import Login from './meetup/Login';
-import Dashboard from './meetup/Dashboard';
-import Logout from './meetup/Logout';
 import restClient from './api/restClient';
+
 import sagas from './meetup-redux/sagas';
 import reducers from './meetup-redux/reducers';
 
+import customRoutes from './routes';
+import translations from './i18n';
 
 import {
   ViewList as VisitorList,
-  ViewEdit as VisitorEdit,
-  ViewEdit as VisitorShow,
+  // ViewEdit as VisitorEdit,
+  // ViewEdit as VisitorShow,
   ViewIcon as VisitorIcon
 } from './visitors';
 
 import {
+  ViewList as NewsletterList,
+  ViewEdit as NewsletterEdit,
+  ViewCreate as NewsletterCreate,
+  ViewIcon as NewsletterIcon
+} from './newsletters';
+
+import {
   ViewList as MeetupList,
-  ViewEdit as MeetupEdit,
+  //ViewEdit as MeetupEdit,
+  ViewCreate as MeetupCreate,
   ViewIcon as MeetupIcon
 } from './meetup';
 
@@ -36,13 +50,8 @@ import {
 
 
 
-import NotFound from './meetup/NotFound';
 
-import Menu from './Menu';
-import customRoutes from './routes';
-import translations from './i18n';
 
-import { CommandList, CommandEdit, CommandIcon } from './aordemo/commands';
 
 
 
@@ -59,19 +68,18 @@ class App extends React.Component {
                 customRoutes={customRoutes}
                 authClient={authClient}
                 dashboard={Dashboard}
-                loginPage={Login}
+                loginPage={Logins}
                 logoutButton={Logout}
-             menu={Menu}
+                menu={Menu}
                 messages={translations}
             >
 
-              <Resource name="visitors"  options={{ label: 'Visitors' }} list={VisitorList} edit={VisitorEdit}  icon={CommandIcon} />
-
-              <Resource name="invitations" options={{ label: 'Invitations' }} list={InvitationList} edit={InvitationEdit} create={InvitationCreate}  icon={CommandIcon} />
-
-              <Resource name="meetups"  options={{ label: 'Meetups' }} list={MeetupList} edit={MeetupEdit} icon={MeetupIcon} />
-
-              <Resource name="scans"  options={{ label: 'Scans' }} list={MeetupList} edit={MeetupEdit} icon={MeetupIcon} />
+              <Resource name="visitors" list={VisitorList} icon={NewsletterIcon} />
+              <Resource name="invitations" list={InvitationList} edit={InvitationEdit} create={InvitationCreate}  icon={NewsletterIcon} />
+              <Resource name="meetups" list={MeetupList} create={MeetupCreate} icon={MeetupIcon} />
+              <Resource name="creatives" list={MeetupList} edit={MeetupCreate} icon={MeetupIcon} />
+              <Resource name="newsletters" list={NewsletterList} edit={NewsletterEdit} create={NewsletterCreate} icon={NewsletterIcon} />
+              <Resource name="scans"  options={{ label: 'Scans' }} list={MeetupList} edit={MeetupCreate} icon={MeetupIcon} />
 
 
                </Admin>

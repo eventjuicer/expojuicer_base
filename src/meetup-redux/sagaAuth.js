@@ -7,7 +7,7 @@ import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_CHECK, AUTH_ERROR } from 'admin-on-rest';
 
 
 function* handleLogin() {
-  yield put(showNotification('resources.reviews.notification.approved_success'));
+  yield put(showNotification('szkurde'));
   yield put(push('/chuj'));
 }
 

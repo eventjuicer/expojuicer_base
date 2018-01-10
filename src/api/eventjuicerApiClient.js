@@ -11,6 +11,7 @@ fetchUtils
 
  } from 'admin-on-rest';
 
+ import qs from 'query-string';
 
 
 /**
@@ -82,7 +83,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
             url = `${apiUrl}/${resource}`;
             options.method = 'POST';
 
-            console.log(params);
+          console.log(params.data);
 
             switch(resource)
             {

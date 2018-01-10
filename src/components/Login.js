@@ -15,7 +15,7 @@ import { Notification, ViewTitle, translate, userLogin as userLoginAction } from
 
 import { withRouter } from 'react-router-dom'
 import {validateToken, getColorsFromTheme} from '../api/helpers'
-import styles from './styles'
+import styles from './styles/login'
 
 
 
@@ -35,7 +35,7 @@ class Login extends Component {
 
     componentWillMount = () => {
 
-        const {userLogin, history,location, match} = this.props;
+        const {userLogin, history, location, match} = this.props;
 
        // console.log(this.props);
 

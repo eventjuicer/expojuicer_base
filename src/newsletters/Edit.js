@@ -2,12 +2,8 @@
 import React from 'react';
 import {
     translate,
-    BooleanField,
-    Datagrid,
-    DateField,
-    DateInput,
-    Delete,
     Edit,
+    EditButton,
     Filter,
     FormTab,
     List,
@@ -20,31 +16,26 @@ import {
     TextInput,
     ReferenceInput
 } from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
 
-import EditButton from '../buttons/EditButton';
-import NbItemsField from '../aordemo/commands/NbItemsField';
-import ProductReferenceField from '../aordemo/products/ProductReferenceField';
-import StarRatingField from '../aordemo/reviews/StarRatingField';
 import FullNameField from '../fields/FullNameField';
 
+import RichTextInput from 'aor-rich-text-input';
 
 
+const ViewTitle = ({ record }) => record ? <FullNameField record={record} size={32} /> : null;
 
-import {Title} from './Shared';
-
-export const InviteIcon = Icon;
 
 const ViewEdit = (props) => (
-    <Edit title={<Title />} {...props}>
+    <Edit title={<ViewTitle />} {...props}>
         <TabbedForm>
             <FormTab label="resources.visitors.tabs.invitation">
 
-                <TextInput source="first_name" style={{ display: 'inline-block' }} />
-                <TextInput source="last_name" style={{ display: 'inline-block', marginLeft: 32 }} />
-                <TextInput type="email" source="email" validation={{ email: true }} options={{ fullWidth: true }} style={{ width: 544 }} />
+              <TextInput source="name" label="resources.newsletters.inputs.name"  />
 
-                <LongTextInput label="resources.visitors.tabs.message" source="invitation" style={{ maxWidth: 544 }} />
+              <TextInput source="data.sender_name" label="resources.newsletters.inputs.sender_name" style={{ display: 'inline-block' }} />
+              <TextInput type="email" source="data.sender_email" label="resources.newsletters.inputs.sender_email"  validation={{ email: true }}  style={{ display: 'inline-block', marginLeft: 32 }} />
+
+              <LongTextInput label="resources.newsletters.inputs.template" source="data.template" style={{ maxWidth: 544 }} />
 
 
             </FormTab>

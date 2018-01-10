@@ -6,8 +6,12 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
     },
+    secondary : {
+        marginTop : 10
+    },
     card: {
-        minWidth: 300,
+        minWidth: 500,
+        padding: '1em'
     },
     avatar: {
         margin: '1em',
@@ -25,6 +29,7 @@ const styles = {
         color: '#ccc',
     },
 };
+
 
 
 export default styles;

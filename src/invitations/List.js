@@ -26,7 +26,7 @@ import NbItemsField from '../aordemo/commands/NbItemsField';
 import ProductReferenceField from '../aordemo/products/ProductReferenceField';
 import StarRatingField from '../aordemo/reviews/StarRatingField';
 import FullNameField from '../fields/FullNameField';
-import InviteButton from '../buttons/InviteButton';
+
 
 
 
@@ -60,7 +60,8 @@ const ViewList = (props) => (
             <TextField source="cname2" label="Company" />
             <TextField source="position" label="Position" />
 
-         <InviteButton />
+
+         
 
 
         </Datagrid>

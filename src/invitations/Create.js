@@ -14,13 +14,13 @@ const ViewCreate = (props) => (
 
         <TabbedForm redirect="list" submitOnEnter={false} validate={validateInvites}>
 
-            <FormTab label="resources.invites.create.tabs.import_manually">
+            <FormTab label="resources.invitations.tabs.import_manually">
 
                 <Field name="imported_manually" component={ImportManually} />
 
             </FormTab>
 
-            <FormTab label="resources.invites.create.tabs.import_csv">
+            <FormTab label="resources.invitations.tabs.import_csv">
 
                   <Field name="imported_json" component={ImportCsv} />
 

@@ -2,12 +2,8 @@
 import React from 'react';
 import {
     translate,
-    BooleanField,
-    Datagrid,
-    DateField,
-    DateInput,
-    Delete,
-    Edit,
+    Create,
+    EditButton,
     Filter,
     FormTab,
     List,
@@ -20,31 +16,23 @@ import {
     TextInput,
     ReferenceInput
 } from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
 
-import EditButton from '../buttons/EditButton';
-import NbItemsField from '../aordemo/commands/NbItemsField';
-import ProductReferenceField from '../aordemo/products/ProductReferenceField';
-import StarRatingField from '../aordemo/reviews/StarRatingField';
 import FullNameField from '../fields/FullNameField';
 
 
 
 
-import {Title} from './Shared';
-
-export const InviteIcon = Icon;
-
-const ViewEdit = (props) => (
-    <Edit title={<Title />} {...props}>
+const ViewCreate = (props) => (
+    <Create {...props}>
         <TabbedForm>
             <FormTab label="resources.visitors.tabs.invitation">
 
-                <TextInput source="first_name" style={{ display: 'inline-block' }} />
-                <TextInput source="last_name" style={{ display: 'inline-block', marginLeft: 32 }} />
-                <TextInput type="email" source="email" validation={{ email: true }} options={{ fullWidth: true }} style={{ width: 544 }} />
+              <TextInput source="name" label="resources.newsletters.inputs.name"  />
 
-                <LongTextInput label="resources.visitors.tabs.message" source="invitation" style={{ maxWidth: 544 }} />
+              <TextInput source="data.sender_name" label="pos.sros" style={{ display: 'inline-block' }} />
+              <TextInput type="email" source="data.sender_email" validation={{ email: true }}  style={{ display: 'inline-block', marginLeft: 32 }} />
+
+              <LongTextInput label="resources.newsletters.inputs.template" source="data.template" style={{ maxWidth: 544 }} />
 
 
             </FormTab>
@@ -89,7 +77,7 @@ const ViewEdit = (props) => (
 
 
         </TabbedForm>
-    </Edit>
+    </Create>
 );
 
-export default ViewEdit;
+export default ViewCreate;
