@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import {  CardActions } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Notification, translate, userLogin as userLoginAction } from 'admin-on-rest';
+import { translate, userLogin as userLoginAction } from 'admin-on-rest';
 import styles from './styles/login'
 import renderInput from '../redux-form/TextInput'
 
@@ -22,22 +22,19 @@ class Login extends Component {
     }
 
     render() {
-        const { handleSubmit, submitting, theme, translate, accentColor} = this.props;
+        const { handleSubmit, submitting, translate} = this.props;
 
         return (
 
   <form onSubmit={handleSubmit(this.login)}>
       <div style={styles.form}>
-          <p style={styles.hint}>If you don't know your company password leave it empty!</p>
-
+          <p style={styles.hint}>{translate('auth.loginByPassword.hint')}</p>
 
               <Field
                   name="email"
                   component={renderInput}
                   floatingLabelText={translate('auth.fields.email')}
               />
-
-
 
           <Field
               name="password"
@@ -63,13 +60,10 @@ Login.propTypes = {
     ...propTypes,
     authClient: PropTypes.func,
     previousRoute: PropTypes.string,
-    theme: PropTypes.object.isRequired,
     translate: PropTypes.func.isRequired,
 };
 
-Login.defaultProps = {
-    theme: {},
-};
+
 
 const enhance = compose(
     translate,

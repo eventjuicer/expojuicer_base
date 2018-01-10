@@ -27,7 +27,7 @@ const ViewCreate = (props) => (
         <TabbedForm>
             <FormTab label="resources.visitors.tabs.invitation">
 
-              <TextInput source="name" label="resources.newsletters.inputs.name"  />
+              <TextInput source="name"   />
 
               <TextInput source="data.sender_name" label="pos.sros" style={{ display: 'inline-block' }} />
               <TextInput type="email" source="data.sender_email" validation={{ email: true }}  style={{ display: 'inline-block', marginLeft: 32 }} />

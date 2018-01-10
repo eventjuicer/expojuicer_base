@@ -5,9 +5,19 @@ import { MenuItemLink, getResources, translate, DashboardMenuItem, WithPermissio
 import compose from 'recompose/compose';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 
+
+
+
+import ContentInbox from 'material-ui/svg-icons/content/inbox';
+
+
+
+
 const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 <div>
+
+
 <DashboardMenuItem onTouchTap={onMenuTap} />
 <MenuItemLink to="/visitors" primaryText={translate('resources.visitors.name')} onClick={onMenuTap}  leftIcon={<SettingsIcon />}  />
 <MenuItemLink  to="/invitations" primaryText={translate('resources.invitations.name')} onClick={onMenuTap}   leftIcon={<SettingsIcon />} />
@@ -23,6 +33,8 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 </WithPermission>
 
 {logout}
+
+
 </div>
 );
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import get from 'lodash/get';
@@ -15,6 +15,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import styles from './styles/login'
 import LoginByPassword from './LoginByPassword';
 import LoginByRequest from './LoginByRequest';
+import LoginByToken from './LoginByToken';
+
 import {getColorsFromTheme} from '../api/helpers';
 
 
@@ -25,23 +27,23 @@ const Logins = (props) => {
     const { primary1Color, accent1Color } = getColorsFromTheme(muiTheme);
 
 
-console.log(props);
-
       return (
 
 <MuiThemeProvider muiTheme={muiTheme}>
   <div style={{ ...styles.main, backgroundColor: primary1Color }}>
   <Card style={styles.card, styles.secondary}>
   <div style={styles.avatar}>
-  <Avatar backgroundColor={accent1Color} icon={<LockIcon />} size={120} />
+  <Avatar backgroundColor={accent1Color} icon={<LockIcon />} size={80} />
   </div>
 
+  <LoginByToken {...props} />
+
   <Tabs>
-    <Tab label="I have password" >
+    <Tab label="I have a password" >
       <LoginByPassword {...props} />
     </Tab>
 
-    <Tab label="I don't have password" >
+    <Tab label="I don't have a password" >
       <LoginByRequest  {...props}  />
     </Tab>
   </Tabs>

@@ -14,11 +14,13 @@ const styles = {
         padding: '1em'
     },
     avatar: {
-        margin: '1em',
+        margin: '2em',
         textAlign: 'center ',
+
     },
     form: {
         padding: '0 1em 1em 1em',
+          minWidth: 500,
     },
     input: {
         display: 'flex',

@@ -1,36 +1,31 @@
 import React, { Component } from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import { translate, userLogout as userLogoutAction } from 'admin-on-rest';
+import { MenuItemLink, translate, userLogout as userLogoutAction } from 'admin-on-rest';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
+
+
 
 class Logout extends Component {
 
 
 	logout = () => {
 
-		alert("logout");
-		this.props.userLogout({});
+		const {userLogout} = this.props;
+
+		userLogout({});
 	}
 
 	render(){
 
-		const {translate, userLogout} = this.props;
+		const {translate} = this.props;
 
 		return (
 
-			<MenuItem
-            
-            primaryText={translate('logout')}
-              containerElement={<Link to={`/login`} />}
-            leftIcon={<SettingsIcon />}
-           	onTouchTap={() => this.logout() }
+			<MenuItemLink to="/login?bye" primaryText={translate('aor.logout')} onClick={()=>this.logout()}  leftIcon={<SettingsIcon />}  />
 
-        />
-
-        )
+      )
 	}
 }
 
@@ -44,4 +39,3 @@ const enhance = compose(
 );
 
 export default enhance(Logout);
-

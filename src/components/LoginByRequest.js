@@ -7,7 +7,7 @@ import compose from 'recompose/compose';
 import { CardActions } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { Notification, translate, userLogin as userLoginAction } from 'admin-on-rest';
+import { translate, userLogin as userLoginAction } from 'admin-on-rest';
 
 import styles from './styles/login'
 import renderInput from '../redux-form/TextInput'
@@ -23,13 +23,13 @@ class LoginByRequest extends Component {
 
   render() {
 
-  const { handleSubmit, submitting, theme, translate, accentColor } = this.props;
+  const { handleSubmit, submitting, translate } = this.props;
 
   return (
 
   <form onSubmit={handleSubmit(this.login)}>
   <div style={styles.form}>
-  <p style={styles.hint}>{translate("costam wtedy")}</p>
+  <p style={styles.hint}>{translate("auth.loginByRequest.hint")}</p>
 
   <Field
   name="email"
@@ -54,12 +54,12 @@ LoginByRequest.propTypes = {
     ...propTypes,
     authClient: PropTypes.func,
     previousRoute: PropTypes.string,
-    theme: PropTypes.object.isRequired,
+
     translate: PropTypes.func.isRequired,
 };
 
 LoginByRequest.defaultProps = {
-    theme: {},
+
 };
 
 const enhance = compose(

@@ -19,6 +19,7 @@ import reducers from './meetup-redux/reducers';
 
 import customRoutes from './routes';
 import translations from './i18n';
+import {getCompanyName} from './api/helpers';
 
 import {
   ViewList as VisitorList,
@@ -61,7 +62,7 @@ class App extends React.Component {
         return (
             <Admin
                 catchAll={NotFound}
-                title="Exhibitordeck"
+                title={`expojuicer ${getCompanyName()}`}
                 restClient={restClient}
                 customReducers={reducers}
                 customSagas={sagas}

@@ -11,6 +11,18 @@ export default {
         email : "Your company email address",
         password : "Password"
 
+        },
+
+
+
+      loginByPassword : {
+
+        hint : "loginByPassword hint"
+      },
+
+      loginByRequest : {
+
+        hint : "loginByRequest hint"
       },
 
       actions : {
@@ -101,7 +113,9 @@ export default {
           fields : {
 
             name : "Internal name of newsletter",
-            sender_name : "Sender name",
+            data : {
+                sender_name : "Sender name",
+            },
             sender_email : "Sender e-mail address",
             template : "Custom message"
 

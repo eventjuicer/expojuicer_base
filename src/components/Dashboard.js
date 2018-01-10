@@ -5,6 +5,9 @@ import { AppBarMobile, GET_LIST, GET_MANY } from 'admin-on-rest';
 import Welcome from './Welcome';
 import restClient from '../api/restClient';
 
+import { Restricted } from 'admin-on-rest';
+
+
 const styles = {
     welcome: { marginBottom: '2em' },
     flex: { display: 'flex' },
@@ -18,7 +21,7 @@ class Dashboard extends Component {
     state = {};
 
     render() {
- 
+
         const { width } = this.props;
         return (
             <div>
@@ -27,7 +30,7 @@ class Dashboard extends Component {
                 <div style={styles.flex}>
                     <div style={styles.leftCol}>
                         <div style={styles.flex}>
-                           
+
 
                         </div>
                         <div style={styles.singleCol}>
@@ -37,7 +40,7 @@ class Dashboard extends Component {
                     </div>
                     <div style={styles.rightCol}>
                         <div style={styles.flex}>
-                          
+
                          </div>
                     </div>
                 </div>
