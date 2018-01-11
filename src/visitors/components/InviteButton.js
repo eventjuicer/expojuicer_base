@@ -1,5 +1,5 @@
 import React from 'react';
- import FlatButton from 'material-ui/FlatButton';
+import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router-dom';
 import { translate } from 'admin-on-rest';
 import { stringify } from 'query-string';

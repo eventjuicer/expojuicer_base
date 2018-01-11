@@ -42,8 +42,6 @@ const ViewCreate = props => (
           style={{ maxWidth: 544 }}
         />
       </FormTab>
-
-       
     </TabbedForm>
   </Create>
 );

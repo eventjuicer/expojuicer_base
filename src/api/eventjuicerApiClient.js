@@ -9,7 +9,6 @@ import {
   fetchUtils
 } from 'admin-on-rest';
 
-
 /**
  * Maps admin-on-rest queries to a json-server powered REST API
  *
@@ -80,7 +79,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         switch (resource) {
           case 'invites':
             options.body = JSON.stringify(params.data);
-          break;
+            break;
           default:
             options.body = JSON.stringify(params.data);
         }
@@ -126,7 +125,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         };
       case CREATE:
         return { data: { ...params.data, id: json.id } };
-   
+
       default:
         return { data: json.data };
     }

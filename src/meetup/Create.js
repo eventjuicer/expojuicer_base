@@ -19,11 +19,7 @@ import { required, email, minLength } from 'admin-on-rest';
 
 const ViewCreate = props => (
   <Create title="hej" {...props}>
-    <TabbedForm
-      redirect={false}
-      submitOnEnter={false}
-      validate={validate}
-    >
+    <TabbedForm redirect={false} submitOnEnter={false} validate={validate}>
       <FormTab label="resources.meetups.tabs.form">
         <DisabledInput
           source="participant_id"

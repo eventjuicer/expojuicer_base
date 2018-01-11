@@ -49,4 +49,3 @@ const ViewList = props => (
 );
 
 export default ViewList;
- 

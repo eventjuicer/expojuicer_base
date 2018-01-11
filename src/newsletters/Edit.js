@@ -42,8 +42,6 @@ const ViewEdit = props => (
 
         <LongTextInput source="data.template" style={{ maxWidth: 544 }} />
       </FormTab>
-
-     
     </TabbedForm>
   </Edit>
 );

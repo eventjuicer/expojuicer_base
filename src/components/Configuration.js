@@ -8,7 +8,7 @@ import {
   ViewTitle
 } from 'admin-on-rest';
 
-import { changeTheme as changeThemeAction } from '../meetup-redux/actions';
+import { changeTheme as changeThemeAction } from '../redux/actions';
 
 import { withRouter } from 'react-router-dom';
 import { Restricted } from 'admin-on-rest';

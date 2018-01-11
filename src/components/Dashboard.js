@@ -3,9 +3,6 @@ import withWidth from 'material-ui/utils/withWidth';
 import { AppBarMobile, GET_LIST, GET_MANY } from 'admin-on-rest';
 
 import Welcome from './Welcome';
-import restClient from '../api/restClient';
-
-import { Restricted } from 'admin-on-rest';
 
 const styles = {
   welcome: { marginBottom: '2em' },
@@ -22,7 +19,7 @@ class Dashboard extends Component {
     const { width } = this.props;
     return (
       <div>
-        {width === 1 && <AppBarMobile title="meetup" />}
+        {width === 1 && <AppBarMobile title="expojuicer" />}
         <Welcome style={styles.welcome} />
         <div style={styles.flex}>
           <div style={styles.leftCol}>

@@ -6,7 +6,8 @@ export const validateToken = token => {
 
 export const checkHttpStatusCode = response => {
   if (response.status < 200 || response.status >= 300) {
-    throw new Error('Ooops!');
+    //  throw new Error('Ooops!');
+    return Promise.reject('rejected');
   }
   return response.json;
 };
@@ -23,7 +24,7 @@ export const clearUserData = () => {
 
 export const getToken = () => {
   const token = localStorage.getItem('token');
-  return validateToken(token) ? token : '';
+  return validateToken(token) ? token : false;
 };
 
 export const getCompanyName = () => {

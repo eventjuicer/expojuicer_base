@@ -1,12 +1,11 @@
 import React from 'react';
 
-import {  translate } from 'admin-on-rest';
+import { translate } from 'admin-on-rest';
 
 import Papa from 'papaparse';
 import Dropzone from 'react-dropzone';
 
 import Mappings from './ImportCsvMappings';
-
 
 class CsvImport extends React.Component {
   state = { files: [], data: null, mappedData: null };

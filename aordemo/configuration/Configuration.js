@@ -8,7 +8,7 @@ import {
   ViewTitle
 } from 'admin-on-rest';
 
-import { changeTheme as changeThemeAction } from '../meetup-redux/actions';
+import { changeTheme as changeThemeAction } from '../redux/actions';
 
 const styles = {
   label: { width: '10em', display: 'inline-block' },

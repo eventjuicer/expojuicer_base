@@ -12,8 +12,8 @@ import Menu from './components/Menu';
 import authClient from './api/authClient';
 import restClient from './api/restClient';
 
-import sagas from './meetup-redux/sagas';
-import reducers from './meetup-redux/reducers';
+import sagas from './redux/sagas';
+import reducers from './redux/reducers';
 
 import customRoutes from './routes';
 import translations from './i18n';
@@ -64,11 +64,7 @@ class App extends React.Component {
         menu={Menu}
         messages={translations}
       >
-        <Resource
-          name="visitors"
-          list={VisitorList}
-          icon={VisitorIcon}
-        />
+        <Resource name="visitors" list={VisitorList} icon={VisitorIcon} />
         <Resource
           name="invitations"
           list={InvitationList}

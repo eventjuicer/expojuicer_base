@@ -1,7 +1,6 @@
 import React from 'react';
 import { translate } from 'admin-on-rest';
 
-
 import TextField from 'material-ui/TextField';
 
 const styles = {

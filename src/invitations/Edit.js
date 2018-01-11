@@ -52,8 +52,6 @@ const ViewEdit = props => (
           style={{ maxWidth: 544 }}
         />
       </FormTab>
-
-   
     </TabbedForm>
   </Edit>
 );

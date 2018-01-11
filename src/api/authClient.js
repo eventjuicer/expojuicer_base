@@ -6,6 +6,7 @@ import {
   AUTH_GET_PERMISSIONS
 } from 'admin-on-rest';
 import { fetchUtils } from 'admin-on-rest';
+
 import {
   validateToken,
   checkHttpStatusCode,
@@ -15,9 +16,46 @@ import {
 } from './helpers';
 
 export default (type, params) => {
+  /*
+
+err AUTH_CHECK {resource: "visitors", route: "list"}
+err AUTH_GET_PERMISSIONS {record: undefined, resource: undefined}
+err AUTH_LOGOUT undefined
+
+AUTH_ERROR Error: Unauthorized
+    at new HttpError (HttpError.js:64)
+    at fetch.js:63
+    at <anonymous>
+
+
+*/
+
+  console.log(type, params);
+
+  if (type === AUTH_ERROR) {
+    const { status } = params;
+
+    if (status === 401 || status === 403) {
+      clearUserData();
+      return Promise.reject('AUTH_ERROR error');
+    }
+    return Promise.resolve();
+  }
+
+  if (type === AUTH_CHECK) {
+    const { resource, route } = params;
+
+    if (resource === 'posts') {
+      // check credentials for the posts resource
+    }
+
+    return getToken() ? Promise.resolve() : Promise.reject('AUTH_CHECK error');
+  }
+
   if (type === AUTH_GET_PERMISSIONS) {
-    //return Promise.reject();
-    return Promise.resolve('admin');
+    return getToken()
+      ? Promise.resolve('admin')
+      : Promise.reject('AUTH_GET_PERMISSIONS error');
   }
 
   if (type === AUTH_LOGIN) {
@@ -35,10 +73,10 @@ export default (type, params) => {
     if (token !== undefined && validateToken(token)) {
       return fetchUtils
         .fetchJson(`${process.env.REACT_APP_API_ENDPOINT}/me`, options)
-        .then(checkHttpStatusCode)
         .then(response => {
           //TODO...checm response
-          storeUserData(token, response);
+          console.log(response);
+          //  storeUserData(token, response);
           return Promise.resolve();
         });
     } else {
@@ -50,7 +88,6 @@ export default (type, params) => {
           `${process.env.REACT_APP_API_ENDPOINT}/authenticate`,
           options
         )
-        .then(checkHttpStatusCode)
         .then(response => {
           console.log(response);
           //storeUserData(token, response);
@@ -60,32 +97,11 @@ export default (type, params) => {
         });
     }
   }
+
   if (type === AUTH_LOGOUT) {
     clearUserData();
-
-    //console.log("wylogowano");
-    return Promise.reject();
-  }
-
-  if (type === AUTH_ERROR) {
-    const { status } = params;
-    if (status === 401 || status === 403) {
-      clearUserData();
-      return Promise.reject();
-    }
     return Promise.resolve();
   }
-  if (type === AUTH_CHECK) {
 
-
-    const { resource } = params;
-    if (resource === 'posts') {
-      // check credentials for the posts resource
-    }
-
-    return getToken()
-      ? Promise.resolve()
-      : Promise.reject({ redirectTo: '/login?notoken' });
-  }
-  return Promise.reject('Unkown method');
+  return Promise.reject('Unknown authClient method');
 };
