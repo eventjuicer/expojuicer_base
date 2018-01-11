@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import { Admin, Resource } from 'admin-on-rest';
 
-import Dashboard from './components/Dashboard';
+import Dashboard from './dashboard';
 import Logins from './components/Logins';
 
 import Logout from './components/Logout';

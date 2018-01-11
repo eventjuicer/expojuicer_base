@@ -74,9 +74,9 @@ AUTH_ERROR Error: Unauthorized
       return fetchUtils
         .fetchJson(`${process.env.REACT_APP_API_ENDPOINT}/me`, options)
         .then(response => {
-          //TODO...checm response
-          console.log(response);
-          //  storeUserData(token, response);
+          //TODO!!!! filter response!
+          console.log(response.json);
+          storeUserData(token, response.json);
           return Promise.resolve();
         });
     } else {
