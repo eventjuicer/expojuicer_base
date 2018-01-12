@@ -23,8 +23,6 @@ import LoginByToken from './LoginByToken';
 
 import { getColorsFromTheme } from '../api/helpers';
 
-
-
 const Logins = props => {
   const { theme, translate } = props;
   const muiTheme = getMuiTheme(theme);

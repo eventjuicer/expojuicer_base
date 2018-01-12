@@ -4,7 +4,6 @@ import { AppBarMobile } from 'admin-on-rest';
 
 import Welcome from './Welcome';
 
-
 const styles = {
   welcome: { marginBottom: '2em' },
   flex: { display: 'flex' },
@@ -22,12 +21,14 @@ class Dashboard extends Component {
       <div>
         {width === 1 && <AppBarMobile title="expojuicer" />}
 
-      <Welcome style={styles.welcome} />
+        <Welcome style={styles.welcome} />
 
         <div style={styles.flex}>
           <div style={styles.leftCol}>
             <div style={styles.flex} />
-            <div style={styles.singleCol} />
+            <div style={styles.singleCol}>
+              <Welcome style={styles.welcome} />
+            </div>
           </div>
           <div style={styles.rightCol}>
             <div style={styles.flex} />

@@ -9,9 +9,9 @@ import { fetchUtils } from 'admin-on-rest';
 
 import {
   validateToken,
-  checkHttpStatusCode,
   storeUserData,
   clearUserData,
+  refreshUserData,
   getToken
 } from './helpers';
 
@@ -63,23 +63,16 @@ AUTH_ERROR Error: Unauthorized
 
     const { email, password, token } = params;
 
-    const options = {
-      headers: new Headers({
-        Accept: 'application/json',
-        'x-token': `${token}`
-      })
-    };
-
     if (token !== undefined && validateToken(token)) {
-      return fetchUtils
-        .fetchJson(`${process.env.REACT_APP_API_ENDPOINT}/me`, options)
-        .then(response => {
-          //TODO!!!! filter response!
-          console.log(response.json);
-          storeUserData(token, response.json);
-          return Promise.resolve();
-        });
+      return refreshUserData(token);
     } else {
+      const options = {
+        headers: new Headers({
+          Accept: 'application/json',
+          'x-token': `${token}`
+        })
+      };
+
       options.method = 'POST';
       options.body = JSON.stringify(params);
 
@@ -88,8 +81,8 @@ AUTH_ERROR Error: Unauthorized
           `${process.env.REACT_APP_API_ENDPOINT}/authenticate`,
           options
         )
-        .then(response => {
-          console.log(response);
+        .then(({ json }) => {
+          console.log(json);
           //storeUserData(token, response);
           //localStorage.setItem('token', token);
           //return Promise.resolve();

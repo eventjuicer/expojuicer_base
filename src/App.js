@@ -1,10 +1,11 @@
-import 'babel-polyfill';
+//import 'babel-polyfill';
 import React from 'react';
 import { Admin, Resource } from 'admin-on-rest';
 
 import Dashboard from './dashboard';
-import Logins from './components/Logins';
 
+import AppBarTitle from './components/AppBarTitle';
+import Logins from './components/Logins';
 import Logout from './components/Logout';
 import NotFound from './components/NotFound';
 import Menu from './components/Menu';
@@ -17,7 +18,6 @@ import reducers from './redux/reducers';
 
 import customRoutes from './routes';
 import translations from './i18n';
-import { getCompanyName } from './api/helpers';
 
 import {
   ViewList as VisitorList,
@@ -52,7 +52,7 @@ class App extends React.Component {
     return (
       <Admin
         catchAll={NotFound}
-        title={`expojuicer ${getCompanyName()}`}
+        title={<AppBarTitle />}
         restClient={restClient}
         customReducers={reducers}
         customSagas={sagas}

@@ -1,41 +1,47 @@
-import React, { Component } from 'react';
-import SettingsIcon from 'material-ui/svg-icons/action/settings';
+import React from 'react';
+
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+
 import {
   MenuItemLink,
   translate,
   userLogout as userLogoutAction
 } from 'admin-on-rest';
-import { connect } from 'react-redux';
-import compose from 'recompose/compose';
 
-class Logout extends Component {
+import IconButton from 'material-ui/IconButton';
+import Icon from 'material-ui/svg-icons/action/power-settings-new';
+
+class Logout extends React.Component {
   logout = () => {
     const { userLogout } = this.props;
-
     userLogout({});
   };
 
   render() {
-    const { translate } = this.props;
+    const { translate, icon } = this.props;
+
+    if (icon) {
+      return (
+        <IconButton>
+          <Icon color="#ffffff" onClick={this.logout} />
+        </IconButton>
+      );
+    }
 
     return (
       <MenuItemLink
         to="/login?bye"
         primaryText={translate('aor.logout')}
-        onClick={() => this.logout()}
-        leftIcon={<SettingsIcon />}
+        onClick={this.logout}
+        leftIcon={<Icon />}
       />
     );
   }
 }
 
 const enhance = compose(
-  connect(
-    state => ({
-      locale: state.locale
-    }),
-    { userLogout: userLogoutAction }
-  ),
+  connect(null, { userLogout: userLogoutAction }),
   translate
 );
 

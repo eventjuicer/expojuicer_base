@@ -4,18 +4,25 @@ import { Card, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import {
   translate,
+  Restricted,
   changeLocale as changeLocaleAction,
   ViewTitle
 } from 'admin-on-rest';
 
+import { withRouter } from 'react-router-dom';
+
 import { changeTheme as changeThemeAction } from '../redux/actions';
+import compose from 'recompose/compose';
 
 const styles = {
   label: { width: '10em', display: 'inline-block' },
   button: { margin: '1em' }
 };
 
-const Ranking = ({ theme, locale, changeTheme, changeLocale, translate }) => (
+const Ranking = ({ theme, locale, changeTheme, changeLocale, translate, location }) => (
+
+  <Restricted authParams={{ foo: 'bar' }} location={location}>
+
   <Card>
     <ViewTitle title={translate('pos.configuration')} />
 
@@ -41,6 +48,7 @@ const Ranking = ({ theme, locale, changeTheme, changeLocale, translate }) => (
       />
     </CardText>
   </Card>
+</Restricted>
 );
 
 const mapStateToProps = state => ({
@@ -48,7 +56,15 @@ const mapStateToProps = state => ({
   locale: state.locale
 });
 
-export default connect(mapStateToProps, {
-  changeLocale: changeLocaleAction,
-  changeTheme: changeThemeAction
-})(translate(Ranking));
+const enhance = compose(
+  translate,
+  connect(mapStateToProps, {
+    changeLocale: changeLocaleAction,
+    changeTheme: changeThemeAction
+  }),
+  withRouter
+);
+
+
+
+export default enhance(Ranking);

@@ -44,15 +44,11 @@ const ViewCreate = props => (
         <Divider style={{ marginTop: 30 }} />
 
         <TextInput
-          source="fname"
-          validate={[required, minLength(2)]}
-          style={{ display: 'inline-block' }}
+          source="fromName"
+          validate={[required, minLength(4)]}
+          options={{ fullWidth: true }} 
         />
-        <TextInput
-          source="lname"
-          validate={[required, minLength(2)]}
-          style={{ display: 'inline-block', marginLeft: 32 }}
-        />
+
         <TextInput
           type="email"
           source="email"

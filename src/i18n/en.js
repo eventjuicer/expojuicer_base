@@ -5,7 +5,7 @@ export default {
     checkEmail: 'Check e-mail for further instructions',
 
     fields: {
-      email: 'Your company email address',
+      email: 'Your business e-mail address',
       password: 'Password'
     },
 
@@ -44,6 +44,7 @@ export default {
   },
 
   pos: {
+    ranking: 'Ranking',
     sros: 'test',
     search: 'Search',
     configuration: 'Configuration',
@@ -53,22 +54,22 @@ export default {
       light: 'Light',
       dark: 'Dark'
     },
+
+    sections: {
+      suggest_a_meeting: 'Suggest a meeting'
+    },
+
     dashboard: {
-      monthly_revenue: 'Monthly Revenue',
-      new_orders: 'New Orders',
-      pending_reviews: 'Pending Reviews',
-      new_customers: 'New Customers',
-      pending_orders: 'Pending Orders',
       order: {
         items:
           'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items'
       },
       welcome: {
-        title: 'Welcome to admin-on-rest demo',
+        title: 'Welcome to expojuicer.com!',
         subtitle:
-          "This is the admin of an imaginary poster shop. Fell free to explore and modify the data - it's local to your computer, and will reset each time you reload.",
-        aor_button: 'Admin-on-rest website',
-        demo_button: 'Source for this demo'
+          'This is the admin panel for all your promotional and logistics needs as an exhibitor.',
+        aor_button: 'Link',
+        demo_button: 'Link #2'
       }
     }
   },
@@ -79,11 +80,11 @@ export default {
     },
 
     creatives: {
-      name: 'Creatives'
+      name: 'Social media'
     },
 
     newsletters: {
-      name: 'Newsletters',
+      name: 'Newsletter templates',
 
       fields: {
         name: 'Internal name of newsletter',
@@ -96,7 +97,7 @@ export default {
     },
 
     meetups: {
-      name: 'Meetups',
+      name: 'RSVPs',
 
       fields: {
         message: 'Type your message',
@@ -110,7 +111,7 @@ export default {
     },
 
     invitations: {
-      name: 'Invitations',
+      name: 'Sent newsletters',
 
       tabs: {
         import_manually: 'Import manually',
@@ -118,8 +119,12 @@ export default {
       }
     },
 
+    imported: {
+      name: 'Contacts'
+    },
+
     visitors: {
-      name: 'Visitors',
+      name: 'Browse participants',
 
       tabs: {
         invitation: 'Send invitation',

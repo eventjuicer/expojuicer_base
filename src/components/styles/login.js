@@ -1,11 +1,6 @@
-
-
-
 import backgroundImage from '../../imgs/bg1.jpg';
 
 //https://github.com/facebookincubator/create-react-app/issues/585
-
-
 
 const styles = {
   main: {
@@ -14,10 +9,10 @@ const styles = {
     minHeight: '100vh',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundImage : `url(${backgroundImage})`,
+    backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
-    backgroundBlendMode : 'luminosity'
+    backgroundBlendMode: 'luminosity'
   },
   secondary: {
     marginTop: 10

@@ -18,12 +18,12 @@ export default translate(({ style, translate }) => (
       <FlatButton
         label={translate('pos.dashboard.welcome.aor_button')}
         icon={<HomeIcon />}
-        href="https://marmelab.com/admin-on-rest/"
+        href=""
       />
       <FlatButton
         label={translate('pos.dashboard.welcome.demo_button')}
         icon={<CodeIcon />}
-        href="https://github.com/marmelab/admin-on-rest-demo"
+        href=""
       />
     </CardActions>
   </Card>

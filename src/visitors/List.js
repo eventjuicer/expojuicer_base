@@ -36,7 +36,7 @@ const ViewList = props => (
     {...props}
     filters={<VisitorFilter />}
     sort={{ field: 'lname', order: 'ASC' }}
-    perPage={100}
+    perPage={50}
   >
     <Datagrid
       //  headerOptions={{displaySelectAll: true, enableSelectAll : true}}
