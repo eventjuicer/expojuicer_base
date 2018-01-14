@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   translate,
-  Create,
+  Edit,
   EditButton,
   Filter,
   FormTab,
@@ -16,17 +16,21 @@ import {
   ReferenceInput
 } from 'admin-on-rest';
 
-import FullNameField from '../fields/FullNameField';
+import FullNameField from '../../fields/FullNameField';
 
-const ViewCreate = props => (
-  <Create {...props}>
+import RichTextInput from 'aor-rich-text-input';
+
+const ViewTitle = ({ record }) =>
+  record ? <FullNameField record={record} size={32} /> : null;
+
+const ViewEdit = props => (
+  <Edit title={<ViewTitle />} {...props}>
     <TabbedForm>
       <FormTab label="resources.visitors.tabs.invitation">
         <TextInput source="name" />
 
         <TextInput
           source="data.sender_name"
-          label="pos.sros"
           style={{ display: 'inline-block' }}
         />
         <TextInput
@@ -36,14 +40,10 @@ const ViewCreate = props => (
           style={{ display: 'inline-block', marginLeft: 32 }}
         />
 
-        <LongTextInput
-          label="resources.newsletters.inputs.template"
-          source="data.template"
-          style={{ maxWidth: 544 }}
-        />
+        <LongTextInput source="data.template" style={{ maxWidth: 544 }} />
       </FormTab>
     </TabbedForm>
-  </Create>
+  </Edit>
 );
 
-export default ViewCreate;
+export default ViewEdit;

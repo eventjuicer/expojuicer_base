@@ -19,33 +19,61 @@ import reducers from './redux/reducers';
 import customRoutes from './routes';
 import translations from './i18n';
 
+
+
+import {
+  ViewList as MeetupList,
+  ViewEdit as MeetupEdit,
+  ViewCreate as MeetupCreate,
+  ViewIcon as MeetupIcon
+} from './crud/meetups';
+
+
+
 import {
   ViewList as VisitorList,
   // ViewEdit as VisitorEdit,
   // ViewEdit as VisitorShow,
   ViewIcon as VisitorIcon
-} from './visitors';
+} from './crud/visitors';
 
 import {
   ViewList as NewsletterList,
   ViewEdit as NewsletterEdit,
   ViewCreate as NewsletterCreate,
   ViewIcon as NewsletterIcon
-} from './newsletters';
+} from './crud/newsletters';
+
+
 
 import {
-  ViewList as MeetupList,
-  //ViewEdit as MeetupEdit,
-  ViewCreate as MeetupCreate,
-  ViewIcon as MeetupIcon
-} from './meetup';
+  ViewList as CampaignList,
+  ViewCreate as CampaignCreate,
+  ViewEdit as CampaignEdit,
+  ViewIcon as CampaignIcon
+} from './crud/campaigns';
 
 import {
-  ViewList as InvitationList,
-  ViewCreate as InvitationCreate,
-  ViewEdit as InvitationEdit,
-  ViewIcon as InvitationIcon
-} from './invitations';
+  ViewList as ImportList,
+  ViewCreate as ImportCreate,
+  ViewEdit as ImportEdit,
+  ViewIcon as ImportIcon
+} from './crud/imports';
+
+import {
+  ViewList as ContactList,
+  ViewCreate as ContactCreate,
+  ViewEdit as ContactEdit,
+  ViewIcon as ContactIcon
+} from './crud/contacts';
+
+
+import {
+  ViewList as ScanList,
+  ViewEdit as ScanEdit,
+  ViewIcon as ScanIcon
+} from './crud/scans';
+
 
 class App extends React.Component {
   render() {
@@ -64,20 +92,40 @@ class App extends React.Component {
         menu={Menu}
         messages={translations}
       >
-        <Resource name="visitors" list={VisitorList} icon={VisitorIcon} />
-        <Resource
-          name="invitations"
-          list={InvitationList}
-          edit={InvitationEdit}
-          create={InvitationCreate}
-          icon={NewsletterIcon}
-        />
+
         <Resource
           name="meetups"
           list={MeetupList}
+          edit={MeetupEdit}
           create={MeetupCreate}
           icon={MeetupIcon}
         />
+
+        <Resource
+          name="visitors"
+          list={VisitorList}
+          icon={VisitorIcon} />
+
+
+
+        <Resource
+          name="campaigns"
+          list={CampaignList}
+          edit={CampaignEdit}
+          create={CampaignCreate}
+          icon={CampaignIcon}
+        />
+
+
+
+          <Resource
+            name="contacts"
+            list={ContactList}
+            edit={ContactEdit}
+            create={ContactCreate}
+            icon={ContactIcon}
+          />
+
         <Resource
           name="creatives"
           list={MeetupList}
@@ -94,9 +142,9 @@ class App extends React.Component {
         <Resource
           name="scans"
           options={{ label: 'Scans' }}
-          list={MeetupList}
-          edit={MeetupCreate}
-          icon={MeetupIcon}
+          list={ScanList}
+          edit={ScanEdit}
+          icon={ScanIcon}
         />
       </Admin>
     );

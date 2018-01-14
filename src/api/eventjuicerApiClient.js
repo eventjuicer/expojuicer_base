@@ -65,6 +65,9 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         url = `${apiUrl}/${resource}?${fetchUtils.queryParameters(query)}`;
         break;
       }
+
+
+
       case UPDATE:
         url = `${apiUrl}/${resource}/${params.id}`;
         options.method = 'PUT';
@@ -124,7 +127,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
           )
         };
       case CREATE:
-        return { data: { ...params.data, id: json.id } };
+        return { data: { ...params.data, id: json.data.id } };
 
       default:
         return { data: json.data };

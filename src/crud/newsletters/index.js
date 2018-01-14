@@ -24,7 +24,7 @@ import {
 import ViewEdit from './Edit';
 import ViewCreate from './Create';
 
-import FullNameField from '../fields/FullNameField';
+import FullNameField from '../../fields/FullNameField';
 
 export { Icon as ViewIcon } from 'material-ui/svg-icons/social/person';
 

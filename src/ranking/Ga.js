@@ -8,16 +8,21 @@ const prizes = [
 ];
 
 class Ga extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-      ranking: []
-    };
+  state = {
+    ranking: []
+  };
+
+
+  componentDidMount()
+  {
+    this.getRanking();
   }
 
+
   getRanking() {
-    this.setState({ ranking: GA.data });
+
+  //  this.setState({ ranking: GA.data });
 
     // axios.get('https://api.eventjuicer.com/v1/public/hosts/targiehandlu.pl/partner-performance?search=partner_&role=company')
 
@@ -59,11 +64,10 @@ class Ga extends React.Component {
     );
   }
 
-  componentWillMount() {
-    this.getRanking();
-  }
+
 
   render() {
+
     const { ranking } = this.state;
 
     const rankingFiltered = ranking.filter(item => 'name' in item);

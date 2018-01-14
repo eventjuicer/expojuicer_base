@@ -7,19 +7,20 @@ import {
   ReferenceInput,
   SelectInput,
   DisabledInput,
-  TextInput
+  TextInput,
+  required, email, minLength
 } from 'admin-on-rest';
 
 import get from 'lodash/get';
-
-import Divider from 'material-ui/Divider';
-import { validate } from './validation';
 import qs from 'query-string';
-import { required, email, minLength } from 'admin-on-rest';
+import Divider from 'material-ui/Divider';
+
+import { validate } from './validation';
+import { getUserFullName, getUserData } from '../../api/helpers';
 
 const ViewCreate = props => (
   <Create title="hej" {...props}>
-    <TabbedForm redirect={false} submitOnEnter={false} validate={validate}>
+    <TabbedForm redirect="edit" submitOnEnter={false} validate={validate}>
       <FormTab label="resources.meetups.tabs.form">
         <DisabledInput
           source="participant_id"
@@ -46,15 +47,17 @@ const ViewCreate = props => (
         <TextInput
           source="fromName"
           validate={[required, minLength(4)]}
-          options={{ fullWidth: true }} 
+          options={{ fullWidth: true }}
+          defaultValue={getUserFullName()}
         />
 
         <TextInput
           type="email"
-          source="email"
+          source="fromEmail"
           validate={[required, email]}
           options={{ fullWidth: true }}
           style={{ width: 544 }}
+          defaultValue={getUserData("email")}
         />
       </FormTab>
 

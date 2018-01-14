@@ -1,23 +1,23 @@
+
+
 import React from 'react';
-import { connect } from 'react-redux';
+
 import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
+
 import {
   translate,
   Restricted,
-  changeLocale as changeLocaleAction,
   ViewTitle
 } from 'admin-on-rest';
 
-import { withRouter } from 'react-router-dom';
 
-import { changeTheme as changeThemeAction } from '../redux/actions';
-import compose from 'recompose/compose';
 
-const styles = {
-  label: { width: '10em', display: 'inline-block' },
-  button: { margin: '1em' }
-};
+
+import Ga from './Ga';
+
+
+
+
 
 const Ranking = ({ theme, locale, changeTheme, changeLocale, translate, location }) => (
 
@@ -27,44 +27,14 @@ const Ranking = ({ theme, locale, changeTheme, changeLocale, translate, location
     <ViewTitle title={translate('pos.configuration')} />
 
     <CardText>
-      <div style={styles.label}>{translate('pos.language')}</div>
-      <RaisedButton
-        style={styles.button}
-        label="en"
-        primary={locale === 'en'}
-        onClick={() => changeLocale('en')}
-      />
-      <RaisedButton
-        style={styles.button}
-        label="de"
-        primary={locale === 'de'}
-        onClick={() => changeLocale('de')}
-      />
-      <RaisedButton
-        style={styles.button}
-        label="pl"
-        primary={locale === 'pl'}
-        onClick={() => changeLocale('pl')}
-      />
+
+          <Ga />
+
     </CardText>
   </Card>
 </Restricted>
 );
 
-const mapStateToProps = state => ({
-  theme: state.theme,
-  locale: state.locale
-});
-
-const enhance = compose(
-  translate,
-  connect(mapStateToProps, {
-    changeLocale: changeLocaleAction,
-    changeTheme: changeThemeAction
-  }),
-  withRouter
-);
 
 
-
-export default enhance(Ranking);
+export default translate(Ranking);

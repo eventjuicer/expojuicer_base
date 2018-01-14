@@ -1,8 +1,10 @@
 //import sagaExamples from './sagaExamples';
 
-import sagaAuth from './sagaAuth';
+import auth from './sagas/auth';
+import messages from './sagas/messages';
 
 export default [
-  sagaAuth
+  auth,
+  messages
   // sagaExamples
 ];

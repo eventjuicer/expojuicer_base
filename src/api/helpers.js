@@ -11,10 +11,15 @@ export const storeUserData = (token, profile) => {
   localStorage.setItem('profile', JSON.stringify(profile));
 };
 
-export const getUserData = path => {
+export const getUserData = (path, replacement) => {
   const profile = JSON.parse(localStorage.getItem('profile'));
-  return path !== undefined ? get(profile, path) : profile;
+  return path !== undefined ? get(profile, path, replacement) : profile;
 };
+
+export const getUserFullName = () =>
+{
+  return getUserData("profile.fname") + " " + getUserData("profile.lname");
+}
 
 export const clearUserData = () => {
   localStorage.removeItem('profile');

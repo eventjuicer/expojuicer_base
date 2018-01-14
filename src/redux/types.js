@@ -1,2 +1,3 @@
 export const CHANGE_THEME = 'CHANGE_THEME';
 export const SET_USER = 'SET_USER';
+export const SPECIAL_MESSAGE_SHOW = 'SPECIAL_MESSAGE_SHOW';

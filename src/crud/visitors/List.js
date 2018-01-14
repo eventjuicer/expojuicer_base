@@ -1,26 +1,14 @@
 import React from 'react';
 import {
   translate,
-  BooleanField,
-  Datagrid,
-  DateField,
-  DateInput,
-  Delete,
-  Edit,
-  Filter,
-  FormTab,
   List,
-  LongTextInput,
-  NullableBooleanInput,
-  NumberField,
-  ReferenceManyField,
-  TabbedForm,
+  Datagrid,
+  Filter,
   TextField,
-  TextInput,
-  ReferenceInput
+  TextInput
 } from 'admin-on-rest';
 
-import FullNameField from '../fields/FullNameField';
+import FullNameField from '../../fields/FullNameField';
 import InviteButton from './components/InviteButton';
 
 //import Actions from './ListActions';
@@ -47,10 +35,10 @@ const ViewList = props => (
         onRowSelection: test => console.log(test)
       }}
     >
-      <TextField source="fname" label="First name" sortable={false} />
-      <TextField source="lname" label="Last name" sortable={false} />
-      <TextField source="cname2" label="Company" sortable={false} />
-      <TextField source="position" label="Position" sortable={false} />
+      <TextField source="profile.fname" label="First name" sortable={false} />
+      <TextField source="profile.lname" label="Last name" sortable={false} />
+      <TextField source="profile.cname2" label="Company" sortable={false} />
+      <TextField source="profile.position" label="Position" sortable={false} />
       <TextField source="domain" label="Domain" sortable={false} />
 
       <InviteButton />

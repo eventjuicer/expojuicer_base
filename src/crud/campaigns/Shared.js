@@ -1,5 +1,5 @@
 import React from 'react';
-import FullNameField from '../fields/FullNameField';
+import FullNameField from '../../fields/FullNameField';
 import { NumberField } from 'admin-on-rest';
 
 export const Title = ({ record }) =>

@@ -44,6 +44,7 @@ export default {
   },
 
   pos: {
+    logout : "Logout",
     ranking: 'Ranking',
     sros: 'test',
     search: 'Search',
@@ -76,15 +77,19 @@ export default {
 
   resources: {
     scans: {
-      name: 'Scans'
+      name: 'Scans',
+      noresults : "This feature is not yet enabled for your company.",
+      noresultsmore : "However...",
     },
 
     creatives: {
-      name: 'Social media'
+      name: 'Social media',
+
     },
 
     newsletters: {
       name: 'Newsletter templates',
+
 
       fields: {
         name: 'Internal name of newsletter',
@@ -110,8 +115,13 @@ export default {
       }
     },
 
-    invitations: {
+    campaigns: {
+
       name: 'Sent newsletters',
+
+      noresults : "This feature is not yet enabled for your company.",
+      noresultsmore : "However...",
+
 
       tabs: {
         import_manually: 'Import manually',
@@ -119,9 +129,15 @@ export default {
       }
     },
 
-    imported: {
-      name: 'Contacts'
+    imports: {
+      name: 'Imported contacts',
     },
+
+
+    contacts: {
+      name: 'Contacts',
+    },
+
 
     visitors: {
       name: 'Browse participants',

@@ -32,7 +32,7 @@ class Logout extends React.Component {
     return (
       <MenuItemLink
         to="/login?bye"
-        primaryText={translate('aor.logout')}
+        primaryText={translate('pos.logout')}
         onClick={this.logout}
         leftIcon={<Icon />}
       />

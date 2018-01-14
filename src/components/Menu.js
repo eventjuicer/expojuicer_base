@@ -48,15 +48,15 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
     />
 
     <MenuItemLink
-      to="/invitations"
-      primaryText={translate('resources.invitations.name')}
+      to="/campaigns"
+      primaryText={translate('resources.campaigns.name')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />
 
     <MenuItemLink
-      to="/imported"
-      primaryText={translate('resources.imported.name')}
+      to="/contacts"
+      primaryText={translate('resources.contacts.name')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />

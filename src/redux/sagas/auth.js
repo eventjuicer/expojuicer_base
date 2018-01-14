@@ -1,7 +1,7 @@
 import { put, takeEvery, all } from 'redux-saga/effects';
 import { push } from 'react-router-redux';
 import { showNotification } from 'admin-on-rest';
-import { getToken } from '../api/helpers';
+import { getToken } from '../../api/helpers';
 
 import { FETCH_ERROR, USER_CHECK } from 'admin-on-rest';
 

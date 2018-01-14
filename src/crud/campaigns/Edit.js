@@ -21,9 +21,9 @@ import {
 } from 'admin-on-rest';
 import Icon from 'material-ui/svg-icons/social/person';
 
-import EditButton from '../buttons/EditButton';
+import EditButton from '../../buttons/EditButton';
 
-import FullNameField from '../fields/FullNameField';
+import FullNameField from '../../fields/FullNameField';
 
 import { Title } from './Shared';
 
