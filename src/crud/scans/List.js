@@ -11,7 +11,6 @@ import {
   SelectInput
 } from 'admin-on-rest';
 
-import ThreeTypesStatusField from '../../fields/ThreeTypesStatusField';
 import ListActions from './ListActions';
 import NoResults from '../../components/NoResults';
 
@@ -44,7 +43,6 @@ const ViewList = props => (
       <TextField source="participant.profile.cname2" label="Company"  sortable={false}  />
       <TextField source="participant.profile.position" label="Position"  sortable={false} />
 
-      <ThreeTypesStatusField source="agreed" label="Status" />
 
       <EditButton />
     </Datagrid>

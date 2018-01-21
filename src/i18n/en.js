@@ -1,4 +1,5 @@
 export default {
+
   auth: {
     unauthorized: 'Unauthorized',
 
@@ -22,6 +23,57 @@ export default {
       requestAccess: 'Request an access'
     }
   },
+
+  prizes : {
+
+    "name" : "Ranking",
+
+    "badges" : {
+
+        "title" : "Exclusive Branding on Visitor Badges",
+        "description" : "Exclusive branding of company logotype on all E-commerce Berlin Expo visitor badges",
+        "image" : ""
+    },
+
+    "presentation" : {
+      "title" : "Presentation on E-commerce Berlin Expo Stage",
+      "description" : "A 20 minute presentation slot at the expo. Your presentation will be added to the E-Commerce Berlin Expo speakers agenda.",
+      "image" : ""
+    },
+
+    "floor" : {
+      "title" : "Sponsored Floor Graphics",
+      "description" : "An extraordinary advertising option with your message on the floor of the venue hall - Size: 50 x 50 cm (5 pieces)",
+      "image" : ""
+    },
+
+    "video_interview" : {
+      "title" : "Video Interview",
+      "description" : "Video interview with your company representative at the expo as part of the E-Commerce Berlin Expo 2018 recap video. Published on the E-Commerce Berlin Expo homepage, Youtube channel and used as promotional material after the event.",
+      "image" : ""
+    },
+
+    "blog" : {
+      "title" : "Blog post",
+      "description" : "One-time inclusion of company content on the ecommercecapitals.com blog (> ___ readers per month). The blogpost will be promoted on the Facebook and Twitter channels of the  E-Commerce Berlin Expo.",
+      "image" : ""
+    },
+
+    "meetups" : {
+      "title" : "Advanced Networking with Visitors",
+      "description" : "Access to visitors contact information via scanning of visitor badges - facilitating the connecting experience and multiplying number of newly made contacts.",
+      "image" : ""
+    },
+
+    "leaflets" : {
+      "title" : "Distribution of flyers by a hostess",
+      "description" : "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor",
+      "image" : ""
+    },
+
+
+  },
+
 
   fields: {
     skip: "Skip, don't import",
@@ -76,6 +128,10 @@ export default {
   },
 
   resources: {
+
+
+
+
     scans: {
       name: 'Scans',
       noresults : "This feature is not yet enabled for your company.",

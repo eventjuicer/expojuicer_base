@@ -102,7 +102,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 );
 
 const mapStateToProps = state => ({
-  //  resources: getResources(state),
+  resources: getResources(state),
   //    resources : state.admin.resources,
   locale: state.locale
 });

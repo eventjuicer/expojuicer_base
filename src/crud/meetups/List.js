@@ -11,9 +11,8 @@ import {
   SelectInput
 } from 'admin-on-rest';
 
-import ThreeTypesStatusField from '../../fields/ThreeTypesStatusField';
+import StatusField from './components/StatusField';
 import ListActions from './ListActions';
-
 
 const ViewFilter = props => (
   <Filter {...props}>
@@ -37,12 +36,12 @@ const ViewList = props => (
   >
     <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
 
-      <TextField source="participant.profile.fname" label="First name" sortable={false} />
+      <TextField source="participant.profile.fname" label="Company name" sortable={false} />
       <TextField source="participant.profile.lname" label="Last name"  sortable={false} />
       <TextField source="participant.profile.cname2" label="Company"  sortable={false}  />
       <TextField source="participant.profile.position" label="Position"  sortable={false} />
 
-      <ThreeTypesStatusField source="agreed" label="Status" />
+      <StatusField label="status" sortable={false}   />
 
       <EditButton />
     </Datagrid>

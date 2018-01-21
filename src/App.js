@@ -75,6 +75,12 @@ import {
 } from './crud/scans';
 
 
+import {
+  ViewList as RankingList,
+  ViewIcon as RankingIcon
+} from './crud/ranking';
+
+
 class App extends React.Component {
   render() {
     return (
@@ -116,6 +122,12 @@ class App extends React.Component {
           icon={CampaignIcon}
         />
 
+
+        <Resource
+          name="ranking"
+          list={RankingList}
+          icon={RankingIcon}
+        />
 
 
           <Resource
