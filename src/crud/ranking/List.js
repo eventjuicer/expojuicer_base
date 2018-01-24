@@ -5,12 +5,16 @@ import {
   Datagrid,
   Filter,
   TextField,
-  TextInput
+  TextInput,
+  ViewTitle
 } from 'admin-on-rest';
 
-import NoResults from '../../components/NoResults';
+import { Card, CardText } from 'material-ui/Card';
+import Paper from 'material-ui/Paper';
+
 import Stats from './components/Stats';
 
+import PointsField from './components/PointsField';
 
 // const VisitorFilter = props => (
 //   <Filter {...props}>
@@ -18,13 +22,27 @@ import Stats from './components/Stats';
 //   </Filter>
 // );
 
-const ViewList = props => (
+const ViewList = (props) => (
 
-  <div>
+  <Paper>
 
-    <NoResults />
 
-    <Stats />
+
+    <ViewTitle title={props.translate('prizes.name')} />
+
+
+<CardText>
+
+
+  Your ranking position determines the amount of services you get by participating in the promotional contest.
+
+</CardText>
+
+<Stats />
+
+ 
+
+
 
   <List
     {...props}
@@ -38,17 +56,19 @@ const ViewList = props => (
       //    rowOptions={{ selectable: true }}
       options={{
         multiSelectable: true,
-        onRowSelection: test => console.log(test)
+      //  onRowSelection: test => console.log(test)
       }}
     >
       <TextField source="profile.cname2" label="Brand name" sortable={false} />
       <TextField source="domain" label="Domain" sortable={false} />
-      <TextField source="stats.sessions" label="Points" sortable={false} />
+      <PointsField source="stats" label="Points" sortable={false} />
 
     </Datagrid>
   </List>
 
-  </div>
+
+
+  </Paper>
 );
 
-export default ViewList;
+export default translate(ViewList);

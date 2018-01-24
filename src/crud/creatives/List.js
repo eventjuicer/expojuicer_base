@@ -1,34 +1,18 @@
 import React from 'react';
 import {
   translate,
-  BooleanField,
+  List,
   Datagrid,
   DateField,
-  DateInput,
-  Delete,
-  Edit,
-  EditButton,
+  ShowButton,
   Filter,
-  FormTab,
-  List,
-  LongTextInput,
-  NullableBooleanInput,
-  NumberField,
-  ReferenceManyField,
-  TabbedForm,
   TextField,
-  TextInput,
-  ReferenceInput
+  TextInput
 } from 'admin-on-rest';
 
-import ViewEdit from './Edit';
-import ViewCreate from './Create';
 
-import FullNameField from '../../fields/FullNameField';
+import Creatives from './components/Creatives';
 
-export { Icon as ViewIcon } from 'material-ui/svg-icons/social/person';
-
-export { ViewEdit, ViewCreate };
 
 const VisitorFilter = props => (
   <Filter {...props}>
@@ -36,11 +20,18 @@ const VisitorFilter = props => (
   </Filter>
 );
 
-export const ViewList = props => (
+const ViewList = props => (
+  <div>
+
+  <Creatives />
+
+
+  {/*
+
   <List
     {...props}
-    filters={<VisitorFilter />}
-    sort={{ field: 'cname2', order: 'ASC' }}
+  //  filters={<VisitorFilter />}
+  //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={100}
   >
     <Datagrid
@@ -59,7 +50,14 @@ export const ViewList = props => (
       <TextField source="act_as" label="Type" />
       <DateField source="updated_at" label="Updated" />
 
-      <EditButton />
+      <ShowButton />
+
     </Datagrid>
   </List>
+
+  */}
+
+  </div>
 );
+
+export default translate(ViewList);

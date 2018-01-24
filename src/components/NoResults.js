@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
+import Paper from 'material-ui/Paper';
+
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 
 import {
@@ -9,14 +11,24 @@ import {
 } from 'admin-on-rest';
 
 
-const NoResults = (props) => (
-  props.specialmessage ? <Card>
+const styles = {
 
-    <CardTitle style={{backgroundColor : "yellow"}} title={props.translate(`${props.specialmessage}.noresults`)} />
+  container : {
+
+    //margin: 10,
+    backgroundColor : "yellow"
+  }
+
+}
+
+const NoResults = (props) => (
+  props.specialmessage ? <Paper zDepth={2} style={styles.container}><Card>
+
+    <CardTitle title={props.translate(`${props.specialmessage}.noresults`)} />
     <CardText>
     {props.translate(`${props.specialmessage}.noresultsmore`)}
     </CardText>
-  </Card> : null
+  </Card></Paper> : null
 );
 
 const mapStateToProps = state => ({

@@ -27,10 +27,10 @@ AUTH_ERROR Error: Unauthorized
     at fetch.js:63
     at <anonymous>
 
-
+console.log(type, params);
 */
 
-  console.log(type, params);
+
 
   if (type === AUTH_ERROR) {
     const { status } = params;

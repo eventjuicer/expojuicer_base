@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
-import { Card, CardText, CardActions } from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
 import FlatButton from 'material-ui/FlatButton';
 
 import {
@@ -15,6 +15,18 @@ import {
 import {getUserData} from '../../../api/helpers';
 import { httpClient } from '../../../api/restClient';
 import Prize from './Prize';
+
+
+
+const styles = {
+  chip: {
+
+    marginLeft: 20,
+    marginBottom : 20
+  },
+
+}
+
 
 class Stats extends React.Component {
 
@@ -29,44 +41,18 @@ class Stats extends React.Component {
     this.getRanking();
   }
 
-  getRanking = () => {
+  getRanking(){
 
     httpClient(`${process.env.REACT_APP_API_ENDPOINT}/prizes`).
     then(response => {
-      if ('data' in response.json && "stats" in response.json.data)
-      {
-        this.setState({
-          stats: response.json.data.stats,
-          prizes : response.json.meta.prizes,
-          position : response.json.data.position
-        });
-      }
+
+      this.setState({
+        stats: 'stats' in response.json.data ? response.json.data.stats : {},
+        prizes : 'meta' in response.json ? response.json.meta.prizes : [],
+        position : 'position' in response.json.data ? response.json.data.position : 0
+      });
+
     });
-
-  }
-
-  renderPrizes()
-  {
-
-  }
-
-  // shouldComponentUpdate(nextProps, nextState)
-  // {
-  //
-  // }
-
-  countPosition()
-  {
-      const { stats } = this.state;
-      const { ranking} = this.props;
-
-
-
-      if(ranking.list.ids)
-      {
-        return ranking.list.ids.indexOf();
-      }
-
 
   }
 
@@ -76,33 +62,25 @@ class Stats extends React.Component {
 
     const {translate} = this.props;
     const {stats, prizes, position} = this.state;
+    const {sessions} = stats;
 
     return (
 
-      <Card>
+      <div>
 
-        <ViewTitle title={`${translate('prizes.name')} for ${getUserData('domain')}`} />
+        <Chip
+                 style={styles.chip}
+               >
+                  { getUserData('domain') } place: {sessions ? `#${position}` : `unknown`}
+               </Chip>
 
-        <CardText>
 
 
-{/*
-            <CardActions>
-               <FlatButton label="Action1" />
-               <FlatButton label="Action2" />
-             </CardActions>
-*/}
+          {prizes && prizes.map(item => <Prize key={item.name} prize={ item } position={ position } sessions={ sessions } />) }
 
-          <p>
 
-            Your current position: {stats.sessions ? position : `unknown`}
 
-          </p>
-
-          {prizes && prizes.map(item => <Prize prize={ item } position={ position } sessions={stats.sessions} />) }
-
-        </CardText>
-      </Card>
+      </div>
 
     );
 

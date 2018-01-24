@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { CardText } from 'material-ui/Card';
 import {
-  Notification,
+  showNotification as showNotificationAction,
   ViewTitle,
   translate,
   userLogin as userLoginAction
 } from 'admin-on-rest';
 import qs from 'query-string';
 import get from 'lodash/get';
-
+import styles from './styles/login';
 import { validateToken } from '../api/helpers';
 
 class LoginByToken extends Component {
@@ -18,26 +18,37 @@ class LoginByToken extends Component {
     token: ''
   };
 
-  componentWillMount = () => {
-    const { userLogin, location } = this.props;
+  componentDidMount = () => {
+
+    const { userLogin, location, showNotification } = this.props;
 
     const token = get(qs.parse(location.search), 'token', '');
 
-    if (validateToken(token)) {
-      this.setState({ token: token });
+    if(token.length)
+    {
+      if (validateToken(token)) {
+        this.setState({ token: token });
 
-      userLogin({ token: token }, '/');
+        userLogin({ token: token }, '/');
+      }
+      else
+      {
+        showNotification("auth.errors.badtoken");
+      }
     }
+
+
   };
 
   render() {
     const { translate } = this.props;
     return (
-      <div>
-        {/*
-    <ViewTitle title={translate('auth.unauthorized')} />
-  <CardText></CardText>
-  */}
+      <div style={styles.form}>
+
+    <h2 style={styles.centered}>{translate('auth.unauthorized')}</h2>
+
+    <p style={styles.centered}>Use the button provided in your exhibitor's account</p>
+
       </div>
     );
   }
@@ -45,7 +56,7 @@ class LoginByToken extends Component {
 
 const enhance = compose(
   translate,
-  connect(null, { userLogin: userLoginAction })
+  connect(null, { userLogin: userLoginAction , showNotification : showNotificationAction})
 );
 
 export default enhance(LoginByToken);

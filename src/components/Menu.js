@@ -16,11 +16,54 @@ import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
 
 import IconPeople from 'material-ui/svg-icons/social/people';
-import IconStatus from 'material-ui/svg-icons/action/thumbs-up-down';
+import IconStatus from 'material-ui/svg-icons/action/today';
+import IconTrend from 'material-ui/svg-icons/action/trending-up';
+import IconShare from 'material-ui/svg-icons/social/share';
+
+import Modal from './Modal'
 
 const Menu = ({ resources, onMenuTap, logout, translate }) => (
   <div>
     <DashboardMenuItem onTouchTap={onMenuTap} />
+
+
+
+    <Subheader>Promote your participation</Subheader>
+
+    <MenuItemLink
+      to="/ranking"
+      primaryText={translate('pos.ranking')}
+      onClick={onMenuTap}
+      leftIcon={<IconTrend />}
+    />
+
+    {/*
+
+    <MenuItemLink
+      to="/campaigns"
+      primaryText={translate('resources.campaigns.name')}
+      onClick={onMenuTap}
+      leftIcon={<SettingsIcon />}
+    />
+
+    <MenuItemLink
+      to="/contacts"
+      primaryText={translate('resources.contacts.name')}
+      onClick={onMenuTap}
+      leftIcon={<SettingsIcon />}
+    />
+
+*/}
+
+    <MenuItemLink
+      to="/creatives"
+      primaryText={translate('resources.creatives.name')}
+      onClick={onMenuTap}
+      leftIcon={<IconShare />}
+    />
+
+
+
 
     <Subheader>{translate('pos.sections.suggest_a_meeting')}</Subheader>
 
@@ -38,37 +81,12 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       leftIcon={<IconPeople />}
     />
 
-    <Subheader>Promote your participation</Subheader>
 
-    <MenuItemLink
-      to="/ranking"
-      primaryText={translate('pos.ranking')}
-      onClick={onMenuTap}
-      leftIcon={<SettingsIcon />}
-    />
 
-    <MenuItemLink
-      to="/campaigns"
-      primaryText={translate('resources.campaigns.name')}
-      onClick={onMenuTap}
-      leftIcon={<SettingsIcon />}
-    />
 
-    <MenuItemLink
-      to="/contacts"
-      primaryText={translate('resources.contacts.name')}
-      onClick={onMenuTap}
-      leftIcon={<SettingsIcon />}
-    />
+    {/*
 
-    <MenuItemLink
-      to="/creatives"
-      primaryText={translate('resources.creatives.name')}
-      onClick={onMenuTap}
-      leftIcon={<SettingsIcon />}
-    />
-
-    <Subheader>Your leads</Subheader>
+      <Subheader>Your leads</Subheader>
 
     <MenuItemLink
       to="/scans"
@@ -97,7 +115,14 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       />
     </WithPermission>
 
+*/}
+
+  <Divider />
+
     {logout}
+
+      <Modal />
+
   </div>
 );
 

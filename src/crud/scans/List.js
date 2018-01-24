@@ -12,7 +12,6 @@ import {
 } from 'admin-on-rest';
 
 import ListActions from './ListActions';
-import NoResults from '../../components/NoResults';
 
 const ViewFilter = props => (
   <Filter {...props}>
@@ -28,7 +27,7 @@ const ViewFilter = props => (
 
 const ViewList = props => (
   <div>
-    <NoResults />
+
   <List
     {...props}
     actions={<ListActions />}

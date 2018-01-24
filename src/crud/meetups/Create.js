@@ -1,8 +1,7 @@
 import React from 'react';
 import {
   Create,
-  FormTab,
-  TabbedForm,
+  SimpleForm,
   LongTextInput,
   ReferenceInput,
   SelectInput,
@@ -13,15 +12,15 @@ import {
 
 import get from 'lodash/get';
 import qs from 'query-string';
-import Divider from 'material-ui/Divider';
+
 
 import { validate } from './validation';
 import { getUserFullName, getUserData } from '../../api/helpers';
 
 const ViewCreate = props => (
-  <Create title="hej" {...props}>
-    <TabbedForm redirect="edit" submitOnEnter={false} validate={validate}>
-      <FormTab label="resources.meetups.tabs.form">
+  <Create title="Send meeting request" {...props}>
+    <SimpleForm redirect="list" submitOnEnter={false} validate={validate}>
+
         <DisabledInput
           source="participant_id"
           defaultValue={get(
@@ -30,7 +29,9 @@ const ViewCreate = props => (
             0
           )}
         />
-        <ReferenceInput
+
+
+    {/*    <ReferenceInput
           label="resources.meetups.fields.creative_id"
           source="creative_id"
           reference="newsletters"
@@ -39,13 +40,13 @@ const ViewCreate = props => (
         >
           <SelectInput optionText="name" />
         </ReferenceInput>
+*/}
 
-        <LongTextInput source="message" style={{ maxWidth: 544 }} />
+        <LongTextInput source="message" style={{ maxWidth: 700 }} />
 
-        <Divider style={{ marginTop: 30 }} />
 
         <TextInput
-          source="fromName"
+          source="data.from_name"
           validate={[required, minLength(4)]}
           options={{ fullWidth: true }}
           defaultValue={getUserFullName()}
@@ -53,16 +54,14 @@ const ViewCreate = props => (
 
         <TextInput
           type="email"
-          source="fromEmail"
+          source="data.from_email"
           validate={[required, email]}
           options={{ fullWidth: true }}
           style={{ width: 544 }}
           defaultValue={getUserData("email")}
         />
-      </FormTab>
 
-      <FormTab label="resources.meetups.tabs.help" />
-    </TabbedForm>
+    </SimpleForm>
   </Create>
 );
 

@@ -26,6 +26,8 @@ export const clearUserData = () => {
   localStorage.removeItem('token');
 };
 
+
+
 export const refreshUserData = (token = getToken) => {
   const options = {
     headers: new Headers({
@@ -52,7 +54,11 @@ export const getToken = () => {
 };
 
 export const getCompanyName = () => {
-  return 'ACME Inc.';
+  return getUserData("company.name", getUserData("profile.cname2"));
+};
+
+export const getCompanyId = () => {
+  return getUserData("company.id", 0);
 };
 
 export const getColorsFromTheme = theme => {

@@ -13,6 +13,8 @@ import {
 
 import StatusField from './components/StatusField';
 import ListActions from './ListActions';
+import Wrapper from '../../components/Wrapper';
+import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 
 const ViewFilter = props => (
   <Filter {...props}>
@@ -27,6 +29,15 @@ const ViewFilter = props => (
 );
 
 const ViewList = props => (
+
+  <Wrapper>
+
+  <h3 style={{padding: 20}}>
+
+    Below invitations are scheduled for sending and will be processed 2 weeks before the event.
+    Your limit is 5 invitations.
+
+  </h3>
   <List
     {...props}
     actions={<ListActions />}
@@ -34,18 +45,20 @@ const ViewList = props => (
   //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={50}
   >
-    <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
 
+
+
+    <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
       <TextField source="participant.profile.fname" label="Company name" sortable={false} />
       <TextField source="participant.profile.lname" label="Last name"  sortable={false} />
       <TextField source="participant.profile.cname2" label="Company"  sortable={false}  />
       <TextField source="participant.profile.position" label="Position"  sortable={false} />
-
       <StatusField label="status" sortable={false}   />
-
       <EditButton />
     </Datagrid>
   </List>
+
+</Wrapper>
 );
 
 export default ViewList;

@@ -1,6 +1,8 @@
 import {
   CHANGE_THEME,
-  SPECIAL_MESSAGE_SHOW
+  SPECIAL_MESSAGE_SHOW,
+  SHOW_MODAL,
+  CLOSE_MODAL
 } from './types';
 
 const changeThemeReducer = (previousState = 'light', { type, payload }) => {
@@ -21,5 +23,20 @@ const specialmessageReducer = (previousState = "", {type, msg}) => {
   return previousState;
 }
 
+const modalReducer = (previousState = "", {type, payload}) => {
 
-export default { userdata: changeThemeReducer, specialmessage : specialmessageReducer };
+  switch(type)
+  {
+    case SHOW_MODAL:
+      return payload;
+    break;
+
+    case CLOSE_MODAL:
+      return null;
+    break;
+  }
+
+  return previousState;
+}
+
+export default { modal: modalReducer, userdata: changeThemeReducer, specialmessage : specialmessageReducer };

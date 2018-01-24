@@ -23,7 +23,9 @@ class Dashboard extends Component {
 
         <Welcome style={styles.welcome} />
 
-        <div style={styles.flex}>
+    {/*
+
+       <div style={styles.flex}>
           <div style={styles.leftCol}>
             <div style={styles.flex} />
             <div style={styles.singleCol}>
@@ -34,6 +36,9 @@ class Dashboard extends Component {
             <div style={styles.flex} />
           </div>
         </div>
+
+        */}
+
       </div>
     );
   }

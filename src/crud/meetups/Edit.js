@@ -18,8 +18,11 @@ import { validate } from './validation';
 import { getUserFullName, getUserData } from '../../api/helpers';
 
 const ViewCreate = props => (
-  <Edit title="hej" {...props}>
+  <Edit title="Check invitation details" {...props}>
     <SimpleForm submitOnEnter={false} validate={validate}>
+
+
+      <LongTextInput source="comment" style={{ maxWidth: 544 }} />
 
 
       <TextField source="participant.profile.fname" />
@@ -27,7 +30,6 @@ const ViewCreate = props => (
       <TextField source="participant.profile.cname2" />
     <TextField source="participant.profile.position" />
 
-        <LongTextInput source="comment" style={{ maxWidth: 544 }} />
 
 
 

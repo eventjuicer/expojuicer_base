@@ -9,49 +9,52 @@ import {
   translate
 } from 'admin-on-rest';
 
+import {red300 as failure, green300 as success} from 'material-ui/styles/colors';
 
 
 const rewarded = (prize, position, sessions) => {
+
+  const level = "level" in prize ? prize.level : 0;
 
   if(!sessions)
   {
     return <Warning  color="#F44336"  />;
   }
 
-  if(prize.min <= position && position <= prize.max)
+  if(prize.min <= position && position <= prize.max && level < sessions)
   {
-    return <Approved color="#4CAF50" />;
+    return <Approved color={success} />;
   }
 
-  return <Rejected color="#F44336"  />;
+  return <Rejected color={failure}  />;
 }
 
 
-const conditions = (min, max) => {
+const conditions = ({min, max, level}) => {
+
+  const levelInfo = level ? `, minimum ${level} points.` : '';
 
   if(min === max)
   {
-    return `Place # ${min}`;
+    return `Only for #${min}${levelInfo}`;
   }
 
-  return `Places from ${min} to ${max}`;
+  return `Position beetween #${min} and #${max}${levelInfo}`;
 }
 
 const Prize = (props) => (
   <Card>
     <CardHeader
       title={props.translate(`prizes.${props.prize.name}.title`)}
-      subtitle={conditions(props.prize.min, props.prize.max)}
+      subtitle={conditions(props.prize)}
       avatar={ rewarded(props.prize, props.position, props.sessions) }
       actAsExpander={true}
       showExpandableButton={true}
     />
 
     <CardText expandable={true}>
+      
   {props.translate(`prizes.${props.prize.name}.description`)}
-
-
-  
 
 
     </CardText>

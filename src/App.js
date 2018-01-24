@@ -24,60 +24,48 @@ import translations from './i18n';
 import {
   ViewList as MeetupList,
   ViewEdit as MeetupEdit,
-  ViewCreate as MeetupCreate,
-  ViewIcon as MeetupIcon
+  ViewCreate as MeetupCreate
 } from './crud/meetups';
-
-
 
 import {
   ViewList as VisitorList,
   // ViewEdit as VisitorEdit,
   // ViewEdit as VisitorShow,
-  ViewIcon as VisitorIcon
 } from './crud/visitors';
 
 import {
-  ViewList as NewsletterList,
-  ViewEdit as NewsletterEdit,
-  ViewCreate as NewsletterCreate,
-  ViewIcon as NewsletterIcon
-} from './crud/newsletters';
-
-
+  ViewList as CreativeList,
+  ViewEdit as CreativeEdit,
+  ViewCreate as CreativeCreate
+} from './crud/creatives';
 
 import {
   ViewList as CampaignList,
   ViewCreate as CampaignCreate,
-  ViewEdit as CampaignEdit,
-  ViewIcon as CampaignIcon
+  ViewEdit as CampaignEdit
 } from './crud/campaigns';
 
 import {
   ViewList as ImportList,
   ViewCreate as ImportCreate,
-  ViewEdit as ImportEdit,
-  ViewIcon as ImportIcon
+  ViewEdit as ImportEdit
 } from './crud/imports';
 
 import {
   ViewList as ContactList,
   ViewCreate as ContactCreate,
-  ViewEdit as ContactEdit,
-  ViewIcon as ContactIcon
+  ViewEdit as ContactEdit
 } from './crud/contacts';
 
 
 import {
   ViewList as ScanList,
-  ViewEdit as ScanEdit,
-  ViewIcon as ScanIcon
+  ViewEdit as ScanEdit
 } from './crud/scans';
 
 
 import {
-  ViewList as RankingList,
-  ViewIcon as RankingIcon
+  ViewList as RankingList
 } from './crud/ranking';
 
 
@@ -104,13 +92,14 @@ class App extends React.Component {
           list={MeetupList}
           edit={MeetupEdit}
           create={MeetupCreate}
-          icon={MeetupIcon}
+
         />
 
         <Resource
           name="visitors"
           list={VisitorList}
-          icon={VisitorIcon} />
+
+       />
 
 
 
@@ -119,14 +108,14 @@ class App extends React.Component {
           list={CampaignList}
           edit={CampaignEdit}
           create={CampaignCreate}
-          icon={CampaignIcon}
+
         />
 
 
         <Resource
           name="ranking"
           list={RankingList}
-          icon={RankingIcon}
+
         />
 
 
@@ -135,28 +124,29 @@ class App extends React.Component {
             list={ContactList}
             edit={ContactEdit}
             create={ContactCreate}
-            icon={ContactIcon}
+
           />
 
         <Resource
           name="creatives"
-          list={MeetupList}
-          edit={MeetupCreate}
-          icon={MeetupIcon}
+          list={CreativeList}
+          edit={CreativeEdit}
+
         />
+
         <Resource
           name="newsletters"
-          list={NewsletterList}
-          edit={NewsletterEdit}
-          create={NewsletterCreate}
-          icon={NewsletterIcon}
+          list={CreativeList}
+          edit={CreativeEdit}
+          create={CreativeCreate}
+
         />
         <Resource
           name="scans"
           options={{ label: 'Scans' }}
           list={ScanList}
           edit={ScanEdit}
-          icon={ScanIcon}
+
         />
       </Admin>
     );

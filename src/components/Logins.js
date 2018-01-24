@@ -42,7 +42,7 @@ const Logins = props => {
 
           <LoginByToken {...props} />
 
-          <Tabs>
+        {/*  <Tabs>
             <Tab label="I have a password">
               <LoginByPassword {...props} />
             </Tab>
@@ -51,6 +51,10 @@ const Logins = props => {
               <LoginByRequest {...props} />
             </Tab>
           </Tabs>
+
+          */}
+
+
         </Card>
 
         <Notification />

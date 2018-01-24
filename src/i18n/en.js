@@ -1,6 +1,19 @@
 export default {
 
+
+  actions : {
+
+    copied : "Copied to clipboard"
+
+  },
+
   auth: {
+
+    errors : {
+
+      badtoken : "Bad token!"
+
+    },
     unauthorized: 'Unauthorized',
 
     checkEmail: 'Check e-mail for further instructions',
@@ -26,7 +39,7 @@ export default {
 
   prizes : {
 
-    "name" : "Ranking",
+    "name" : "Ranking & Rewards",
 
     "badges" : {
 
@@ -95,6 +108,24 @@ export default {
     }
   },
 
+
+
+  dashboard: {
+    // order: {
+    //   items:
+    //     'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items'
+    // },
+    welcome: {
+      title: 'Welcome to expojuicer.com!',
+      subtitle:
+      ' ',
+      description : "This is the administration panel for exhibitors which allows you to promote your presence at the E-commerce Berlin Expo.The options provided here will help you to schedule meetings with registered attendees, invite your clients (soon!) and get extra promotional services at the event.",
+      aor_button: 'Link',
+      demo_button: 'Link #2'
+    }
+  },
+
+
   pos: {
     logout : "Logout",
     ranking: 'Ranking',
@@ -109,22 +140,9 @@ export default {
     },
 
     sections: {
-      suggest_a_meeting: 'Suggest a meeting'
+      suggest_a_meeting: 'Invite to your booth'
     },
 
-    dashboard: {
-      order: {
-        items:
-          'by %{customer_name}, one item |||| by %{customer_name}, %{nb_items} items'
-      },
-      welcome: {
-        title: 'Welcome to expojuicer.com!',
-        subtitle:
-          'This is the admin panel for all your promotional and logistics needs as an exhibitor.',
-        aor_button: 'Link',
-        demo_button: 'Link #2'
-      }
-    }
   },
 
   resources: {
@@ -139,7 +157,7 @@ export default {
     },
 
     creatives: {
-      name: 'Social media',
+      name: 'Promo materials',
 
     },
 
@@ -159,6 +177,9 @@ export default {
 
     meetups: {
       name: 'RSVPs',
+
+      noresults : "Navigate to Browse participants to invite some people.",
+      noresultsmore : "",
 
       fields: {
         message: 'Type your message',
@@ -234,92 +255,6 @@ export default {
       },
       page: {
         delete: 'Delete Customer'
-      }
-    },
-    commands: {
-      name: 'Order |||| Orders',
-      fields: {
-        basket: {
-          delivery: 'Delivery',
-          reference: 'Reference',
-          quantity: 'Quantity',
-          sum: 'Sum',
-          tax_rate: 'Tax Rate',
-          total: 'Total',
-          unit_price: 'Unit Price'
-        },
-        customer_id: 'Customer',
-        date_gte: 'Passed Since',
-        date_lte: 'Passed Before',
-        total_gte: 'Min amount'
-      }
-    },
-    products: {
-      name: 'Poster |||| Posters',
-      fields: {
-        category_id: 'Category',
-        height_gte: 'Min height',
-        height_lte: 'Max height',
-        height: 'Height',
-        image: 'Image',
-        price: 'Price',
-        reference: 'Reference',
-        stock_lte: 'Low Stock',
-        stock: 'Stock',
-        thumbnail: 'Thumbnail',
-        width_gte: 'Min width',
-        width_lte: 'mx_width',
-        width: 'Width'
-      },
-      tabs: {
-        image: 'Image',
-        details: 'Details',
-        description: 'Description',
-        reviews: 'Reviews'
-      }
-    },
-    categories: {
-      name: 'Category |||| Categories',
-      fields: {
-        products: 'Products'
-      }
-    },
-    reviews: {
-      name: 'Review |||| Reviews',
-      fields: {
-        customer_id: 'Customer',
-        command_id: 'Order',
-        product_id: 'Product',
-        date_gte: 'Posted since',
-        date_lte: 'Posted before',
-        date: 'Date',
-        comment: 'Comment',
-        rating: 'Rating'
-      },
-      action: {
-        accept: 'Accept',
-        reject: 'Reject'
-      },
-      notification: {
-        approved_success: 'Review approved',
-        approved_error: 'Error: Review not approved',
-        rejected_success: 'Review rejected',
-        rejected_error: 'Error: Review not rejected'
-      }
-    },
-    segments: {
-      name: 'Segments',
-      fields: {
-        customers: 'Customers',
-        name: 'Name'
-      },
-      data: {
-        compulsive: 'Compulsive',
-        collector: 'Collector',
-        ordered_once: 'Ordered once',
-        regular: 'Regular',
-        returns: 'Returns',
-        reviewer: 'Reviewer'
       }
     }
   }
