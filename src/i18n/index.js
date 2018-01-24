@@ -1,10 +1,10 @@
 import { englishMessages } from 'admin-on-rest';
-import customEnglishMessages from './en';
-import customPolishMessages from './pl';
-import customGermanMessages from './de';
+
+
+import {en,de,pl} from 'eventjuicer-aor-translations';
 
 export default {
-  en: { ...englishMessages, ...customEnglishMessages },
-  pl: { ...englishMessages, ...customEnglishMessages, ...customPolishMessages },
-  de: { ...englishMessages, ...customEnglishMessages, ...customGermanMessages }
+  en: { ...englishMessages, ...en },
+  pl: { ...englishMessages, ...en, ...pl },
+  de: { ...englishMessages, ...en, ...de }
 };
