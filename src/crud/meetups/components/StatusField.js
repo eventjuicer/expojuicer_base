@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import Approved from 'material-ui/svg-icons/action/thumb-up';
 import Rejected from 'material-ui/svg-icons/action/thumb-down';
-import Waiting from 'material-ui/svg-icons/communication/email';
-import Scheduled from 'material-ui/svg-icons/action/today';
+import Waiting from 'material-ui/svg-icons/action/hourglass-empty';
+import Scheduled from 'material-ui/svg-icons/action/hourglass-empty';
 
 class StatusField extends React.Component {
 
