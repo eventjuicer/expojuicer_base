@@ -1,12 +1,16 @@
 import React from 'react';
 import pure from 'recompose/pure';
+import get from 'lodash/get';
 
-const FullNameField = ({ record = {}, size = 25 }) => (
-  <span>
-    <span style={{ display: 'inline-block', width: size / 3 }}>&nbsp;</span>
-    {record.fname} {record.lname}
-  </span>
-);
+const FullNameField = ({ record = {}, source, size = 25 }) => {
+  const _source = source ? `${source}.` : "";
+  return   (
+    <span>
+      {get(record, _source+"fname")} {get(record, _source+"lname")}
+    </span>
+  );
+}
+
 
 const PureFullNameField = pure(FullNameField);
 

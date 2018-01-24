@@ -15,6 +15,7 @@ import StatusField from './components/StatusField';
 import ListActions from './ListActions';
 import Wrapper from '../../components/Wrapper';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
+import FullNameField from '../../fields/FullNameField';
 
 const ViewFilter = props => (
   <Filter {...props}>
@@ -49,10 +50,14 @@ const ViewList = props => (
 
 
     <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
-      <TextField source="participant.profile.fname" label="Company name" sortable={false} />
-      <TextField source="participant.profile.lname" label="Last name"  sortable={false} />
-      <TextField source="participant.profile.cname2" label="Company"  sortable={false}  />
-      <TextField source="participant.profile.position" label="Position"  sortable={false} />
+
+      <FullNameField source="participant.profile" label="Recipient"  sortable={false} />
+
+      <TextField source="participant.profile.cname2" label="Company name" sortable={false} />
+
+      <TextField source="message" label="Message"  sortable={false} />
+      <TextField source="comment" label="Private comment"  sortable={false}  />
+    
       <StatusField label="status" sortable={false}   />
       <EditButton />
     </Datagrid>

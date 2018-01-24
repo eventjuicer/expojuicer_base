@@ -34,13 +34,13 @@ const ViewList = (props) => (
 <CardText>
 
 
-  Your ranking position determines the amount of services you get by participating in the promotional contest.
+  To participate in the contest you must use dedicated tracking link. See Promo Materials for details.
 
 </CardText>
 
 <Stats />
 
- 
+
 
 
 
