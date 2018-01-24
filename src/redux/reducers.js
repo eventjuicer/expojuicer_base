@@ -34,9 +34,13 @@ const modalReducer = (previousState = "", {type, payload}) => {
     case CLOSE_MODAL:
       return null;
     break;
+
+    default:
+
+    return previousState;
   }
 
-  return previousState;
+
 }
 
 export default { modal: modalReducer, userdata: changeThemeReducer, specialmessage : specialmessageReducer };

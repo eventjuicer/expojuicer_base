@@ -19,8 +19,11 @@ import IconPeople from 'material-ui/svg-icons/social/people';
 import IconStatus from 'material-ui/svg-icons/action/today';
 import IconTrend from 'material-ui/svg-icons/action/trending-up';
 import IconShare from 'material-ui/svg-icons/social/share';
+import IconRewards from 'material-ui/svg-icons/action/favorite';
 
 import Modal from './Modal'
+import Chatlio from '../services/Chatlio';
+
 
 const Menu = ({ resources, onMenuTap, logout, translate }) => (
   <div>
@@ -32,7 +35,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/ranking"
-      primaryText={translate('pos.ranking')}
+      primaryText={translate('resources.ranking.name')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
     />
@@ -54,6 +57,13 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
     />
 
 */}
+
+    <MenuItemLink
+      to="/rewards"
+      primaryText={translate('resources.rewards.name')}
+      onClick={onMenuTap}
+      leftIcon={<IconRewards />}
+    />
 
     <MenuItemLink
       to="/creatives"
@@ -122,6 +132,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
     {logout}
 
       <Modal />
+      <Chatlio />
 
   </div>
 );
