@@ -9,7 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { translate, userLogin as userLoginAction } from 'admin-on-rest';
 
-import styles from './styles/login';
+import styles from '../styles/landing';
 import renderInput from '../redux-form/TextInput';
 
 class LoginByRequest extends Component {

@@ -1,4 +1,4 @@
-import backgroundImage from '../../imgs/12052503_1174776899198981_2983491387424920150_o.jpg';
+import backgroundImage from '../imgs/12052503_1174776899198981_2983491387424920150_o.jpg';
 
 //https://github.com/facebookincubator/create-react-app/issues/585
 

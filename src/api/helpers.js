@@ -27,6 +27,25 @@ export const clearUserData = () => {
 };
 
 
+export const fetchHtml = (url) => {
+
+  const options = {
+    headers: new Headers({
+      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+    })
+  };
+
+  return fetchUtils
+    .fetchJson(url, options);
+    // .then(response => {
+    //
+    //   console.log(response);
+    //
+    //   return Promise.resolve( );
+    // });
+
+}
+
 
 export const refreshUserData = (token = getToken) => {
   const options = {

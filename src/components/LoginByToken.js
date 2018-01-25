@@ -10,7 +10,7 @@ import {
 } from 'admin-on-rest';
 import qs from 'query-string';
 import get from 'lodash/get';
-import styles from './styles/login';
+import styles from '../styles/landing';
 import { validateToken } from '../api/helpers';
 
 class LoginByToken extends Component {

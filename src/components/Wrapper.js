@@ -10,7 +10,7 @@ import Paper from 'material-ui/Paper';
 
 
 const Wrapper = (props) => (
-  <Paper>{props.children}</Paper>
+  <div style={{paddingTop: 30, paddingBottom: 50, margin: 20}}>{props.children}</div>
 );
 
 

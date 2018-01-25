@@ -16,7 +16,8 @@ import Avatar from 'material-ui/Avatar';
 import LockIcon from 'material-ui/svg-icons/action/lock-outline';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
-import styles from './styles/login';
+import styles from '../styles/landing';
+
 import LoginByPassword from './LoginByPassword';
 import LoginByRequest from './LoginByRequest';
 import LoginByToken from './LoginByToken';

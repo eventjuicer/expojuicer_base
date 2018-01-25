@@ -7,44 +7,37 @@ import {
 } from 'admin-on-rest';
 
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {Card, CardHeader, CardText, CardMedia, CardActions} from 'material-ui/Card';
+import {Card, CardHeader, CardText, CardActions} from 'material-ui/Card';
 import Button from 'material-ui/FlatButton';
-//import PrimaryButton from 'material-ui/RaisedButton';
+import PrimaryButton from 'material-ui/RaisedButton';
 
-import FontIcon from 'material-ui/FontIcon';
+
 
 import IconPreview from 'material-ui/svg-icons/action/visibility';
 import IconDownload from 'material-ui/svg-icons/file/file-download';
+import IconCopy from 'material-ui/svg-icons/content/content-copy';
 
 import {showModal as showModalAction} from '../../../redux/actions';
-import {fb,tt,li} from '../../../api/sharers';
 
-const modalData = ({name, act_as, link, content}) => {
+const modalData = ({name, act_as, link, image}) => {
 
     return {
       title : name,
       body : link,
-      image : act_as == "banner" ? content : null,
+      image : act_as == "image" ? image : null,
       buttons : []
 
-}
-
+    }
 };
 
-// //<Button
-// ///  label="Download"
-// icon={<IconDownload />}
-// onClick={() => alert("dupa")}
-// />
-
-const htmlCode = ({name, act_as, link, content}) => {
+const htmlCode = ({name, act_as, link, image}) => {
 
   if(act_as == "link")
   {
     return link;
   }
 
-  return `<a href="${link}"><img src="${content}" alt="e-commerce berlin expo" /></a>`;
+  return `<a href="${link}"><img src="${image}" alt="e-commerce berlin expo" /></a>`;
 
 }
 
@@ -53,52 +46,41 @@ const Creative = ({creative, showModal, translate, showNotification}) => (
   <Card>
     <CardHeader
       title={creative.name}
-  //    subtitle="asd"
-//      avatar={ rewarded(props.prize, props.position, props.sessions) }
-
+//    subtitle="asd"
     />
 
     <CardActions>
 
       <CopyToClipboard text={htmlCode(creative)} onCopy={()=>showNotification('actions.copied')}>
-          <Button
+          <PrimaryButton
             label="Copy embed code"
      primary={true}
+     icon={<IconCopy />}
           />
 
         </CopyToClipboard>
 
+        {"image" in creative &&
+
+        <Button
+          download={true}
+          target="_blank"
+          label="Download"
+      icon={<IconDownload />}
+      href={`${creative.image}?dl=1`}
+      onClick={() => showModal( {
+        title : "Image downloaded",
+        body : "Remember that you have to use tracking link."
+      })}
+        />
+
+        }
 
         <Button
           label="Preview"
       icon={<IconPreview />}
       onClick={() => showModal(modalData(creative))}
         />
-
-        {"shareable" in creative && creative.shareable ?
-
-        [<Button
-          label={translate('pos.share_linkedin')}
-      icon={<FontIcon className="fa fa-linkedin" />}
-    href={ li() }
-  />,
-
-        <Button
-          label={translate('pos.share_twitter')}
-      icon={<FontIcon className="fa fa-twitter" />}
-      href={ tt() }
-        />
-,
-      <Button
-          label={translate('pos.share_facebook')}
-      icon={<FontIcon className="fa fa-facebook" />}
-    href={ fb() }
-    />] :
-
-      null }
-
-
-
 
     </CardActions>
 
