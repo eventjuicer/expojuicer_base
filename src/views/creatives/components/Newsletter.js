@@ -15,23 +15,45 @@ import PrimaryButton from 'material-ui/RaisedButton';
 import Button from 'material-ui/FlatButton';
 import { httpClient } from '../../../api/restClient';
 import Iframe from '../../../components/Iframe';
+import { getUserId } from '../../../api/helpers';
+
+
+const newsletterLink = (link, type) => {
+
+  const base = `${link}?participant_id=${getUserId()}`;
+
+  switch(type)
+  {
+    case "zip":
+      return `${base}&zip=1`;
+    break;
+
+    case "download":
+      return `${base}&dl=1`;
+    break;
+
+    default:
+      return base;
+  }
+}
+
 
 class Newsletter extends React.Component {
   state = {
     newsletter: ''
   };
 
-  componentDidMount() {
-    this.getHTMLContent();
+  setStateAsync(state) {
+      return new Promise((resolve) => {
+        this.setState(state, resolve)
+      });
   }
 
-  getHTMLContent = () => {
+  async componentDidMount() {
     const { creative } = this.props;
-
-    httpClient(creative.content).then(response => {
-      console.log(response);
-    });
-  };
+    const res = await httpClient(newsletterLink(creative.content));
+    await this.setStateAsync({newsletter: res.body});
+  }
 
   render() {
     const { translate, creative, showNotification } = this.props;
@@ -50,7 +72,7 @@ class Newsletter extends React.Component {
             target="_blank"
             label="Download HTML"
             icon={<IconDownload />}
-            href={`${creative.content}?dl=1`}
+            href={newsletterLink(creative.content, "download")}
           />
 
           <Button
@@ -59,7 +81,7 @@ class Newsletter extends React.Component {
             target="_blank"
             label="Download .zip"
             icon={<IconZip />}
-            href={`${creative.content}?zip=1`}
+            href={newsletterLink(creative.content, "zip")}
           />
 
           <CopyToClipboard

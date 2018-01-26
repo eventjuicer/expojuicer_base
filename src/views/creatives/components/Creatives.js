@@ -4,6 +4,7 @@ import { translate } from 'admin-on-rest';
 import { Card, CardTitle } from 'material-ui/Card';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
+
 import { httpClient } from '../../../api/restClient';
 
 import IconEmail from 'material-ui/svg-icons/communication/email';
@@ -25,23 +26,18 @@ class Creatives extends React.Component {
     creatives: []
   };
 
-  componentDidMount() {
-    this.getCreatives();
+
+  setStateAsync(state) {
+      return new Promise((resolve) => {
+        this.setState(state, resolve)
+      });
   }
 
-  getCreatives() {
-    httpClient(`${process.env.REACT_APP_API_ENDPOINT}/creatives`).then(
-      response => {
-        this.setState({
-          creatives:
-            'creatives' in response.json.meta
-              ? response.json.meta.creatives
-              : []
-        });
+  async componentDidMount() {
 
-        this.renderNewsletters();
-      }
-    );
+   const res = await httpClient(`${process.env.REACT_APP_API_ENDPOINT}/creatives`);
+   const {meta} = await res.json;
+   await this.setStateAsync({creatives: meta.creatives})
   }
 
   filterByType(type) {
@@ -87,13 +83,13 @@ class Creatives extends React.Component {
 
         <Wrapper>
           <Tabs>
-            {/* <Tab
+            <Tab
               label="newsletters"
               onActive={handleActive}
               icon={<IconEmail />}
             >
               <div style={{ marginTop: 30 }}>{this.renderNewsletters()}</div>
-            </Tab> */}
+            </Tab>
 
             <Tab label="banners" onActive={handleActive} icon={<IconImages />}>
               <Wrapper>
