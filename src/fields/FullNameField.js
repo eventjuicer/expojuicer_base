@@ -3,14 +3,13 @@ import pure from 'recompose/pure';
 import get from 'lodash/get';
 
 const FullNameField = ({ record = {}, source, size = 25 }) => {
-  const _source = source ? `${source}.` : "";
-  return   (
+  const _source = source ? `${source}.` : '';
+  return (
     <span>
-      {get(record, _source+"fname")} {get(record, _source+"lname")}
+      {get(record, _source + 'fname')} {get(record, _source + 'lname')}
     </span>
   );
-}
-
+};
 
 const PureFullNameField = pure(FullNameField);
 

@@ -19,38 +19,31 @@ class LoginByToken extends Component {
   };
 
   componentDidMount = () => {
-
     const { userLogin, location, showNotification } = this.props;
 
     const token = get(qs.parse(location.search), 'token', '');
 
-    if(token.length)
-    {
+    if (token.length) {
       if (validateToken(token)) {
         this.setState({ token: token });
 
         userLogin({ token: token }, '/');
-      }
-      else
-      {
-        showNotification("auth.errors.badtoken");
+      } else {
+        showNotification('auth.errors.badtoken');
       }
     }
-
-
   };
 
   render() {
     const { translate } = this.props;
     return (
       <div style={styles.form}>
+        <h2 style={styles.centered}>{translate('auth.unauthorized')}</h2>
 
-    <h2 style={styles.centered}>{translate('auth.unauthorized')}</h2>
-
-    <p style={styles.centered}>
-      Please contact with sales support if you cannot access this application .
-    </p>
-
+        <p style={styles.centered}>
+          Please contact with sales support if you cannot access this
+          application .
+        </p>
       </div>
     );
   }
@@ -58,7 +51,10 @@ class LoginByToken extends Component {
 
 const enhance = compose(
   translate,
-  connect(null, { userLogin: userLoginAction , showNotification : showNotificationAction})
+  connect(null, {
+    userLogin: userLoginAction,
+    showNotification: showNotificationAction
+  })
 );
 
 export default enhance(LoginByToken);

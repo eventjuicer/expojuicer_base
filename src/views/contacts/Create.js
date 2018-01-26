@@ -17,11 +17,11 @@ const ViewCreate = props => (
       validate={validateInvites}
     >
       <FormTab label="resources.invitations.tabs.import_manually">
-    {/*    <Field name="imported_manually" component={ImportManually} /> */}
+        {/*    <Field name="imported_manually" component={ImportManually} /> */}
       </FormTab>
 
       <FormTab label="resources.invitations.tabs.import_csv">
-      {/*      <Field name="imported_json" component={ImportCsv} />  */}
+        {/*      <Field name="imported_json" component={ImportCsv} />  */}
       </FormTab>
     </TabbedForm>
   </Create>

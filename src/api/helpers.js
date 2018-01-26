@@ -16,36 +16,30 @@ export const getUserData = (path, replacement) => {
   return path !== undefined ? get(profile, path, replacement) : profile;
 };
 
-export const getUserFullName = () =>
-{
-  return getUserData("profile.fname") + " " + getUserData("profile.lname");
-}
+export const getUserFullName = () => {
+  return getUserData('profile.fname') + ' ' + getUserData('profile.lname');
+};
 
 export const clearUserData = () => {
   localStorage.removeItem('profile');
   localStorage.removeItem('token');
 };
 
-
-export const fetchHtml = (url) => {
-
+export const fetchHtml = url => {
   const options = {
     headers: new Headers({
-      'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     })
   };
 
-  return fetchUtils
-    .fetchJson(url, options);
-    // .then(response => {
-    //
-    //   console.log(response);
-    //
-    //   return Promise.resolve( );
-    // });
-
-}
-
+  return fetchUtils.fetchJson(url, options);
+  // .then(response => {
+  //
+  //   console.log(response);
+  //
+  //   return Promise.resolve( );
+  // });
+};
 
 export const refreshUserData = (token = getToken) => {
   const options = {
@@ -73,11 +67,11 @@ export const getToken = () => {
 };
 
 export const getCompanyName = () => {
-  return getUserData("company.name", getUserData("profile.cname2"));
+  return getUserData('company.name', getUserData('profile.cname2'));
 };
 
 export const getCompanyId = () => {
-  return getUserData("company.id", 0);
+  return getUserData('company.id', 0);
 };
 
 export const getColorsFromTheme = theme => {

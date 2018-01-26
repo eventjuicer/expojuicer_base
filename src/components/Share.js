@@ -2,54 +2,44 @@ import React from 'react';
 import pure from 'recompose/pure';
 import Button from 'material-ui/FlatButton';
 import FontIcon from 'material-ui/FontIcon';
-import {
-  translate
-} from 'admin-on-rest';
-
+import { translate } from 'admin-on-rest';
 
 //escape() will not encode: @*/+
 //encodeURI() will not encode: ~!@#$&*()=:/,;?+'
 //encodeURIComponent() will not encode: ~!*()'
 
+const Share = ({ translate, type, target }) => {
+  const encTarget = encodeURIComponent(target);
 
-const Share = ({translate, type, target}) => {
+  let link = '';
 
-const encTarget =  encodeURIComponent(target);
+  switch (type) {
+    case 'linkedin':
+      link = `https://www.linkedin.com/shareArticle?mini=true&url=${encTarget}&title=${'asd'}&summary=${'dsa'}`;
 
-let link = "";
+      break;
 
-switch(type)
-{
+    case 'facebook':
+      link = `https://www.facebook.com/sharer/sharer.php?u=${encTarget}`;
+      break;
 
-  case "linkedin":
+    case 'twitter':
+      link = `https://twitter.com/home?status=${encTarget}`;
 
-  link = `https://www.linkedin.com/shareArticle?mini=true&url=${ encTarget }&title=${ 'asd' }&summary=${ 'dsa' }`;
+      break;
 
-  break;
+    default:
+  }
 
-  case "facebook":
-    link = `https://www.facebook.com/sharer/sharer.php?u=${encTarget}`;
-  break;
-
-  case "twitter":
-
-   link = `https://twitter.com/home?status=${encTarget}`;
-
-  break;
-
-  default:
-
-
-}
-
-return (  <Button
-    label={translate(`actions.share_${type}`)}
-  icon={<FontIcon className={`fa fa-${type}`} />}
-  href={ link } target="_blank"
-/>);
-
-}
-
+  return (
+    <Button
+      label={translate(`actions.share_${type}`)}
+      icon={<FontIcon className={`fa fa-${type}`} />}
+      href={link}
+      target="_blank"
+    />
+  );
+};
 
 /*
 
@@ -66,7 +56,5 @@ href={ fb() }
 />
 
 */
-
-
 
 export default translate(Share);

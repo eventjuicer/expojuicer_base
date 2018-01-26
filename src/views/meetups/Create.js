@@ -7,12 +7,13 @@ import {
   SelectInput,
   DisabledInput,
   TextInput,
-  required, email, minLength
+  required,
+  email,
+  minLength
 } from 'admin-on-rest';
 
 import get from 'lodash/get';
 import qs from 'query-string';
-
 
 import { validate } from './validation';
 import { getUserFullName, getUserData } from '../../api/helpers';
@@ -20,18 +21,12 @@ import { getUserFullName, getUserData } from '../../api/helpers';
 const ViewCreate = props => (
   <Create title="Send meeting request" {...props}>
     <SimpleForm redirect="list" submitOnEnter={false} validate={validate}>
+      <DisabledInput
+        source="participant_id"
+        defaultValue={get(qs.parse(props.location.search), 'participant_id', 0)}
+      />
 
-        <DisabledInput
-          source="participant_id"
-          defaultValue={get(
-            qs.parse(props.location.search),
-            'participant_id',
-            0
-          )}
-        />
-
-
-    {/*    <ReferenceInput
+      {/*    <ReferenceInput
           label="resources.meetups.fields.creative_id"
           source="creative_id"
           reference="newsletters"
@@ -42,25 +37,23 @@ const ViewCreate = props => (
         </ReferenceInput>
 */}
 
-        <LongTextInput source="message" style={{ maxWidth: 700 }} />
+      <LongTextInput source="message" style={{ maxWidth: 700 }} />
 
+      <TextInput
+        source="data.from_name"
+        validate={[required, minLength(4)]}
+        options={{ fullWidth: true }}
+        defaultValue={getUserFullName()}
+      />
 
-        <TextInput
-          source="data.from_name"
-          validate={[required, minLength(4)]}
-          options={{ fullWidth: true }}
-          defaultValue={getUserFullName()}
-        />
-
-        <TextInput
-          type="email"
-          source="data.from_email"
-          validate={[required, email]}
-          options={{ fullWidth: true }}
-          style={{ width: 544 }}
-          defaultValue={getUserData("email")}
-        />
-
+      <TextInput
+        type="email"
+        source="data.from_email"
+        validate={[required, email]}
+        options={{ fullWidth: true }}
+        style={{ width: 544 }}
+        defaultValue={getUserData('email')}
+      />
     </SimpleForm>
   </Create>
 );

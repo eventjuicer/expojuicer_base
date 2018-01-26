@@ -15,10 +15,8 @@ export default translate(({ style, translate }) => (
       avatar={<Avatar backgroundColor="#FFEB3B" icon={<LightBulbIcon />} />}
     />
 
-    <CardText>
-  {translate('dashboard.welcome.description')}
-    </CardText>
-  {/*  <CardActions style={{ textAlign: 'right' }}>
+    <CardText>{translate('dashboard.welcome.description')}</CardText>
+    {/*  <CardActions style={{ textAlign: 'right' }}>
       <FlatButton
         label={translate('pos.dashboard.welcome.aor_button')}
         icon={<HomeIcon />}
@@ -31,8 +29,6 @@ export default translate(({ style, translate }) => (
       />
     </CardActions>
 
-    */ }
-
-
+    */}
   </Card>
 ));

@@ -30,8 +30,6 @@ AUTH_ERROR Error: Unauthorized
 console.log(type, params);
 */
 
-
-
   if (type === AUTH_ERROR) {
     const { status } = params;
 

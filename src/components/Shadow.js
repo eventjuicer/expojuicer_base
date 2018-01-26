@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 /*
@@ -9,22 +8,19 @@ import ReactDOM from 'react-dom';
 
 */
 class Shadow extends React.Component {
-
   componentDidMount() {
-    this.shadowRoot = this.node.attachShadow({ mode: this.props.mode })
-    this.forceUpdate()
+    this.shadowRoot = this.node.attachShadow({ mode: this.props.mode });
+    this.forceUpdate();
   }
 
   render() {
-    const { children, ...rest } = this.props
+    const { children, ...rest } = this.props;
     return (
       <div {...rest} ref={node => (this.node = node)}>
         {this.shadowRoot && ReactDOM.createPortal(children, this.shadowRoot)}
       </div>
-    )
+    );
   }
-
 }
-
 
 export default Shadow;

@@ -14,8 +14,8 @@ const styles = {
     backgroundPosition: 'center center',
     backgroundBlendMode: 'luminosity'
   },
-  centered : {
-    textAlign : 'center'
+  centered: {
+    textAlign: 'center'
   },
   secondary: {
     marginTop: 10

@@ -21,15 +21,12 @@ import IconTrend from 'material-ui/svg-icons/action/trending-up';
 import IconShare from 'material-ui/svg-icons/social/share';
 import IconRewards from 'material-ui/svg-icons/action/favorite';
 
-import Modal from './Modal'
+import Modal from './Modal';
 import Chatlio from '../services/Chatlio';
-
 
 const Menu = ({ resources, onMenuTap, logout, translate }) => (
   <div>
     <DashboardMenuItem onTouchTap={onMenuTap} />
-
-
 
     <Subheader>Promote your participation</Subheader>
 
@@ -72,9 +69,6 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       leftIcon={<IconShare />}
     />
 
-
-
-
     <Subheader>{translate('pos.sections.suggest_a_meeting')}</Subheader>
 
     <MenuItemLink
@@ -90,9 +84,6 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       onClick={onMenuTap}
       leftIcon={<IconPeople />}
     />
-
-
-
 
     {/*
 
@@ -127,13 +118,12 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 */}
 
-  <Divider />
+    <Divider />
 
     {logout}
 
-      <Modal />
-      <Chatlio />
-
+    <Modal />
+    <Chatlio />
   </div>
 );
 

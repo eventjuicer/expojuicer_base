@@ -12,7 +12,6 @@ import { withRouter } from 'react-router-dom';
 import { Restricted } from 'admin-on-rest';
 import compose from 'recompose/compose';
 
-
 import { changeTheme as changeThemeAction } from '../../redux/actions';
 
 const styles = {

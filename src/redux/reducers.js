@@ -12,35 +12,31 @@ const changeThemeReducer = (previousState = 'light', { type, payload }) => {
   return previousState;
 };
 
-
-const specialmessageReducer = (previousState = "", {type, msg}) => {
-
-  if(type === SPECIAL_MESSAGE_SHOW)
-  {
+const specialmessageReducer = (previousState = '', { type, msg }) => {
+  if (type === SPECIAL_MESSAGE_SHOW) {
     return msg;
   }
 
   return previousState;
-}
+};
 
-const modalReducer = (previousState = "", {type, payload}) => {
-
-  switch(type)
-  {
+const modalReducer = (previousState = '', { type, payload }) => {
+  switch (type) {
     case SHOW_MODAL:
       return payload;
-    break;
+      break;
 
     case CLOSE_MODAL:
       return null;
-    break;
+      break;
 
     default:
-
-    return previousState;
+      return previousState;
   }
+};
 
-
-}
-
-export default { modal: modalReducer, userdata: changeThemeReducer, specialmessage : specialmessageReducer };
+export default {
+  modal: modalReducer,
+  userdata: changeThemeReducer,
+  specialmessage: specialmessageReducer
+};

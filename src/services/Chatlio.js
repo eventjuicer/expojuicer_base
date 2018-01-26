@@ -1,44 +1,40 @@
-
 import React from 'react';
 import { getUserData, getUserFullName, getCompanyName } from '../api/helpers';
 import { httpClient } from '../api/restClient';
 
 class Chatlio extends React.Component {
-
   componentDidMount() {
-
-    document.addEventListener("chatlio.firstMessageSent", this.handleChatlioFirstMessage);
-    document.addEventListener("chatlio.ready", this.handleChatlioFirstMessage);
-
+    document.addEventListener(
+      'chatlio.firstMessageSent',
+      this.handleChatlioFirstMessage
+    );
+    document.addEventListener('chatlio.ready', this.handleChatlioFirstMessage);
   }
 
   componentWillUnmount() {
-
-    document.removeEventListener("chatlio.firstMessageSent", this.handleChatlioFirstMessage);
-    document.removeEventListener("chatlio.ready", this.handleChatlioFirstMessage);
-
+    document.removeEventListener(
+      'chatlio.firstMessageSent',
+      this.handleChatlioFirstMessage
+    );
+    document.removeEventListener(
+      'chatlio.ready',
+      this.handleChatlioFirstMessage
+    );
   }
 
-
-  handleChatlioFirstMessage = (event) => {
-
-    window._chatlio.identify(getUserData("id"), {
+  handleChatlioFirstMessage = event => {
+    window._chatlio.identify(getUserData('id'), {
       name: getCompanyName(),
-      email: getUserData("email"),
-      representative : getUserFullName()
+      email: getUserData('email'),
+      representative: getUserFullName()
       // plan: 'king',
       // favoriteColor: 'black'
     });
-
-  }
+  };
 
   render() {
-
     return null;
   }
-
 }
-
-
 
 export default Chatlio;

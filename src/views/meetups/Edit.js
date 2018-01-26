@@ -8,7 +8,9 @@ import {
   TextField,
   DisabledInput,
   TextInput,
-  required, email, minLength
+  required,
+  email,
+  minLength
 } from 'admin-on-rest';
 
 import get from 'lodash/get';
@@ -23,24 +25,17 @@ import { getUserFullName, getUserData } from '../../api/helpers';
 const ViewCreate = props => (
   <Edit title="Check invitation details" {...props}>
     <SimpleForm submitOnEnter={false} validate={validate}>
-
-      <FullNameField source="admin.profile" label="Creator"    />
+      <FullNameField source="admin.profile" label="Creator" />
 
       <TextField source="message" style={{ maxWidth: 544 }} />
 
       <LongTextInput source="comment" style={{ maxWidth: 544 }} />
 
-
-
       <TextField source="participant.profile.fname" />
       <TextField source="participant.profile.lname" />
       <TextField source="participant.profile.cname2" />
-    <TextField source="participant.profile.position" />
-
-
-
-
-      </SimpleForm>
+      <TextField source="participant.profile.position" />
+    </SimpleForm>
   </Edit>
 );
 

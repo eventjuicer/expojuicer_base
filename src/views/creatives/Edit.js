@@ -1,10 +1,10 @@
 import React from 'react';
 import {
- Edit,
- TabbedForm,
- FormTab,
- TextInput,
- LongTextInput
+  Edit,
+  TabbedForm,
+  FormTab,
+  TextInput,
+  LongTextInput
 } from 'admin-on-rest';
 
 import FullNameField from '../../fields/FullNameField';

@@ -17,7 +17,7 @@ class AppBarTitle extends React.Component {
   render() {
     return (
       <div>
-        {`${getUserData('profile.fname')} @ ${ getCompanyName() } `}
+        {`${getUserData('profile.fname')} @ ${getCompanyName()} `}
 
         <Logout icon />
       </div>

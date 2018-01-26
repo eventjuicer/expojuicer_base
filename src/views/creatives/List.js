@@ -10,9 +10,7 @@ import {
   TextInput
 } from 'admin-on-rest';
 
-
 import Creatives from './components/Creatives';
-
 
 const VisitorFilter = props => (
   <Filter {...props}>
@@ -22,11 +20,9 @@ const VisitorFilter = props => (
 
 const ViewList = props => (
   <div>
+    <Creatives />
 
-  <Creatives />
-
-
-  {/*
+    {/*
 
   <List
     {...props}
@@ -56,7 +52,6 @@ const ViewList = props => (
   </List>
 
   */}
-
   </div>
 );
 

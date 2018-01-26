@@ -66,8 +66,6 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         break;
       }
 
-
-
       case UPDATE:
         url = `${apiUrl}/${resource}/${params.id}`;
         options.method = 'PUT';

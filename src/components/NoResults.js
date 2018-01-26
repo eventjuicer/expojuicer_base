@@ -6,38 +6,33 @@ import Paper from 'material-ui/Paper';
 
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 
-import {
-  translate
-} from 'admin-on-rest';
-
+import { translate } from 'admin-on-rest';
 
 const styles = {
-
-  container : {
-
+  container: {
     //margin: 10,
-    backgroundColor : "yellow"
+    backgroundColor: 'yellow'
   }
+};
 
-}
-
-const NoResults = (props) => (
-  props.specialmessage ? <Paper zDepth={2} style={styles.container}><Card>
-
-    <CardTitle title={props.translate(`${props.specialmessage}.noresults`)} />
-    <CardText>
-    {props.translate(`${props.specialmessage}.noresultsmore`)}
-    </CardText>
-  </Card></Paper> : null
-);
+const NoResults = props =>
+  props.specialmessage ? (
+    <Paper zDepth={2} style={styles.container}>
+      <Card>
+        <CardTitle
+          title={props.translate(`${props.specialmessage}.noresults`)}
+        />
+        <CardText>
+          {props.translate(`${props.specialmessage}.noresultsmore`)}
+        </CardText>
+      </Card>
+    </Paper>
+  ) : null;
 
 const mapStateToProps = state => ({
   specialmessage: state.specialmessage
 });
 
-const enhance = compose(
-  translate,
-  connect(mapStateToProps, null)
-);
+const enhance = compose(translate, connect(mapStateToProps, null));
 
 export default enhance(NoResults);

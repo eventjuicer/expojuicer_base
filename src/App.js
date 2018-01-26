@@ -2,14 +2,12 @@
 import React from 'react';
 import { Admin, Resource } from 'admin-on-rest';
 
-
 import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
 import Logout from './components/Logout';
 import NotFound from './components/NotFound';
 import Menu from './components/Menu';
 import customRoutes from './components/routes';
-
 
 import authClient from './api/authClient';
 import restClient from './api/restClient';
@@ -18,9 +16,6 @@ import sagas from './redux/sagas';
 import reducers from './redux/reducers';
 
 import translations from './i18n';
-
-
-
 
 import Dashboard from './views/dashboard';
 
@@ -31,7 +26,7 @@ import {
 } from './views/meetups';
 
 import {
-  ViewList as VisitorList,
+  ViewList as VisitorList
   // ViewEdit as VisitorEdit,
   // ViewEdit as VisitorShow,
 } from './views/visitors';
@@ -60,15 +55,9 @@ import {
   ViewEdit as ContactEdit
 } from './views/contacts';
 
-import {
-  ViewList as ScanList,
-  ViewEdit as ScanEdit
-} from './views/scans';
+import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 
-import {
-  ViewList as RankingList
-} from './views/ranking';
-
+import { ViewList as RankingList } from './views/ranking';
 
 class App extends React.Component {
   render() {
@@ -87,67 +76,44 @@ class App extends React.Component {
         menu={Menu}
         messages={translations}
       >
-
         <Resource
           name="meetups"
           list={MeetupList}
           edit={MeetupEdit}
           create={MeetupCreate}
-
         />
 
-        <Resource
-          name="visitors"
-          list={VisitorList}
-
-       />
-
-
+        <Resource name="visitors" list={VisitorList} />
 
         <Resource
           name="campaigns"
           list={CampaignList}
           edit={CampaignEdit}
           create={CampaignCreate}
-
         />
 
+        <Resource name="ranking" list={RankingList} />
 
         <Resource
-          name="ranking"
-          list={RankingList}
-
+          name="contacts"
+          list={ContactList}
+          edit={ContactEdit}
+          create={ContactCreate}
         />
 
-
-          <Resource
-            name="contacts"
-            list={ContactList}
-            edit={ContactEdit}
-            create={ContactCreate}
-
-          />
-
-        <Resource
-          name="creatives"
-          list={CreativeList}
-          edit={CreativeEdit}
-
-        />
+        <Resource name="creatives" list={CreativeList} edit={CreativeEdit} />
 
         <Resource
           name="newsletters"
           list={CreativeList}
           edit={CreativeEdit}
           create={CreativeCreate}
-
         />
         <Resource
           name="scans"
           options={{ label: 'Scans' }}
           list={ScanList}
           edit={ScanEdit}
-
         />
       </Admin>
     );

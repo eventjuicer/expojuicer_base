@@ -16,7 +16,6 @@ function* handleFetchError(data) {
 }
 
 function* handleUserCheck(data) {
-
   const token = getToken();
 
   if (!token && 'payload' in data && 'route' in data.payload) {
@@ -31,15 +30,13 @@ function* handleUserCheck(data) {
   }
 }
 
-
-function* handleSlackNotification()
-{
-   const userData = yield call(slack, "User loggedin!");
+function* handleSlackNotification() {
+  const userData = yield call(slack, 'User loggedin!');
   // Instructing middleware to dispatch corresponding action.
-    yield put({
-      type: 'SLACK_NOTIFICATION_STATUS',
-      userData
-    });
+  yield put({
+    type: 'SLACK_NOTIFICATION_STATUS',
+    userData
+  });
 }
 
 export default function* saga() {
