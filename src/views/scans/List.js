@@ -1,13 +1,11 @@
 import React from 'react';
 import {
   Datagrid,
-  DateField,
   EditButton,
   Filter,
   List,
-  NumberField,
   TextField,
-  TextInput,
+  //  TextInput,
   SelectInput
 } from 'admin-on-rest';
 

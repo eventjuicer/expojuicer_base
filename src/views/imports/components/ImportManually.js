@@ -3,14 +3,14 @@ import { translate } from 'admin-on-rest';
 
 import TextField from 'material-ui/TextField';
 
-const styles = {
-  label: { width: '10em', display: 'inline-block' },
-  button: { margin: '1em' }
-};
+// const styles = {
+//   label: { width: '10em', display: 'inline-block' },
+//   button: { margin: '1em' }
+// };
 
 class ImportManually extends React.Component {
   onTextareaChange = (event, value) => {
-    const { showNotification, input } = this.props;
+    const { input } = this.props;
 
     if (value.indexOf('@') > -1) {
       //    showNotification(value.split("@").length-1);

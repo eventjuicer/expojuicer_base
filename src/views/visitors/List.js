@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-  translate,
-  List,
-  Datagrid,
-  Filter,
-  TextField,
-  TextInput
-} from 'admin-on-rest';
+import { List, Datagrid, Filter, TextField, TextInput } from 'admin-on-rest';
 
-import FullNameField from '../../fields/FullNameField';
 import InviteButton from './components/InviteButton';
 
 //import Actions from './ListActions';

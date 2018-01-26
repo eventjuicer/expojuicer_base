@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { CardText } from 'material-ui/Card';
+
 import {
   showNotification as showNotificationAction,
-  ViewTitle,
   translate,
   userLogin as userLoginAction
 } from 'admin-on-rest';

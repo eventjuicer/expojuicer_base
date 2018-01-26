@@ -76,11 +76,18 @@ class CsvImportMappings extends React.PureComponent {
   render() {
     const { data } = this.props;
 
-    if (data && typeof data[1] != 'undefined' && Array.isArray(data[1])) {
-      console.log('renderd');
+    if (data && typeof data[1] !== 'undefined' && Array.isArray(data[1])) {
+      console.log('rendered');
 
       return (
         <Table selectable={false}>
+          <TableHeader displaySelectAll={false}>
+            <TableRow>
+              <TableHeaderColumn>Found data</TableHeaderColumn>
+              <TableHeaderColumn>Assignment</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+
           <TableBody displayRowCheckbox={false}>
             {data[1].map((cell, i) => {
               return (

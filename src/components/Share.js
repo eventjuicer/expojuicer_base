@@ -1,5 +1,4 @@
 import React from 'react';
-import pure from 'recompose/pure';
 import Button from 'material-ui/FlatButton';
 import FontIcon from 'material-ui/FontIcon';
 import { translate } from 'admin-on-rest';

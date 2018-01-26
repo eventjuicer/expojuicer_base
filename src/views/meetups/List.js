@@ -1,20 +1,16 @@
 import React from 'react';
 import {
   Datagrid,
-  DateField,
   EditButton,
   Filter,
   List,
-  NumberField,
   TextField,
-  TextInput,
   SelectInput
 } from 'admin-on-rest';
 
 import StatusField from './components/StatusField';
-import ListActions from './ListActions';
-import Wrapper from '../../components/Wrapper';
-import { red500, yellow500, blue500 } from 'material-ui/styles/colors';
+//import ListActions from './ListActions';
+
 import FullNameField from '../../fields/FullNameField';
 
 const ViewFilter = props => (
@@ -33,39 +29,40 @@ const ViewFilter = props => (
 );
 
 const ViewList = props => (
-  <Wrapper>
-    <h3 style={{ padding: 20 }}>
-      Below invitations are scheduled for sending and will be processed 2 weeks
-      before the event. Your limit is 5 invitations.
-    </h3>
-    <List
-      {...props}
-      actions={<ListActions />}
-      filters={<ViewFilter />}
-      //  sort={{ field: 'cname2', order: 'ASC' }}
-      perPage={50}
-    >
-      <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
-        <FullNameField
-          source="participant.profile"
-          label="Recipient"
-          sortable={false}
-        />
+  <List
+    title={
+      <h4 style={{}}>
+        Below invitations are scheduled for sending and will be processed 2
+        weeks before the event. Your limit is 5 invitations.
+      </h4>
+    }
+    {...props}
+    //  actions={<ListActions />}
+    actions={null}
+    filters={<ViewFilter />}
+    //  sort={{ field: 'cname2', order: 'ASC' }}
+    perPage={50}
+  >
+    <Datagrid bodyOptions={{ stripedRows: true, showRowHover: true }}>
+      <FullNameField
+        source="participant.profile"
+        label="Recipient"
+        sortable={false}
+      />
 
-        <TextField
-          source="participant.profile.cname2"
-          label="Company name"
-          sortable={false}
-        />
+      <TextField
+        source="participant.profile.cname2"
+        label="Company name"
+        sortable={false}
+      />
 
-        <TextField source="message" label="Message" sortable={false} />
-        <TextField source="comment" label="Private comment" sortable={false} />
+      <TextField source="message" label="Message" sortable={false} />
+      <TextField source="comment" label="Private comment" sortable={false} />
 
-        <StatusField label="status" sortable={false} />
-        <EditButton />
-      </Datagrid>
-    </List>
-  </Wrapper>
+      <StatusField label="status" sortable={false} />
+      <EditButton />
+    </Datagrid>
+  </List>
 );
 
 export default ViewList;

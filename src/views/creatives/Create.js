@@ -7,8 +7,6 @@ import {
   LongTextInput
 } from 'admin-on-rest';
 
-import FullNameField from '../../fields/FullNameField';
-
 const ViewCreate = props => (
   <Create {...props}>
     <TabbedForm>

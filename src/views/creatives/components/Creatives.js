@@ -1,15 +1,8 @@
 import React from 'react';
 import { translate } from 'admin-on-rest';
 
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardText,
-  CardActions
-} from 'material-ui/Card';
+import { Card, CardTitle } from 'material-ui/Card';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import Paper from 'material-ui/Paper';
 
 import { httpClient } from '../../../api/restClient';
 
@@ -19,7 +12,6 @@ import IconImages from 'material-ui/svg-icons/image/collections';
 import Image from './Image';
 import Newsletter from './Newsletter';
 import Link from './Link';
-import { colorSubheader } from '../../../styles/colors';
 
 import { Heading, Subheading, Body } from '../../../components/Typography';
 import Wrapper from '../../../components/Wrapper';
@@ -79,7 +71,6 @@ class Creatives extends React.Component {
 
   render() {
     const { translate } = this.props;
-    const { creatives } = this.state;
 
     return (
       <Card>
@@ -96,17 +87,20 @@ class Creatives extends React.Component {
 
         <Wrapper>
           <Tabs>
-            <Tab
+            {/* <Tab
               label="newsletters"
               onActive={handleActive}
               icon={<IconEmail />}
             >
               <div style={{ marginTop: 30 }}>{this.renderNewsletters()}</div>
-            </Tab>
+            </Tab> */}
 
             <Tab label="banners" onActive={handleActive} icon={<IconImages />}>
               <Wrapper>
-                <img src="https://files.ecommerceberlin.com/eb3/600x200.jpg" />
+                <img
+                  src="https://files.ecommerceberlin.com/eb3/600x200.jpg"
+                  alt="example"
+                />
               </Wrapper>
 
               <CardTitle title="Choose size" />

@@ -39,7 +39,7 @@ const Modal = ({ modal, closeModal, translate }) => {
 
       {get(modal, 'image') ? (
         <div style={style.imageContainer}>
-          <img style={style.image} src={get(modal, 'image')} />
+          <img style={style.image} src={get(modal, 'image')} alt="" />
         </div>
       ) : null}
     </Dialog>

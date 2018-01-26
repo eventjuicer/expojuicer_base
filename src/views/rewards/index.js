@@ -1,27 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import compose from 'recompose/compose';
-
-import Chip from 'material-ui/Chip';
-import FlatButton from 'material-ui/FlatButton';
-
 import { translate, ViewTitle, Restricted } from 'admin-on-rest';
-
 import { Card, CardText } from 'material-ui/Card';
-import Paper from 'material-ui/Paper';
-
 import { getUserData } from '../../api/helpers';
 import { httpClient } from '../../api/restClient';
 import Prize from './Prize';
-
 import { Link } from 'react-router-dom';
-
-const styles = {
-  chip: {
-    marginLeft: 20,
-    marginBottom: 20
-  }
-};
 
 class Stats extends React.Component {
   state = {

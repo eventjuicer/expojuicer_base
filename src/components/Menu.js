@@ -12,8 +12,8 @@ import compose from 'recompose/compose';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 
-import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import ContentInbox from 'material-ui/svg-icons/content/inbox';
+//import SettingsIcon from 'material-ui/svg-icons/action/settings';
+//import ContentInbox from 'material-ui/svg-icons/content/inbox';
 
 import IconPeople from 'material-ui/svg-icons/social/people';
 import IconStatus from 'material-ui/svg-icons/action/today';

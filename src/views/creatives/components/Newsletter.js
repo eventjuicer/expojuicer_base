@@ -7,23 +7,14 @@ import {
 } from 'admin-on-rest';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardText,
-  CardActions
-} from 'material-ui/Card';
+import { Card, CardHeader, CardActions } from 'material-ui/Card';
 import IconDownload from 'material-ui/svg-icons/file/file-download';
 import IconCopy from 'material-ui/svg-icons/content/content-copy';
 import IconZip from 'material-ui/svg-icons/content/archive';
 import PrimaryButton from 'material-ui/RaisedButton';
 import Button from 'material-ui/FlatButton';
-import { getCompanyId } from '../../../api/helpers';
 import { httpClient } from '../../../api/restClient';
 import Iframe from '../../../components/Iframe';
-import styles from '../../../styles/iframes';
-import { colorBg, colorHeader } from '../../../styles/colors';
 
 class Newsletter extends React.Component {
   state = {

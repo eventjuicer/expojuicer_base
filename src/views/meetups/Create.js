@@ -3,8 +3,6 @@ import {
   Create,
   SimpleForm,
   LongTextInput,
-  ReferenceInput,
-  SelectInput,
   DisabledInput,
   TextInput,
   required,

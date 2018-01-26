@@ -1,6 +1,5 @@
 import React from 'react';
 import pure from 'recompose/pure';
-import Warning from 'material-ui/svg-icons/alert/warning';
 import get from 'lodash/get';
 
 const PositionField = ({ record = {}, size = 25 }) =>
@@ -10,11 +9,11 @@ const PositionField = ({ record = {}, size = 25 }) =>
     '...'
   );
 
-const PureFullNameField = pure(PositionField);
+const PurePositionField = pure(PositionField);
 
 // PureFullNameField.defaultProps = {
 //   source: 'email',
 //   label: 'resources.customers.fields.name'
 // };
 
-export default PositionField;
+export default PurePositionField;

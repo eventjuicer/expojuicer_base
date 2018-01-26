@@ -1,22 +1,22 @@
 import React from 'react';
 import {
-  translate,
-  List,
-  Datagrid,
-  DateField,
-  ShowButton,
-  Filter,
-  TextField,
-  TextInput
+  translate
+  //  List,
+  //  Datagrid,
+  //  DateField,
+  //  ShowButton,
+  //  Filter,
+  //  TextField,
+  //  TextInput
 } from 'admin-on-rest';
 
 import Creatives from './components/Creatives';
 
-const VisitorFilter = props => (
-  <Filter {...props}>
-    <TextInput label="pos.search" source="q" alwaysOn />
-  </Filter>
-);
+// const VisitorFilter = props => (
+//   <Filter {...props}>
+//     <TextInput label="pos.search" source="q" alwaysOn />
+//   </Filter>
+// );
 
 const ViewList = props => (
   <div>

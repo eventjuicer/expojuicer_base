@@ -9,7 +9,7 @@ import {
 
 import FullNameField from '../../fields/FullNameField';
 
-import RichTextInput from 'aor-rich-text-input';
+//import RichTextInput from 'aor-rich-text-input';
 
 const ViewTitle = ({ record }) =>
   record ? <FullNameField record={record} size={32} /> : null;

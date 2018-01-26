@@ -1,6 +1,5 @@
-import React from 'react';
 import { fetchUtils } from 'admin-on-rest';
-import { getUserData, getUserFullName, getCompanyName } from '../api/helpers';
+import { getUserFullName, getCompanyName } from '../api/helpers';
 
 const buildMessage = message => {
   return {

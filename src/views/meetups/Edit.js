@@ -3,31 +3,25 @@ import {
   Edit,
   SimpleForm,
   LongTextInput,
-  LongTextField,
-  ReferenceField,
   TextField,
-  DisabledInput,
-  TextInput,
   required,
-  email,
   minLength
 } from 'admin-on-rest';
 
-import get from 'lodash/get';
-import qs from 'query-string';
-import Divider from 'material-ui/Divider';
-
 import FullNameField from '../../fields/FullNameField';
-
 import { validate } from './validation';
-import { getUserFullName, getUserData } from '../../api/helpers';
+//import { getUserFullName, getUserData } from '../../api/helpers';
 
-const ViewCreate = props => (
+const ViewEdit = props => (
   <Edit title="Check invitation details" {...props}>
     <SimpleForm submitOnEnter={false} validate={validate}>
       <FullNameField source="admin.profile" label="Creator" />
 
-      <TextField source="message" style={{ maxWidth: 544 }} />
+      <TextField
+        source="message"
+        validate={[minLength(10)]}
+        style={{ maxWidth: 544 }}
+      />
 
       <LongTextInput source="comment" style={{ maxWidth: 544 }} />
 
@@ -39,4 +33,4 @@ const ViewCreate = props => (
   </Edit>
 );
 
-export default ViewCreate;
+export default ViewEdit;

@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
-import HomeIcon from 'material-ui/svg-icons/action/home';
-import CodeIcon from 'material-ui/svg-icons/action/code';
+// import HomeIcon from 'material-ui/svg-icons/action/home';
+// import CodeIcon from 'material-ui/svg-icons/action/code';
 import FlatButton from 'material-ui/FlatButton';
 import { translate } from 'admin-on-rest';
 

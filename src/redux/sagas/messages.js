@@ -1,12 +1,12 @@
-import { put, takeEvery, all, delay } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
+import { put, takeEvery, all } from 'redux-saga/effects';
+//import { push } from 'react-router-redux';
 import {
   CRUD_GET_LIST,
   CRUD_GET_LIST_SUCCESS,
   showNotification
 } from 'admin-on-rest';
 
-import { SPECIAL_MESSAGE_SHOW } from '../types';
+//import { SPECIAL_MESSAGE_SHOW } from '../types';
 import { setSpecialMessage as setSpecialMessageAction } from '../actions';
 
 function* handleSpecialMessage(data) {
@@ -24,6 +24,7 @@ function* handleSpecialMessage(data) {
         );
       }
       break;
+    default:
   }
 }
 

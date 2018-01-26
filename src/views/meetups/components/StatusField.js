@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Approved from 'material-ui/svg-icons/action/thumb-up';
 import Rejected from 'material-ui/svg-icons/action/thumb-down';

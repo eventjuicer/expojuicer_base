@@ -1,18 +1,5 @@
 import React from 'react';
-import {
-  translate,
-  Datagrid,
-  Filter,
-  List,
-  TextInput,
-  TextField
-} from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
-
-import EditButton from '../../buttons/EditButton';
-import FullNameField from '../../fields/FullNameField';
-
-export const InviteIcon = Icon;
+import { Datagrid, Filter, List, TextInput, TextField } from 'admin-on-rest';
 
 const VisitorFilter = props => (
   <Filter {...props}>

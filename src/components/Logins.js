@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import get from 'lodash/get';
-
-import {
-  Notification,
-  translate,
-  userLogin as userLoginAction
-} from 'admin-on-rest';
+import { Notification, translate } from 'admin-on-rest';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { Card, CardActions } from 'material-ui/Card';
+import { Card } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import LockIcon from 'material-ui/svg-icons/action/lock-outline';
-import { Tabs, Tab } from 'material-ui/Tabs';
 
 import styles from '../styles/landing';
 
-import LoginByPassword from './LoginByPassword';
-import LoginByRequest from './LoginByRequest';
+//import LoginByPassword from './LoginByPassword';
+//import LoginByRequest from './LoginByRequest';
 import LoginByToken from './LoginByToken';
 
 import { getColorsFromTheme } from '../api/helpers';

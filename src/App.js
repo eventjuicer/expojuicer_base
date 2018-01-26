@@ -77,6 +77,13 @@ class App extends React.Component {
         messages={translations}
       >
         <Resource
+          name="imports"
+          list={ImportList}
+          edit={ImportEdit}
+          create={ImportCreate}
+        />
+
+        <Resource
           name="meetups"
           list={MeetupList}
           edit={MeetupEdit}

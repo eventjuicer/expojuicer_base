@@ -7,7 +7,7 @@ import {
 } from 'admin-on-rest';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card';
+import { Card, CardHeader, CardActions } from 'material-ui/Card';
 import Button from 'material-ui/FlatButton';
 import PrimaryButton from 'material-ui/RaisedButton';
 
@@ -21,13 +21,13 @@ const modalData = ({ name, act_as, link, image }) => {
   return {
     title: name,
     body: link,
-    image: act_as == 'image' ? image : null,
+    image: act_as === 'image' ? image : null,
     buttons: []
   };
 };
 
 const htmlCode = ({ name, act_as, link, image }) => {
-  if (act_as == 'link') {
+  if (act_as === 'link') {
     return link;
   }
 

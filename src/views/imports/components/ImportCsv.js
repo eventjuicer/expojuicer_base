@@ -76,12 +76,7 @@ class CsvImport extends React.Component {
 
     return (
       <div>
-        <Dropzone
-          accept="text/csv"
-          accept="text/csv"
-          multiple={false}
-          onDrop={this.onDrop}
-        >
+        <Dropzone accept="text/csv" multiple={false} onDrop={this.onDrop}>
           <p>
             Try dropping some files here, or click to select files to upload.
           </p>

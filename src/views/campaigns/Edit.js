@@ -4,8 +4,7 @@ import {
   FormTab,
   LongTextInput,
   TabbedForm,
-  TextInput,
-  ReferenceInput
+  TextInput
 } from 'admin-on-rest';
 import Icon from 'material-ui/svg-icons/social/person';
 
