@@ -1,36 +1,29 @@
 import React from 'react';
-import { Datagrid, Filter, List, TextInput, TextField } from 'admin-on-rest';
+import { Datagrid, List, TextField } from 'admin-on-rest';
 
-const VisitorFilter = props => (
-  <Filter {...props}>
-    <TextInput label="pos.search" source="q" alwaysOn />
-  </Filter>
-);
+//import ListActions from './ListActions';
+import FullNameField from '../../fields/FullNameField';
+import ProgressField from '../../fields/ProgressField';
 
 const ViewList = props => (
   <List
     {...props}
-    filters={<VisitorFilter />}
-    sort={{ field: 'cname2', order: 'ASC' }}
-    perPage={100}
+  //  actions={<ListActions />}
+    perPage={200}
   >
     <Datagrid
-      //  headerOptions={{ adjustForCheckbox: true, displaySelectAll: true }}
       bodyOptions={{
         stripedRows: true,
         showRowHover: false,
-        displayRowCheckbox: true
-      }}
-      rowOptions={{ selectable: true }}
-      options={{
-        multiSelectable: true,
-        onRowSelection: test => console.log(test)
       }}
     >
-      <TextField source="fname" label="First name" />
-      <TextField source="lname" label="Last name" />
-      <TextField source="cname2" label="Company" />
-      <TextField source="position" label="Position" />
+
+      <TextField source="created_at"  sortable={false} />
+      <TextField source="name"   sortable={false} />
+      <TextField source="contactlist.name"   sortable={false} />
+      <ProgressField label="Imported" current="imported" target="submitted"  sortable={false}  />
+      <FullNameField source="admin.profile" sortable={false} />
+
     </Datagrid>
   </List>
 );

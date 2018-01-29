@@ -16,7 +16,7 @@ const styles = {
   },
 
   first: {
-    paddingTop: 30
+    paddingTop: 20
   },
 
   subheading: {

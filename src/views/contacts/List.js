@@ -8,6 +8,10 @@ import {
   TextField
 } from 'admin-on-rest';
 
+
+import ListActions from './ListActions';
+
+
 const VisitorFilter = props => (
   <Filter {...props}>
     <TextInput label="pos.search" source="q" alwaysOn />
@@ -17,27 +21,32 @@ const VisitorFilter = props => (
 const ViewList = props => (
   <List
     {...props}
-    filters={<VisitorFilter />}
-    sort={{ field: 'cname2', order: 'ASC' }}
+    actions={<ListActions />}
+  //  filters={<VisitorFilter />}
+  //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={100}
   >
     <Datagrid
-      //  headerOptions={{ adjustForCheckbox: true, displaySelectAll: true }}
+        headerOptions={{
+    //  adjustForCheckbox: true, displaySelectAll: true
+      }}
       bodyOptions={{
         stripedRows: true,
-        showRowHover: false,
-        displayRowCheckbox: true
+        // showRowHover: false,
+        // displayRowCheckbox: true
       }}
-      rowOptions={{ selectable: true }}
+      rowOptions={{
+      //  selectable: true
+      }}
       options={{
-        multiSelectable: true,
-        onRowSelection: test => console.log(test)
+        // multiSelectable: true,
+        // onRowSelection: test => console.log(test)
       }}
     >
-      <TextField source="fname" label="First name" />
-      <TextField source="lname" label="Last name" />
-      <TextField source="cname2" label="Company" />
-      <TextField source="position" label="Position" />
+      <TextField source="email"  sortable={false} />
+      <TextField source="import.name"  sortable={false} />
+      <TextField source="cname2" label="Company"  sortable={false}  />
+      <TextField source="sent_at"   sortable={false}  />
     </Datagrid>
   </List>
 );

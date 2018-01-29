@@ -18,8 +18,9 @@ import Divider from 'material-ui/Divider';
 import IconPeople from 'material-ui/svg-icons/social/people';
 import IconStatus from 'material-ui/svg-icons/action/today';
 import IconTrend from 'material-ui/svg-icons/action/trending-up';
-import IconShare from 'material-ui/svg-icons/social/share';
+import IconShare from 'material-ui/svg-icons/av/volume-up';
 import IconRewards from 'material-ui/svg-icons/action/favorite';
+import IconImports from 'material-ui/svg-icons/communication/contact-mail';
 
 import Modal from './Modal';
 import Chatlio from '../services/Chatlio';
@@ -67,6 +68,13 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       primaryText={translate('resources.creatives.name')}
       onClick={onMenuTap}
       leftIcon={<IconShare />}
+    />
+
+    <MenuItemLink
+      to="/contacts"
+      primaryText={translate('resources.contacts.name')}
+      onClick={onMenuTap}
+      leftIcon={<IconImports />}
     />
 
     <Subheader>{translate('pos.sections.suggest_a_meeting')}</Subheader>

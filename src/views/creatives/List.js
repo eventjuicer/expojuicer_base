@@ -19,7 +19,7 @@ import Creatives from './components/Creatives';
 // );
 
 const ViewList = props => (
-  <div>
+  <div className="list-page" style={{marginTop: -25}}>
     <Creatives />
 
     {/*

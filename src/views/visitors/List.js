@@ -20,11 +20,15 @@ const ViewList = props => (
   >
     <Datagrid
       //  headerOptions={{displaySelectAll: true, enableSelectAll : true}}
-      //    bodyOptions={{ stripedRows: true, showRowHover: false, displayRowCheckbox: true }}
+       bodyOptions={{
+         stripedRows: true,
+        // showRowHover: false,
+      //   displayRowCheckbox: true
+        }}
       //    rowOptions={{ selectable: true }}
       options={{
-        multiSelectable: true,
-        onRowSelection: test => console.log(test)
+        // multiSelectable: true,
+        // onRowSelection: test => console.log(test)
       }}
     >
       <TextField source="profile.fname" label="First name" sortable={false} />

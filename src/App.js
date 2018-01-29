@@ -51,9 +51,16 @@ import {
 
 import {
   ViewList as ContactList,
-  ViewCreate as ContactCreate,
   ViewEdit as ContactEdit
 } from './views/contacts';
+
+
+import {
+  ViewList as ContactlistList,
+  ViewCreate as ContactlistCreate,
+  ViewEdit as ContactlistEdit
+} from './views/contactlists';
+
 
 import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 
@@ -90,6 +97,15 @@ class App extends React.Component {
           create={MeetupCreate}
         />
 
+        <Resource
+
+          name="contactlists"
+          list={ContactlistList}
+          edit={ContactlistEdit}
+          create={ContactlistCreate}
+
+        />
+
         <Resource name="visitors" list={VisitorList} />
 
         <Resource
@@ -105,7 +121,6 @@ class App extends React.Component {
           name="contacts"
           list={ContactList}
           edit={ContactEdit}
-          create={ContactCreate}
         />
 
         <Resource name="creatives" list={CreativeList} edit={CreativeEdit} />

@@ -7,6 +7,10 @@ import Dropzone from 'react-dropzone';
 
 import Mappings from './ImportCsvMappings';
 
+
+import styles from '../../../styles/dropzone'
+
+
 class CsvImport extends React.Component {
   state = { files: [], data: null, mappedData: null };
 
@@ -41,6 +45,7 @@ class CsvImport extends React.Component {
   };
 
   parseTextToCsv(text) {
+    
     const { input } = this.props;
 
     //reset!
@@ -54,6 +59,7 @@ class CsvImport extends React.Component {
   }
 
   onDrop = (acceptedFiles, rejectedFiles) => {
+
     this.setState({
       files: acceptedFiles
     });
@@ -76,11 +82,14 @@ class CsvImport extends React.Component {
 
     return (
       <div>
-        <Dropzone accept="text/csv" multiple={false} onDrop={this.onDrop}>
-          <p>
-            Try dropping some files here, or click to select files to upload.
-          </p>
+
+        <div>
+          <Dropzone accept="text/csv" multiple={false} onDrop={this.onDrop} style={styles.dropzone}>
+
+            <p style={{textAlign : "center"}}>Drop files or click here to select files to upload.</p>
+
         </Dropzone>
+        </div>
 
         {meta.touched &&
           meta.error && (

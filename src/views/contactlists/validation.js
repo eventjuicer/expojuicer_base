@@ -1,15 +1,7 @@
 
-/*
 
-function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+const containsEmail = (str) => (str.indexOf("@") > 1);
 
-*/
-
-
-const containsOneEmailPerLine = (line) => (line.indexOf("@") > 0 && (line.match(/@/g) || []).length === 1);
 
 
 export const validate = values => {
@@ -18,15 +10,15 @@ export const validate = values => {
   const errors = {};
 
   if (!values.imported_manually && !values.imported_json) {
-    errors.imported_manually = ['No input detected...'];
-    errors.imported_json = ['No file detected...'];
+    errors.imported_manually = ['No data detected...'];
+    errors.imported_json = ['No data detected...'];
   }
 
   if (values.imported_manually) {
 
-    if(!values.imported_manually.every((el,idx,arr) => containsOneEmailPerLine(el)))
+    if(!values.imported_manually.every((el,idx,arr) => containsEmail(el)))
     {
-        errors.imported_manually = ['Bad input? One email per line?'];
+        errors.imported_manually = ['No email addresses detected!'];
     }
   }
 

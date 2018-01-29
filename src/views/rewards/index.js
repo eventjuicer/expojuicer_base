@@ -1,10 +1,15 @@
 import React from 'react';
-import { translate, ViewTitle, Restricted } from 'admin-on-rest';
-import { Card, CardText } from 'material-ui/Card';
+import { translate, Restricted } from 'admin-on-rest';
+import { Link } from 'react-router-dom';
+
+import { Card } from 'material-ui/Card';
+
+import Prize from './Prize';
+import Photogrid from './Photogrid';
+
 import { getUserData } from '../../api/helpers';
 import { httpClient } from '../../api/restClient';
-import Prize from './Prize';
-import { Link } from 'react-router-dom';
+import { Heading, Subheading, Body } from '../../components/Typography'
 
 class Stats extends React.Component {
   state = {
@@ -37,11 +42,13 @@ class Stats extends React.Component {
 
     return (
       <Restricted authParams={{ foo: 'bar' }}>
-        <Card>
-          <ViewTitle title={translate('resources.rewards.name')} />
+<div className="list-page">
+        <Card style={{marginTop: -25}}>
 
-          <CardText>
-            To participate in the{' '}
+          <Heading first={true}>{translate('resources.rewards.name')} </Heading>
+
+            <Body>
+              To participate in the{' '}
             <Link to={{ pathname: '/ranking' }}>
               {translate('resources.ranking.name')}
             </Link>{' '}
@@ -50,10 +57,15 @@ class Stats extends React.Component {
               {translate('resources.creatives.name')}
             </Link>{' '}
             for details.
-            <p>
+
+          </Body>
+
+            <Body>
               {getUserData('domain')} place:{' '}
               {sessions ? `#${position}` : `unknown`}
-            </p>
+            </Body>
+
+
             {prizes &&
               prizes.map(item => (
                 <Prize
@@ -63,8 +75,16 @@ class Stats extends React.Component {
                   sessions={sessions}
                 />
               ))}
-          </CardText>
+
+
+
+          <Subheading>Rewards in real life</Subheading>
+
+          <Photogrid />
+
         </Card>
+
+        </div>
       </Restricted>
     );
   }

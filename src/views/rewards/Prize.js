@@ -1,55 +1,106 @@
 import React from 'react';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 
-import Approved from 'material-ui/svg-icons/action/thumb-up';
-import Rejected from 'material-ui/svg-icons/action/thumb-down';
+import Bulb from 'material-ui/svg-icons/image/brightness-1';
+//import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
 import Warning from 'material-ui/svg-icons/alert/warning';
 
-import { translate } from 'admin-on-rest';
+import { translate, Textfield } from 'admin-on-rest';
 
-import {
-  red300 as failure,
-  green300 as success
-} from 'material-ui/styles/colors';
+import { failure, success, disabledBg, disabledHeader, disabledSubheader  } from '../../styles/colors';
 
-const rewarded = (prize, position, sessions) => {
+
+import Photogrid from './Photogrid';
+
+
+const rewarded = ( prize, position, sessions ) => {
+
   const level = 'level' in prize ? prize.level : 0;
 
-  if (!sessions) {
-    return <Warning color="#F44336" />;
+  if (!sessions)
+  {
+    return null;
   }
 
   if (prize.min <= position && position <= prize.max && level < sessions) {
-    return <Approved color={success} />;
+   return true;
   }
 
-  return <Rejected color={failure} />;
+  return false;
+
+}
+
+
+
+const avatar = (prize, position, sessions) => {
+
+  const status = rewarded(prize, position, sessions);
+
+  if (status === null) {
+    return <Warning color="#F44336" />;
+  }
+
+  if (status) {
+    return <Bulb color={success} />;
+  }
+
+  return <Bulb color={disabledHeader} />;
 };
+
+
 
 const conditions = ({ min, max, level }) => {
   const levelInfo = level ? `, minimum ${level} points.` : '';
 
   if (min === max) {
-    return `Only for #${min}${levelInfo}`;
+
+    if(min===1)
+    {
+      return `You must be the Winner`;
+    }
+
+    return `Only for position #${min}${levelInfo}`;
   }
 
-  return `Position beetween #${min} and #${max}${levelInfo}`;
+  return `Your position must be beetween #${min} and #${max}${levelInfo}`;
 };
 
-const Prize = props => (
-  <Card>
-    <CardHeader
-      title={props.translate(`prizes.${props.prize.name}.title`)}
-      subtitle={conditions(props.prize)}
-      avatar={rewarded(props.prize, props.position, props.sessions)}
+
+
+
+const Prize = ({translate, prize, position, sessions}) => (
+
+  <Card containerStyle={!rewarded(prize, position, sessions) ? {backgroundColor: disabledBg} : {}}>
+
+
+    <CardTitle
+      title={ translate(`prizes.${prize.name}.title`) }
+      titleStyle={{fontSize: 16, lineHeight: "26px"}}
+      subtitle={ translate(`prizes.${prize.name}.description`) }
       actAsExpander={true}
       showExpandableButton={true}
     />
 
-    <CardText expandable={true}>
-      {props.translate(`prizes.${props.prize.name}.description`)}
-    </CardText>
+
+
+        <CardText expandable={true}>
+        <Photogrid />
+        </CardText>
+
+
+    <CardHeader
+      title={ conditions(prize) }
+      avatar={ avatar(prize, position, sessions) }
+    />
+
+
+
+
   </Card>
+
 );
+
+//
+//
 
 export default translate(Prize);

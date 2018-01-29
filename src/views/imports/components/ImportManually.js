@@ -3,10 +3,11 @@ import { translate } from 'admin-on-rest';
 
 import TextField from 'material-ui/TextField';
 
-// const styles = {
-//   label: { width: '10em', display: 'inline-block' },
-//   button: { margin: '1em' }
-// };
+const styles = {
+  width: "100%",
+  // label: { width: '10em', display: 'inline-block' },
+  // button: { margin: '1em' }
+};
 
 class ImportManually extends React.Component {
   onTextareaChange = (event, value) => {
@@ -34,12 +35,12 @@ class ImportManually extends React.Component {
         hintText="Message Field"
         fullwidth="true"
         errorText={touched && error}
-        floatingLabelText="Paste or enter email addresses - one by one"
+        floatingLabelText="Paste or enter email addresses. One address per line."
         multiLine={true}
         rows={10}
         rowsMax={50}
         onChange={this.onTextareaChange}
-        style={elStyle}
+        style={styles}
       />
     );
   }
