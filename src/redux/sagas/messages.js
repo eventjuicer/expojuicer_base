@@ -1,4 +1,4 @@
-import { put, takeEvery, all } from 'redux-saga/effects';
+import { put, takeEvery, all} from 'redux-saga/effects';
 //import { push } from 'react-router-redux';
 import {
   CRUD_GET_LIST,
@@ -7,30 +7,54 @@ import {
 } from 'admin-on-rest';
 
 //import { SPECIAL_MESSAGE_SHOW } from '../types';
-import { setSpecialMessage as setSpecialMessageAction } from '../actions';
+import {
+  setSpecialMessage as setSpecialMessageAction,
+  setResponseLimit as setResponseLimitAction
+} from '../actions';
 
-function* handleSpecialMessage(data) {
-  switch (data.type) {
-    case CRUD_GET_LIST:
-      yield put(setSpecialMessageAction(''));
 
-      break;
+function* handleLimits(data)
+{
 
-    case CRUD_GET_LIST_SUCCESS:
-      if ('total' in data.payload && data.payload.total === 0) {
-        //  yield put(setSpecialMessageAction(`resources.${data.meta.resource}`));
-        yield put(
-          showNotification(`resources.${data.meta.resource}.noresults`)
-        );
-      }
-      break;
-    default:
+  if("meta" in data.payload && "limit" in data.payload.meta)
+  {
+    yield put(setResponseLimitAction(
+       data.meta.resource,
+       data.payload.meta.limit
+    ));
   }
+
 }
+
+function* resetSpecialMessage()
+{
+    yield put(setSpecialMessageAction(''));
+}
+
+
+function* handleSpecialMessage(data)
+{
+
+  if ('total' in data.payload && data.payload.total === 0) {
+    //  yield put(setSpecialMessageAction(`resources.${data.meta.resource}`));
+    yield put(
+      showNotification(`resources.${data.meta.resource}.noresults`)
+    );
+  }
+
+}
+
+
 
 export default function* saga() {
   yield all([
-    takeEvery(CRUD_GET_LIST, handleSpecialMessage),
-    takeEvery(CRUD_GET_LIST_SUCCESS, handleSpecialMessage)
+
+
+    takeEvery(CRUD_GET_LIST, resetSpecialMessage),
+
+    takeEvery(CRUD_GET_LIST_SUCCESS, handleSpecialMessage),
+
+    takeEvery(CRUD_GET_LIST_SUCCESS, handleLimits),
+
   ]);
 }

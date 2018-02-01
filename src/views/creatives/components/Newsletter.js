@@ -1,21 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import compose from 'recompose/compose';
+
 import {
-  translate,
-  showNotification as showNotificationAction
+  translate
 } from 'admin-on-rest';
 
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Card, CardHeader, CardActions } from 'material-ui/Card';
 import IconDownload from 'material-ui/svg-icons/file/file-download';
-import IconCopy from 'material-ui/svg-icons/content/content-copy';
 import IconZip from 'material-ui/svg-icons/content/archive';
 import PrimaryButton from 'material-ui/RaisedButton';
 import Button from 'material-ui/FlatButton';
 import { httpClient } from '../../../api/restClient';
 import Iframe from '../../../components/Iframe';
 import { getUserId } from '../../../api/helpers';
+
+import CopyToClipboardButton from './CopyToClipboardButton';
+
 
 
 const newsletterLink = (link, type) => {
@@ -56,17 +55,19 @@ class Newsletter extends React.Component {
   }
 
   render() {
-    const { translate, creative, showNotification } = this.props;
+    const { translate, creative } = this.props;
     const { newsletter } = this.state;
 
     return (
       <Card>
         <CardHeader title={creative.name} />
 
-        <Iframe src={`data:text/html, ${newsletter}`} />
+        {newsletter &&
+          <div><Iframe src={`data:text/html, ${newsletter}`} />
 
-        <CardActions>
-          <PrimaryButton
+            <CardActions>
+
+            <PrimaryButton
             primary={true}
             download={true}
             target="_blank"
@@ -84,21 +85,20 @@ class Newsletter extends React.Component {
             href={newsletterLink(creative.content, "zip")}
           />
 
-          <CopyToClipboard
-            text={newsletter}
-            onCopy={() => showNotification('actions.copied')}
-          >
-            <Button label="Copy HTML Source" icon={<IconCopy />} />
-          </CopyToClipboard>
-        </CardActions>
+          <CopyToClipboardButton text={newsletter} label="Copy HTML Source" />
+
+            </CardActions>
+          </div>
+        
+      }
+
+
+
+
       </Card>
     );
   }
 }
 
-const enhance = compose(
-  translate,
-  connect(null, { showNotification: showNotificationAction })
-);
 
-export default enhance(Newsletter);
+export default translate(Newsletter);

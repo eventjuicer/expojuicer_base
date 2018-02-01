@@ -1,34 +1,56 @@
 import React from 'react';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
-import Avatar from 'material-ui/Avatar';
-import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
+import { Card, CardTitle, CardHeader, CardText } from 'material-ui/Card';
+
+import { translate } from 'admin-on-rest';
+
+//import Avatar from 'material-ui/Avatar';
+//import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
 // import HomeIcon from 'material-ui/svg-icons/action/home';
 // import CodeIcon from 'material-ui/svg-icons/action/code';
-import FlatButton from 'material-ui/FlatButton';
-import { translate } from 'admin-on-rest';
+//import FlatButton from 'material-ui/FlatButton';
+
+import { Heading, Subheading, Body } from '../../components/Typography'
+
 
 export default translate(({ style, translate }) => (
   <Card style={style}>
-    <CardHeader
+
+    <CardTitle
       title={translate('dashboard.welcome.title')}
       subtitle={translate('dashboard.welcome.subtitle')}
-      avatar={<Avatar backgroundColor="#FFEB3B" icon={<LightBulbIcon />} />}
+
     />
 
-    <CardText>{translate('dashboard.welcome.description')}</CardText>
-    {/*  <CardActions style={{ textAlign: 'right' }}>
+      <CardText>
+      {translate('dashboard.welcome.description')}
+      </CardText>
+
+      <Card>
+
+        <CardHeader title="Check out our tutorial about using promo materials" />
+
+      <CardText>
+        <iframe width='800' height='450' src="https://www.youtube.com/embed/adF7n7297u8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </CardText>
+
+      </Card>
+
+
+
+    {/* <CardActions style={{ textAlign: 'right' }}>
       <FlatButton
         label={translate('pos.dashboard.welcome.aor_button')}
         icon={<HomeIcon />}
-        href=""
+        href="https://github.com/eventjuicer/expojuicer/issues"
+        target="_blank"
       />
       <FlatButton
         label={translate('pos.dashboard.welcome.demo_button')}
         icon={<CodeIcon />}
         href=""
       />
-    </CardActions>
+    </CardActions> */}
 
-    */}
+
   </Card>
 ));

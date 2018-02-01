@@ -5,24 +5,29 @@ import Rejected from 'material-ui/svg-icons/action/thumb-down';
 import Waiting from 'material-ui/svg-icons/action/hourglass-empty';
 import Scheduled from 'material-ui/svg-icons/action/hourglass-empty';
 
-class StatusField extends React.Component {
-  render() {
-    const { record } = this.props;
+import {status} from './status';
 
-    if (record.agreed) {
-      if (record.scheduled_at !== '') {
+
+
+const StatusField = (props) => {
+
+    const intStatus = status(props.record);
+
+    if (intStatus > 0 ) {
+      if (intStatus === 2) {
         return <Scheduled color="blue" />;
       }
 
       return <Approved color="blue" />;
     } else {
-      if (record.responded_at !== '') {
+      if (intStatus === -2) {
         return <Rejected />;
       }
     }
 
     return <Waiting />;
-  }
+
 }
+
 
 export default StatusField;

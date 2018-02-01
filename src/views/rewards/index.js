@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Card } from 'material-ui/Card';
 
 import Prize from './Prize';
-import Photogrid from './Photogrid';
+//import Photogrid from './Photogrid';
 
 import { getUserData } from '../../api/helpers';
 import { httpClient } from '../../api/restClient';
@@ -77,10 +77,10 @@ class Stats extends React.Component {
               ))}
 
 
-
-          <Subheading>Rewards in real life</Subheading>
-
-          <Photogrid />
+  {/*
+      <Subheading>Rewards in real life</Subheading>
+      <Photogrid />
+  */}
 
         </Card>
 

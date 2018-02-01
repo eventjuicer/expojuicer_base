@@ -10,7 +10,7 @@ import { translate, Textfield } from 'admin-on-rest';
 import { failure, success, disabledBg, disabledHeader, disabledSubheader  } from '../../styles/colors';
 
 
-import Photogrid from './Photogrid';
+//import Photogrid from './Photogrid';
 
 
 const rewarded = ( prize, position, sessions ) => {
@@ -77,15 +77,15 @@ const Prize = ({translate, prize, position, sessions}) => (
       title={ translate(`prizes.${prize.name}.title`) }
       titleStyle={{fontSize: 16, lineHeight: "26px"}}
       subtitle={ translate(`prizes.${prize.name}.description`) }
-      actAsExpander={true}
-      showExpandableButton={true}
+    //  actAsExpander={true}
+  //    showExpandableButton={true}
     />
 
 
 
-        <CardText expandable={true}>
+        {/* <CardText expandable={true}>
         <Photogrid />
-        </CardText>
+        </CardText> */}
 
 
     <CardHeader

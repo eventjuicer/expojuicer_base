@@ -1,23 +1,38 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
 import { translate } from 'admin-on-rest';
 
-import Papa from 'papaparse';
 import Dropzone from 'react-dropzone';
-
-import Mappings from './ImportCsvMappings';
-
-
+import Mappings from './Mappings';
 import styles from '../../../styles/dropzone'
 
+import {changeImportData as changeImportDataAction } from '../../../redux/actions';
+import {Parse} from '../../../api/csv';
 
 class CsvImport extends React.Component {
+
   state = { files: [], data: null, mappedData: null };
 
-  handleMapping = mappings => {
+
+  componentWillReceiveProps(nextProps)
+  {
+
+    if("data" in nextProps && Array.isArray(nextProps.data) && nextProps.data.length)
+    {
+      this.convertData(nextProps.data, nextProps.mappings);
+    }
+
+  }
+
+
+  outputResult(data)
+  {
     const { input } = this.props;
-    const { data } = this.state;
-    //we should now manipulate DATA!
+    input.onChange(data);
+  }
+
+  convertData = (data, mappings) => {
 
     let newData = [];
 
@@ -41,44 +56,35 @@ class CsvImport extends React.Component {
       });
     }
 
-    input.onChange({ data: newData, mappings: mappings });
+    this.outputResult(newData);
+
   };
 
-  parseTextToCsv(text) {
-    
-    const { input } = this.props;
+  onDrop = (acceptedFiles, rejectedFiles, onload) => {
 
     //reset!
-    input.onChange({ data: {}, mappings: {} });
-
-    const parsed = Papa.parse(text);
-
-    const data = parsed.data.filter(row => Array.isArray(row));
-
-    this.setState({ data });
-  }
-
-  onDrop = (acceptedFiles, rejectedFiles) => {
-
-    this.setState({
-      files: acceptedFiles
-    });
+    this.props.changeImportData();
 
     acceptedFiles.forEach(file => {
+
       const reader = new FileReader();
 
-      reader.onload = event => this.parseTextToCsv(event.target.result);
+      reader.onload = event => Parse(event.target.result).then(({data}) => {
+        this.props.changeImportData(data.filter(row => Array.isArray(row)));
+      });
 
+       //this.parseTextToCsv(event.target.result);
+  /*
       reader.onabort = () => console.log('file reading was aborted');
       reader.onerror = () => console.log('file reading has failed');
-
+  */
       reader.readAsText(file);
     }, this);
   };
 
   render() {
-    const { translate, input, meta } = this.props;
-    const { data } = this.state;
+
+    const { translate, input, meta, data, mappings } = this.props;
 
     return (
       <div>
@@ -96,10 +102,18 @@ class CsvImport extends React.Component {
             <div className="alert alert-important">{meta.error}</div>
           )}
 
-        {data && <Mappings data={data} onMappingsChange={this.handleMapping} />}
+        {data && data[1] && <Mappings data={data[1]} />}
       </div>
     );
   }
 }
 
-export default translate(CsvImport);
+
+const mapStateToProps = state => state.import;
+
+const enhance = compose(
+  translate,
+  connect(mapStateToProps, {changeImportData : changeImportDataAction})
+);
+
+export default enhance(CsvImport);

@@ -8,6 +8,7 @@ import {
 } from 'admin-on-rest';
 
 import PointsField from './components/PointsField';
+import ViewTitle from '../../components/ViewTitle';
 
 // const VisitorFilter = props => (
 //   <Filter {...props}>
@@ -17,6 +18,7 @@ import PointsField from './components/PointsField';
 
 const ViewList = props => (
   <List
+    title={<ViewTitle resource={props.resource} subtitle={true} />}
     {...props}
     //  filters={<VisitorFilter />}
     //  sort={{ field: 'lname', order: 'ASC' }}

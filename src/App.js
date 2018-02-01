@@ -1,6 +1,6 @@
 //import 'babel-polyfill';
 import React from 'react';
-import { Admin, Resource } from 'admin-on-rest';
+import { Admin, Resource, Delete } from 'admin-on-rest';
 
 import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
@@ -95,6 +95,7 @@ class App extends React.Component {
           list={MeetupList}
           edit={MeetupEdit}
           create={MeetupCreate}
+          remove={Delete}
         />
 
         <Resource

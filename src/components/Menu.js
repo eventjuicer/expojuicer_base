@@ -33,7 +33,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/ranking"
-      primaryText={translate('resources.ranking.name')}
+      primaryText={translate('resources.ranking.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
     />
@@ -42,14 +42,14 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/campaigns"
-      primaryText={translate('resources.campaigns.name')}
+      primaryText={translate('resources.campaigns.menu')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />
 
     <MenuItemLink
       to="/contacts"
-      primaryText={translate('resources.contacts.name')}
+      primaryText={translate('resources.contacts.menu')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />
@@ -58,37 +58,37 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/rewards"
-      primaryText={translate('resources.rewards.name')}
+      primaryText={translate('resources.rewards.menu')}
       onClick={onMenuTap}
       leftIcon={<IconRewards />}
     />
 
     <MenuItemLink
       to="/creatives"
-      primaryText={translate('resources.creatives.name')}
+      primaryText={translate('resources.creatives.menu')}
       onClick={onMenuTap}
       leftIcon={<IconShare />}
     />
 
-    <MenuItemLink
-      to="/contacts"
-      primaryText={translate('resources.contacts.name')}
-      onClick={onMenuTap}
-      leftIcon={<IconImports />}
-    />
+  {/* <MenuItemLink
+    to="/contacts"
+    primaryText={translate('resources.contacts.menu')}
+    onClick={onMenuTap}
+    leftIcon={<IconImports />}
+  /> */}
 
     <Subheader>{translate('pos.sections.suggest_a_meeting')}</Subheader>
 
     <MenuItemLink
       to="/meetups"
-      primaryText={translate('resources.meetups.name')}
+      primaryText={translate('resources.meetups.menu')}
       onClick={onMenuTap}
       leftIcon={<IconStatus />}
     />
 
     <MenuItemLink
       to="/visitors"
-      primaryText={translate('resources.visitors.name')}
+      primaryText={translate('resources.visitors.menu')}
       onClick={onMenuTap}
       leftIcon={<IconPeople />}
     />
@@ -99,7 +99,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/scans"
-      primaryText={translate('resources.scans.name')}
+      primaryText={translate('resources.scans.menu')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />
@@ -108,7 +108,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <MenuItemLink
       to="/newsletters"
-      primaryText={translate('resources.newsletters.name')}
+      primaryText={translate('resources.newsletters.menu')}
       onClick={onMenuTap}
       leftIcon={<SettingsIcon />}
     />

@@ -12,7 +12,7 @@ const styles = {
 
   container: {
     margin: 10,
-    position: 'relative'
+    position: 'relative',
   },
 
   iframe: {

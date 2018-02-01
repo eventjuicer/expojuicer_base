@@ -3,38 +3,31 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import {
   translate,
-  showNotification as showNotificationAction
 } from 'admin-on-rest';
 
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Card, CardHeader, CardActions } from 'material-ui/Card';
-import Button from 'material-ui/FlatButton';
-import PrimaryButton from 'material-ui/RaisedButton';
 
+import SecondaryButton from 'material-ui/FlatButton';
 import IconPreview from 'material-ui/svg-icons/action/visibility';
 import IconDownload from 'material-ui/svg-icons/file/file-download';
-import IconCopy from 'material-ui/svg-icons/content/content-copy';
-
 import { showModal as showModalAction } from '../../../redux/actions';
+import CopyToClipboardButton from './CopyToClipboardButton';
 
-const modalData = ({ name, act_as, link, image }) => {
-  return {
-    title: name,
-    body: link,
-    image: act_as === 'image' ? image : null,
-    buttons: []
-  };
-};
+
 
 const htmlCode = ({ name, act_as, link, image }) => {
   if (act_as === 'link') {
     return link;
   }
 
-  return `<a href="${link}"><img src="${image}" alt="e-commerce berlin expo" /></a>`;
+  return `<a href="${link}"><img src="${image}" alt="" /></a>`;
 };
 
-const Creative = ({ creative, showModal, translate, showNotification }) => (
+const CopyTrackingLink = (link) => (
+  <CopyToClipboardButton text={link} label="Copy tracking link to clipboard" raised={true} />
+);
+
+const Creative = ({ creative, showModal, translate }) => (
   <Card>
     <CardHeader
       title={creative.name}
@@ -42,19 +35,11 @@ const Creative = ({ creative, showModal, translate, showNotification }) => (
     />
 
     <CardActions>
-      <CopyToClipboard
-        text={htmlCode(creative)}
-        onCopy={() => showNotification('actions.copied')}
-      >
-        <PrimaryButton
-          label="Copy embed code"
-          primary={true}
-          icon={<IconCopy />}
-        />
-      </CopyToClipboard>
+
+      <CopyToClipboardButton text={htmlCode(creative)} label="Copy embed code" raised={true} />
 
       {'image' in creative && (
-        <Button
+        <SecondaryButton
           download={true}
           target="_blank"
           label="Download"
@@ -63,16 +48,22 @@ const Creative = ({ creative, showModal, translate, showNotification }) => (
           onClick={() =>
             showModal({
               title: 'Image downloaded',
-              body: 'Remember that you have to use tracking link.'
+              body: `Important! Please remember that you have to use your tracking link.`,
+              buttons : [<CopyTrackingLink link={creative.link} />]
             })
           }
         />
       )}
 
-      <Button
+      <SecondaryButton
         label="Preview"
         icon={<IconPreview />}
-        onClick={() => showModal(modalData(creative))}
+        onClick={() => showModal({
+          title: creative.name,
+          body: "",
+          image: creative.act_as === 'image' ? creative.image : null,
+          buttons: [<CopyToClipboardButton text={htmlCode(creative)} label="Copy embed code" raised={true} />]
+        })}
       />
     </CardActions>
   </Card>
@@ -85,8 +76,7 @@ const Creative = ({ creative, showModal, translate, showNotification }) => (
 const enhance = compose(
   translate,
   connect(null, {
-    showModal: showModalAction,
-    showNotification: showNotificationAction
+    showModal: showModalAction
   })
 );
 

@@ -5,6 +5,12 @@ import get from 'lodash/get';
 export const validateToken = token => {
   return /^[a-z0-9]{32,40}$/.test(token);
 };
+//
+// export const storeResourceLimit = (resource, limit) => {
+//     const limits = JSON.parse(localStorage.getItem('limits') || "{}");
+//     limits[resource] = limit;
+//     localStorage.setItem();
+// }
 
 export const storeUserData = (token, profile) => {
   localStorage.setItem('token', token);

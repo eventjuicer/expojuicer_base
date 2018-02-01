@@ -9,6 +9,8 @@ import {
   fetchUtils
 } from 'admin-on-rest';
 
+import {} from './helpers';
+
 /**
  * Maps admin-on-rest queries to a json-server powered REST API
  *
@@ -114,7 +116,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         if (!headers.has('x-total-count')) {
           //    throw new Error('The X-Total-Count header is missing in the HTTP Response. The jsonServer REST client expects responses for lists of resources to contain this header with the total number of results to build the pagination. If you are using CORS, did you declare X-Total-Count in the Access-Control-Expose-Headers header?');
         }
-        return {
+        const data = {
           data: json.data,
           total: parseInt(
             headers
@@ -124,6 +126,13 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
             10
           )
         };
+
+        if("meta" in json)
+        {
+          data["meta"] = json.meta;
+        }
+
+        return data;
       case CREATE:
         return { data: { ...params.data, id: json.data.id } };
 
