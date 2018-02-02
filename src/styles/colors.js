@@ -9,4 +9,13 @@ import {
   grey700 as disabledSubheader
 } from 'material-ui/styles/colors';
 
-export { colorBg, colorHeader, colorSubheader, success, failure, disabledBg, disabledHeader,  disabledSubheader};
+export {
+  colorBg,
+  colorHeader,
+  colorSubheader,
+  success,
+  failure,
+  disabledBg,
+  disabledHeader,
+  disabledSubheader
+};

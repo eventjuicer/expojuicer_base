@@ -13,22 +13,24 @@ import FlatButton from 'material-ui/FlatButton';
 
 import IconCopy from 'material-ui/svg-icons/content/content-copy';
 
-const CopyToClipboardButton = ({text, translate, showNotification, label="Copy to clipboard", raised = false}) => (
+const CopyToClipboardButton = ({
+  text,
+  translate,
+  showNotification,
+  label = 'Copy to clipboard',
+  raised = false
+}) => (
   <CopyToClipboard
     text={text}
     onCopy={() => showNotification('actions.copied')}
   >
-    {raised ? <PrimaryButton
-      label={label}
-      icon={<IconCopy />}
-      primary={true}
-    /> : <FlatButton
-      label={label}
-      icon={<IconCopy />}
-    />}
+    {raised ? (
+      <PrimaryButton label={label} icon={<IconCopy />} primary={true} />
+    ) : (
+      <FlatButton label={label} icon={<IconCopy />} />
+    )}
   </CopyToClipboard>
 );
-
 
 const enhance = compose(
   translate,

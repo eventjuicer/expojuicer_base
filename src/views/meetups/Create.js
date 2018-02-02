@@ -24,17 +24,6 @@ const ViewCreate = props => (
         defaultValue={get(qs.parse(props.location.search), 'participant_id', 0)}
       />
 
-      {/*    <ReferenceInput
-          label="resources.meetups.fields.creative_id"
-          source="creative_id"
-          reference="newsletters"
-          filter={{ act_as: 'newsletter' }}
-          allowEmpty
-        >
-          <SelectInput optionText="name" />
-        </ReferenceInput>
-*/}
-
       <LongTextInput source="message" style={{ maxWidth: 700 }} />
 
       <TextInput

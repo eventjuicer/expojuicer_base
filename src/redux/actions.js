@@ -34,23 +34,23 @@ export const closeModal = () => ({
   type: CLOSE_MODAL
 });
 
-export const changeImportMapping = (index,value) => ({
-  type : IMPORT_CHANGE_MAPPING,
-  index : index,
-  value : value
+export const changeImportMapping = (index, value) => ({
+  type: IMPORT_CHANGE_MAPPING,
+  index: index,
+  value: value
 });
 
 export const resetImportMapping = () => ({
-  type : IMPORT_RESET_MAPPING
+  type: IMPORT_RESET_MAPPING
 });
 
 export const changeImportData = (data = {}) => ({
-  type : IMPORT_CHANGE_DATA,
-  data : data
+  type: IMPORT_CHANGE_DATA,
+  data: data
 });
 
 export const setResponseLimit = (resource, limit) => ({
-  type : RESOURCE_LIMIT_SHOW,
+  type: RESOURCE_LIMIT_SHOW,
   resource: resource,
-  limit : limit
-})
+  limit: limit
+});

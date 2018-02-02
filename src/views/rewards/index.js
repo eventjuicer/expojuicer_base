@@ -9,7 +9,7 @@ import Prize from './Prize';
 
 import { getUserData } from '../../api/helpers';
 import { httpClient } from '../../api/restClient';
-import { Heading, Subheading, Body } from '../../components/Typography'
+import { Heading, Subheading, Body } from '../../components/Typography';
 
 class Stats extends React.Component {
   state = {
@@ -42,29 +42,29 @@ class Stats extends React.Component {
 
     return (
       <Restricted authParams={{ foo: 'bar' }}>
-<div className="list-page">
-        <Card style={{marginTop: -25}}>
-
-          <Heading first={true}>{translate('resources.rewards.name')} </Heading>
+        <div className="list-page">
+          <Card style={{ marginTop: -25 }}>
+            <Heading first={true}>
+              {translate('resources.rewards.name')}{' '}
+            </Heading>
 
             <Body>
               To participate in the{' '}
-            <Link to={{ pathname: '/ranking' }}>
-              {translate('resources.ranking.name')}
-            </Link>{' '}
-            and be able to win rewards you must use dedicated tracking link. See{' '}
-            <Link to={{ pathname: '/creatives' }}>
-              {translate('resources.creatives.name')}
-            </Link>{' '}
-            for details.
-
-          </Body>
+              <Link to={{ pathname: '/ranking' }}>
+                {translate('resources.ranking.name')}
+              </Link>{' '}
+              and be able to win rewards you must use dedicated tracking link.
+              See{' '}
+              <Link to={{ pathname: '/creatives' }}>
+                {translate('resources.creatives.name')}
+              </Link>{' '}
+              for details.
+            </Body>
 
             <Body>
               {getUserData('domain')} place:{' '}
               {sessions ? `#${position}` : `unknown`}
             </Body>
-
 
             {prizes &&
               prizes.map(item => (
@@ -76,14 +76,11 @@ class Stats extends React.Component {
                 />
               ))}
 
-
-  {/*
+            {/*
       <Subheading>Rewards in real life</Subheading>
       <Photogrid />
   */}
-
-        </Card>
-
+          </Card>
         </div>
       </Restricted>
     );

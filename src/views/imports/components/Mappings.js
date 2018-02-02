@@ -12,9 +12,7 @@ import {
 
 import Mapping from './Mapping';
 
-
-const Mappings = (props) => (
-
+const Mappings = props => (
   <Table selectable={false}>
     <TableHeader displaySelectAll={false}>
       <TableRow>
@@ -38,8 +36,6 @@ const Mappings = (props) => (
       })}
     </TableBody>
   </Table>
-
 );
-
 
 export default translate(Mappings);

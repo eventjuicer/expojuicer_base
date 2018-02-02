@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 //import compose from 'recompose/compose';
 
-import {GridList, GridTile} from 'material-ui/GridList';
+import { GridList, GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import IconPreview from 'material-ui/svg-icons/action/visibility';
 
@@ -11,7 +11,7 @@ import { showModal as showModalAction } from '../../redux/actions';
 const modalData = ({ img, title, author }) => {
   return {
     title: author,
-    body: "",
+    body: '',
     image: img,
     buttons: []
   };
@@ -21,86 +21,85 @@ const styles = {
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   gridList: {
-  //  width: 500,
+    //  width: 500,
     height: 450,
-    overflowY: 'auto',
-  },
+    overflowY: 'auto'
+  }
 };
 
 const tilesData = [
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/badge_1.jpg',
     title: 'Breakfast',
-    author: 'jill111',
+    author: 'jill111'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/hostess_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
+    author: 'pashminu'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/scanner_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
+    author: 'pashminu'
   },
 
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/badge_1.jpg',
     title: 'Breakfast',
-    author: 'jill111',
+    author: 'jill111'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/hostess_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
+    author: 'pashminu'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/scanner_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
+    author: 'pashminu'
   },
-
 
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/badge_1.jpg',
     title: 'Breakfast',
-    author: 'jill111',
+    author: 'jill111'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/hostess_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
+    author: 'pashminu'
   },
   {
     img: 'https://files.ecommerceberlin.com/expojuicer/scanner_1.jpg',
     title: 'Tasty burger',
-    author: 'pashminu',
-  },
-
+    author: 'pashminu'
+  }
 ];
 
-
-const Photogrid = (props) => (
+const Photogrid = props => (
   <div style={styles.root}>
-    <GridList
-      cellHeight={180}
-      style={styles.gridList}
-      cols={4}
-    >
-
+    <GridList cellHeight={180} style={styles.gridList} cols={4}>
       {tilesData.map((tile, i) => (
         <GridTile
           key={i}
           title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}
-          actionIcon={<IconButton onClick={()=>props.showModal(modalData(tile))}><IconPreview color="white" /></IconButton>}
+          subtitle={
+            <span>
+              by <b>{tile.author}</b>
+            </span>
+          }
+          actionIcon={
+            <IconButton onClick={() => props.showModal(modalData(tile))}>
+              <IconPreview color="white" />
+            </IconButton>
+          }
           actionPosition="right"
-         titlePosition="top"
-         titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-
+          titlePosition="top"
+          titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
           <img src={tile.img} alt="" />
         </GridTile>
@@ -108,9 +107,6 @@ const Photogrid = (props) => (
     </GridList>
   </div>
 );
-
-
-
 
 export default connect(null, {
   showModal: showModalAction

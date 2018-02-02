@@ -38,15 +38,12 @@ const ViewFilter = props => (
 </h4>
 */
 
-
 const ViewList = props => (
   <List
-    title={
-      <ViewTitle resource={props.resource} limit={true} />
-    }
+    title={<ViewTitle resource={props.resource} limit={true} />}
     {...props}
-     actions={<ListActions />}
-  //  actions={null}
+    actions={<ListActions />}
+    //  actions={null}
     filters={<ViewFilter />}
     //  sort={{ field: 'cname2', order: 'ASC' }}
     perPage={50}
@@ -71,10 +68,8 @@ const ViewList = props => (
       <EditButton />
 
       <StatusAwareDeleteButton />
-
     </Datagrid>
   </List>
 );
-
 
 export default ViewList;

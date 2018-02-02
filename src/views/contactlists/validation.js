@@ -1,8 +1,4 @@
-
-
-const containsEmail = (str) => (str.indexOf("@") > 1);
-
-
+const containsEmail = str => str.indexOf('@') > 1;
 
 export const validate = values => {
   console.log(values);
@@ -15,10 +11,8 @@ export const validate = values => {
   }
 
   if (values.imported_manually) {
-
-    if(!values.imported_manually.every((el,idx,arr) => containsEmail(el)))
-    {
-        errors.imported_manually = ['No email addresses detected!'];
+    if (!values.imported_manually.every((el, idx, arr) => containsEmail(el))) {
+      errors.imported_manually = ['No email addresses detected!'];
     }
   }
 

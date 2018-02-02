@@ -28,7 +28,10 @@ const Modal = ({ modal, closeModal, translate }) => {
   return (
     <Dialog
       title={get(modal, 'title', 'Info')}
-      actions={[...buttons, [<FlatButton label="Close" onClick={closeModal} />]]}
+      actions={[
+        ...buttons,
+        [<FlatButton label="Close" onClick={closeModal} />]
+      ]}
       modal={false}
       open={modal ? true : false}
       onRequestClose={closeModal}

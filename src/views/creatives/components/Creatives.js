@@ -4,7 +4,6 @@ import { translate } from 'admin-on-rest';
 import { Card, CardTitle } from 'material-ui/Card';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
-
 import { httpClient } from '../../../api/restClient';
 
 import IconEmail from 'material-ui/svg-icons/communication/email';
@@ -26,18 +25,18 @@ class Creatives extends React.Component {
     creatives: []
   };
 
-
   setStateAsync(state) {
-      return new Promise((resolve) => {
-        this.setState(state, resolve)
-      });
+    return new Promise(resolve => {
+      this.setState(state, resolve);
+    });
   }
 
   async componentDidMount() {
-
-   const res = await httpClient(`${process.env.REACT_APP_API_ENDPOINT}/creatives`);
-   const {meta} = await res.json;
-   await this.setStateAsync({creatives: meta.creatives})
+    const res = await httpClient(
+      `${process.env.REACT_APP_API_ENDPOINT}/creatives`
+    );
+    const { meta } = await res.json;
+    await this.setStateAsync({ creatives: meta.creatives });
   }
 
   filterByType(type) {

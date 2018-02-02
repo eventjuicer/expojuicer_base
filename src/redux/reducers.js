@@ -3,14 +3,10 @@ import {
   SPECIAL_MESSAGE_SHOW,
   SHOW_MODAL,
   CLOSE_MODAL,
-
-
   IMPORT_CHANGE_MAPPING,
   IMPORT_RESET_MAPPING,
   IMPORT_CHANGE_DATA,
-
   RESOURCE_LIMIT_SHOW
-
 } from './types';
 
 const changeThemeReducer = (previousState = 'light', { type, payload }) => {
@@ -44,43 +40,42 @@ const modalReducer = (previousState = '', { type, payload }) => {
 };
 
 const resourceLimitReducer = (previousState = {}, payload) => {
-
-  switch(payload.type)
-  {
+  switch (payload.type) {
     case RESOURCE_LIMIT_SHOW:
-      return {...previousState, [payload.resource] : payload.limit};
-    break;
+      return { ...previousState, [payload.resource]: payload.limit };
+      break;
 
     default:
       return previousState;
   }
-}
+};
 
-const importReducer = (previousState = {data:{},mappings:{}}, payload ) => {
-
-  switch(payload.type)
-  {
+const importReducer = (previousState = { data: {}, mappings: {} }, payload) => {
+  switch (payload.type) {
     case IMPORT_CHANGE_MAPPING:
-      return {...previousState, mappings: {...previousState.mappings, [payload.index] : payload.value}};
-    break;
+      return {
+        ...previousState,
+        mappings: { ...previousState.mappings, [payload.index]: payload.value }
+      };
+      break;
 
     case IMPORT_RESET_MAPPING:
-      return {...previousState, mappings : {}};
-    break;
+      return { ...previousState, mappings: {} };
+      break;
 
     case IMPORT_CHANGE_DATA:
-      return {data : payload.data, mappings : {}};
-    break;
+      return { data: payload.data, mappings: {} };
+      break;
 
     default:
       return previousState;
   }
-}
+};
 
 export default {
-  import : importReducer,
+  import: importReducer,
   modal: modalReducer,
   userdata: changeThemeReducer,
   specialmessage: specialmessageReducer,
-  resourcelimit : resourceLimitReducer
+  resourcelimit: resourceLimitReducer
 };

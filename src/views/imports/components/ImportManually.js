@@ -4,7 +4,7 @@ import { translate } from 'admin-on-rest';
 import TextField from 'material-ui/TextField';
 
 const styles = {
-  width: "100%",
+  width: '100%'
   // label: { width: '10em', display: 'inline-block' },
   // button: { margin: '1em' }
 };

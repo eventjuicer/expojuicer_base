@@ -69,13 +69,13 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       onClick={onMenuTap}
       leftIcon={<IconShare />}
     />
-
-  {/* <MenuItemLink
-    to="/contacts"
-    primaryText={translate('resources.contacts.menu')}
-    onClick={onMenuTap}
-    leftIcon={<IconImports />}
-  /> */}
+{/* 
+    <MenuItemLink
+      to="/contacts"
+      primaryText={translate('resources.contacts.menu')}
+      onClick={onMenuTap}
+      leftIcon={<IconImports />}
+    /> */}
 
     <Subheader>{translate('pos.sections.suggest_a_meeting')}</Subheader>
 

@@ -1,4 +1,3 @@
-
 /*
   sent_at
   resent_at
@@ -6,24 +5,17 @@
   scheduled_at
 */
 
-
-export const status = (record) => {
-
-  if(record.sent_at === "")
-  {
+export const status = record => {
+  if (record.sent_at === '') {
     return -3;
   }
 
-  if(record.agreed)
-  {
-    if (record.scheduled_at === '')
-    {
+  if (record.agreed) {
+    if (record.scheduled_at === '') {
       return 1;
     }
     return 2;
-  }
-  else
-  {
+  } else {
     // rejected
     if (record.responded_at === '') {
       return -1;
@@ -31,5 +23,4 @@ export const status = (record) => {
     //no reaction
     return -2;
   }
-
 };

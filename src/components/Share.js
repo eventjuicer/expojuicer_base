@@ -7,11 +7,11 @@ import { translate } from 'admin-on-rest';
 //encodeURI() will not encode: ~!@#$&*()=:/,;?+'
 //encodeURIComponent() will not encode: ~!*()'
 
-import {getCompanyName, getUserData} from '../api/helpers';
+import { getCompanyName, getUserData } from '../api/helpers';
 
 const title = () => {
   return encodeURIComponent(`Let's meet there!`);
-}
+};
 
 const Share = ({ translate, type, target }) => {
   const encTarget = encodeURIComponent(target);

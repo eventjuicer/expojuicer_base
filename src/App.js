@@ -54,13 +54,11 @@ import {
   ViewEdit as ContactEdit
 } from './views/contacts';
 
-
 import {
   ViewList as ContactlistList,
   ViewCreate as ContactlistCreate,
   ViewEdit as ContactlistEdit
 } from './views/contactlists';
-
 
 import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 
@@ -99,12 +97,10 @@ class App extends React.Component {
         />
 
         <Resource
-
           name="contactlists"
           list={ContactlistList}
           edit={ContactlistEdit}
           create={ContactlistCreate}
-
         />
 
         <Resource name="visitors" list={VisitorList} />
@@ -118,11 +114,7 @@ class App extends React.Component {
 
         <Resource name="ranking" list={RankingList} />
 
-        <Resource
-          name="contacts"
-          list={ContactList}
-          edit={ContactEdit}
-        />
+        <Resource name="contacts" list={ContactList} edit={ContactEdit} />
 
         <Resource name="creatives" list={CreativeList} edit={CreativeEdit} />
 

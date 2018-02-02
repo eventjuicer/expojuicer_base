@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import {
-  translate,
-} from 'admin-on-rest';
+import { translate } from 'admin-on-rest';
 
 import { Card, CardHeader, CardText, CardActions } from 'material-ui/Card';
 
@@ -22,8 +20,7 @@ const Creative = ({ creative, translate }) => (
     <CardText>{creative.link}</CardText>
 
     <CardActions>
-
-    <CopyToClipboardButton text={creative.link} raised={true} />
+      <CopyToClipboardButton text={creative.link} raised={true} />
 
       {'shareable' in creative &&
         creative.shareable && (
@@ -36,6 +33,5 @@ const Creative = ({ creative, translate }) => (
     </CardActions>
   </Card>
 );
-
 
 export default translate(Creative);

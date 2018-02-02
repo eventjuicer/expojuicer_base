@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import {translate } from 'admin-on-rest';
+import { translate } from 'admin-on-rest';
 
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import {changeImportMapping as changeImportMappingAction } from '../../../redux/actions';
+import { changeImportMapping as changeImportMappingAction } from '../../../redux/actions';
 
 import get from 'lodash/get';
 
 const mappingOptions = ['skip', 'email', 'fname', 'lname', 'cname2', 'phone'];
 
 class Mapping extends React.Component {
-
   //
   // shouldComponentUpdate(nextProps, nextState)
   // {
@@ -27,45 +26,38 @@ class Mapping extends React.Component {
   // }
 
   componentDidMount() {
-
     this.setAutoMapping();
   }
 
-  setAutoMapping()
-  {
+  setAutoMapping() {
     const { cell } = this.props;
 
-    if (cell.indexOf('@') > 0)
-    {
-        return this.handleMappingChange("email");
+    if (cell.indexOf('@') > 0) {
+      return this.handleMappingChange('email');
     }
 
-    if( cell.length < 15 && (cell.match(/[0-9]/g) || []).length > 8 )
-    {
-        return this.handleMappingChange("phone");
+    if (cell.length < 15 && (cell.match(/[0-9]/g) || []).length > 8) {
+      return this.handleMappingChange('phone');
     }
   }
 
-  handleMappingChange = (value) => {
-
+  handleMappingChange = value => {
     //check if already used?
-    const {index, changeImportMapping, mappings} = this.props;
+    const { index, changeImportMapping, mappings } = this.props;
 
     //search for a value in object
 
     changeImportMapping(index, value);
-  }
+  };
 
   render() {
-
     const { translate, index, mappings } = this.props;
 
     return (
       <SelectField
         floatingLabelText="What is it?"
-        value={ get(mappings, index, "skip") }
-        onChange={(ev, idx, value) => this.handleMappingChange(value)
-        }
+        value={get(mappings, index, 'skip')}
+        onChange={(ev, idx, value) => this.handleMappingChange(value)}
       >
         {mappingOptions.map((item, i) => (
           <MenuItem
@@ -77,7 +69,6 @@ class Mapping extends React.Component {
       </SelectField>
     );
   }
-
 }
 
 const mapStateToProps = state => ({

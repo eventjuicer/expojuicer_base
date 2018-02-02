@@ -12,8 +12,7 @@ const styles = {
 
 const InviteListActions = ({ basePath, data, refresh }) => (
   <CardActions style={styles}>
-
-      <FlatButton  basePath="/contacts" primary label="Contacts"   />
+    <FlatButton basePath="/contacts" primary label="Contacts" />
 
     <FlatButton
       primary
@@ -28,7 +27,6 @@ const InviteListActions = ({ basePath, data, refresh }) => (
       <EditButton basePath={basePath} record={data} />
   <FlatButton primary label="Custom Action" onClick={customAction} />
       */}
-
   </CardActions>
 );
 

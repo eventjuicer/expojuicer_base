@@ -8,22 +8,25 @@ import ProgressField from '../../fields/ProgressField';
 const ViewList = props => (
   <List
     {...props}
-  //  actions={<ListActions />}
+    //  actions={<ListActions />}
     perPage={200}
   >
     <Datagrid
       bodyOptions={{
         stripedRows: true,
-        showRowHover: false,
+        showRowHover: false
       }}
     >
-
-      <TextField source="created_at"  sortable={false} />
-      <TextField source="name"   sortable={false} />
-      <TextField source="contactlist.name"   sortable={false} />
-      <ProgressField label="Imported" current="imported" target="submitted"  sortable={false}  />
+      <TextField source="created_at" sortable={false} />
+      <TextField source="name" sortable={false} />
+      <TextField source="contactlist.name" sortable={false} />
+      <ProgressField
+        label="Imported"
+        current="imported"
+        target="submitted"
+        sortable={false}
+      />
       <FullNameField source="admin.profile" sortable={false} />
-
     </Datagrid>
   </List>
 );

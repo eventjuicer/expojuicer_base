@@ -1,59 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import copy from 'copy-to-clipboard';
+import slack from './slack';
 
-
-export class CopyToClipboard extends React.PureComponent {
+class Monitor extends React.PureComponent {
   static propTypes = {
-    text: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired,
-    onCopy: PropTypes.func,
-    options: PropTypes.shape({
-      debug: PropTypes.bool,
-      message: PropTypes.string
-    })
+    name: PropTypes.string.isRequired,
+    services: PropTypes.array.isRequired,
+    children: PropTypes.element.isRequired
   };
-
 
   static defaultProps = {
-    onCopy: undefined,
-    options: undefined
+    name: undefined,
+    services: undefined
   };
 
-
   onClick = event => {
-    const {
-      text,
-      onCopy,
-      children,
-      options
-    } = this.props;
+    const { services, name, children } = this.props;
 
     const elem = React.Children.only(children);
 
-    const result = copy(text, options);
-
-    if (onCopy) {
-      onCopy(text, result);
-    }
+    // const result = copy(text, options);
+    //
+    // if (onCopy) {
+    //   onCopy(text, result);
+    // }
 
     // Bypass onClick if it was present
     if (elem && elem.props && typeof elem.props.onClick === 'function') {
       elem.props.onClick(event);
     }
+
+    slack(`clicked ${name}`);
   };
 
-
   render() {
-    const {
-      text: _text,
-      onCopy: _onCopy,
-      options: _options,
-      children,
-      ...props
-    } = this.props;
+    const { name: _name, services: _services, children, ...props } = this.props;
+
     const elem = React.Children.only(children);
 
-    return React.cloneElement(elem, {...props, onClick: this.onClick});
+    return React.cloneElement(elem, { ...props, onClick: this.onClick });
   }
 }
+
+export default Monitor;

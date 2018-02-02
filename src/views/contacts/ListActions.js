@@ -11,10 +11,7 @@ const inviteListActionsStyle = {
 };
 
 const InviteListActions = ({ basePath, data, refresh }) => (
-
-<CardActions style={inviteListActionsStyle}>
-
-
+  <CardActions style={inviteListActionsStyle}>
     <CreateButton basePath="/imports" />
 
     <FlatButton
@@ -32,9 +29,7 @@ const InviteListActions = ({ basePath, data, refresh }) => (
       <FlatButton primary label="Custom Action" onClick={customAction} />
 
         */}
-
   </CardActions>
-
 );
 
 export default InviteListActions;

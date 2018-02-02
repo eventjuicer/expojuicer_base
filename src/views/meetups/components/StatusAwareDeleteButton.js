@@ -9,21 +9,26 @@ import IconDelete from 'material-ui/svg-icons/action/delete';
 
 import { showModal as showModalAction } from '../../../redux/actions';
 
-import {status} from './status';
+import { status } from './status';
 
-
-const StatusAwareDeleteButton = (props) => {
-
+const StatusAwareDeleteButton = props => {
   const intStatus = status(props.record);
 
-  return (intStatus === -3 ?
-    <DeleteButton {...props} /> :
-    <IconButton onClick={() => props.showModal({
-      title : "Sorry!",
-      body : "You can only delete before sending...."
-    })} ><IconDelete color="#cccccc" /></IconButton>);
-}
-
+  return intStatus === -3 ? (
+    <DeleteButton {...props} />
+  ) : (
+    <IconButton
+      onClick={() =>
+        props.showModal({
+          title: 'Sorry!',
+          body: 'You can only delete before sending....'
+        })
+      }
+    >
+      <IconDelete color="#cccccc" />
+    </IconButton>
+  );
+};
 
 const enhance = compose(
   translate,

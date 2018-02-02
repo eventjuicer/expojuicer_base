@@ -12,7 +12,6 @@ const styles = {
   singleCol: { marginTop: '2em' }
 };
 
-
 class Dashboard extends Component {
   state = {};
 
@@ -20,10 +19,9 @@ class Dashboard extends Component {
     const { width } = this.props;
     return (
       <div>
-
         {width === 1 && <AppBarMobile title="expojuicer" />}
 
-        <Welcome  style={styles.welcome} />
+        <Welcome style={styles.welcome} />
 
         {/*
 

@@ -127,9 +127,8 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
           )
         };
 
-        if("meta" in json)
-        {
-          data["meta"] = json.meta;
+        if ('meta' in json) {
+          data['meta'] = json.meta;
         }
 
         return data;
@@ -152,7 +151,9 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
     if (type === GET_MANY) {
       return Promise.all(
         params.ids.map(id => httpClient(`${apiUrl}/${resource}/${id}`))
-      ).then(responses => ({ data: responses.map(response => response.json) }));
+      ).then(responses => ({
+        data: responses.map(response => response.json.data)
+      }));
     }
     const { url, options } = convertRESTRequestToHTTP(type, resource, params);
     return httpClient(url, options).then(response =>

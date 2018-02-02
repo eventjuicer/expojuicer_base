@@ -5,35 +5,30 @@ import { translate } from 'admin-on-rest';
 
 import Dropzone from 'react-dropzone';
 import Mappings from './Mappings';
-import styles from '../../../styles/dropzone'
+import styles from '../../../styles/dropzone';
 
-import {changeImportData as changeImportDataAction } from '../../../redux/actions';
-import {Parse} from '../../../api/csv';
+import { changeImportData as changeImportDataAction } from '../../../redux/actions';
+import { Parse } from '../../../api/csv';
 
 class CsvImport extends React.Component {
-
   state = { files: [], data: null, mappedData: null };
 
-
-  componentWillReceiveProps(nextProps)
-  {
-
-    if("data" in nextProps && Array.isArray(nextProps.data) && nextProps.data.length)
-    {
+  componentWillReceiveProps(nextProps) {
+    if (
+      'data' in nextProps &&
+      Array.isArray(nextProps.data) &&
+      nextProps.data.length
+    ) {
       this.convertData(nextProps.data, nextProps.mappings);
     }
-
   }
 
-
-  outputResult(data)
-  {
+  outputResult(data) {
     const { input } = this.props;
     input.onChange(data);
   }
 
   convertData = (data, mappings) => {
-
     let newData = [];
 
     if (data && Array.isArray(data)) {
@@ -57,24 +52,22 @@ class CsvImport extends React.Component {
     }
 
     this.outputResult(newData);
-
   };
 
   onDrop = (acceptedFiles, rejectedFiles, onload) => {
-
     //reset!
     this.props.changeImportData();
 
     acceptedFiles.forEach(file => {
-
       const reader = new FileReader();
 
-      reader.onload = event => Parse(event.target.result).then(({data}) => {
-        this.props.changeImportData(data.filter(row => Array.isArray(row)));
-      });
+      reader.onload = event =>
+        Parse(event.target.result).then(({ data }) => {
+          this.props.changeImportData(data.filter(row => Array.isArray(row)));
+        });
 
-       //this.parseTextToCsv(event.target.result);
-  /*
+      //this.parseTextToCsv(event.target.result);
+      /*
       reader.onabort = () => console.log('file reading was aborted');
       reader.onerror = () => console.log('file reading has failed');
   */
@@ -83,18 +76,21 @@ class CsvImport extends React.Component {
   };
 
   render() {
-
     const { translate, input, meta, data, mappings } = this.props;
 
     return (
       <div>
-
         <div>
-          <Dropzone accept="text/csv" multiple={false} onDrop={this.onDrop} style={styles.dropzone}>
-
-            <p style={{textAlign : "center"}}>Drop files or click here to select files to upload.</p>
-
-        </Dropzone>
+          <Dropzone
+            accept="text/csv"
+            multiple={false}
+            onDrop={this.onDrop}
+            style={styles.dropzone}
+          >
+            <p style={{ textAlign: 'center' }}>
+              Drop files or click here to select files to upload.
+            </p>
+          </Dropzone>
         </div>
 
         {meta.touched &&
@@ -108,12 +104,11 @@ class CsvImport extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => state.import;
 
 const enhance = compose(
   translate,
-  connect(mapStateToProps, {changeImportData : changeImportDataAction})
+  connect(mapStateToProps, { changeImportData: changeImportDataAction })
 );
 
 export default enhance(CsvImport);
