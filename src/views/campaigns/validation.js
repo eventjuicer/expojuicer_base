@@ -1,41 +1,41 @@
 export const validate = values => {
+
   console.log(values);
 
-  const errors = {};
+  const errors = { data : {} };
 
-  if (!values.imported_manually && !values.imported_json) {
-    errors.imported_manually = ['No data detected...'];
-    errors.imported_json = ['No data detected...'];
+  if (! values.data)
+  {
+      errors.data.subject = "Required";
+  }
+  else
+  {
+    // if(! "from_email" in values.data || (values.data.from_email && values.data.from_email.indexOf("@") < 1))
+    // {
+    //   errors.data.from_email = "Address seems to be incorrect";
+    // }
+    //
+    // if(! "subject" in values.data || (values.data.subject || "").length < 10)
+    // {
+    //   errors.data.subject = "Subject must be more descriptive";
+    // }
+
   }
 
-  if (values.imported_manually && values.imported_manually.indexOf('@') < 0) {
-    errors.imported_manually = ['No email addresses detected!'];
+  if(!values.contactlist_ids || !Array.isArray(values.contactlist_ids))
+  {
+    errors.contactlist_ids = "Choose contact list(s)";
   }
 
-  if (values.imported_json) {
-    const mappings = values.imported_json.mappings;
-
-    let emailMapped = false;
-    const mappingsUsed = [];
-
-    for (var key in mappings) {
-      if (mappings.hasOwnProperty(key)) {
-        if (mappings[key] === 'email') {
-          emailMapped = true;
-        }
-
-        if (mappingsUsed.indexOf(mappings[key]) > -1) {
-          errors.imported_json = ['Mapping overlapping!'];
-        }
-
-        if (mappings[key] !== 'skip') {
-          mappingsUsed.push(mappings[key]);
-        }
-      }
-    }
-
-    if (!emailMapped) {
-      errors.imported_json = ['Bad mapping!'];
+  if(!values.name)
+  {
+    errors.name = "Name must be more descriptive";
+  }
+  else
+  {
+    if(values.name.length < 10)
+    {
+        errors.name = "Name must be more descriptive";
     }
   }
 
