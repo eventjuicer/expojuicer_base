@@ -13,6 +13,9 @@ import {
   ChipField
 } from 'admin-on-rest';
 
+
+import FullNameField from '../../fields/FullNameField';
+
 import ListActions from './ListActions';
 
 const VisitorFilter = props => (
@@ -58,16 +61,18 @@ const ViewList = props => (
         label="Lists"
         reference="contactlists"
         source="contactlist_ids"
+        sortable={false}
       >
         <SingleFieldList>
-          <ChipField source="name" />
+          <ChipField source="name"   />
         </SingleFieldList>
       </ReferenceArrayField>
 
       <TextField source="import.name" sortable={false} />
+      <FullNameField source="data" sortable={false} />
+      
+      <TextField source="data.phone" sortable={false} />
 
-      <TextField source="profile.phone" sortable={false} />
-      <TextField source="profile.fname" sortable={false} />
 
       <TextField source="sent_at" sortable={false} />
       <EditButton />

@@ -1,43 +1,18 @@
 export const validate = values => {
+
   console.log(values);
 
-  const errors = {};
+  const errors = { data : {}};
 
-  if (!values.imported_manually && !values.imported_json) {
-    errors.imported_manually = ['No data detected...'];
-    errors.imported_json = ['No data detected...'];
-  }
-
-  if (values.imported_manually && values.imported_manually.indexOf('@') < 0) {
-    errors.imported_manually = ['No email addresses detected!'];
-  }
-
-  if (values.imported_json) {
-    const mappings = values.imported_json.mappings;
-
-    let emailMapped = false;
-    const mappingsUsed = [];
-
-    for (var key in mappings) {
-      if (mappings.hasOwnProperty(key)) {
-        if (mappings[key] === 'email') {
-          emailMapped = true;
-        }
-
-        if (mappingsUsed.indexOf(mappings[key]) > -1) {
-          errors.imported_json = ['Mapping overlapping!'];
-        }
-
-        if (mappings[key] !== 'skip') {
-          mappingsUsed.push(mappings[key]);
-        }
-      }
+  if ("data" in values)
+  {
+    if(values.data.phone && (values.data.phone.match(/[0-9]/g) || []).length < 9)
+    {
+        errors.data.phone = ['Bad phone number'];
     }
 
-    if (!emailMapped) {
-      errors.imported_json = ['Bad mapping!'];
-    }
   }
+
 
   return errors;
 };

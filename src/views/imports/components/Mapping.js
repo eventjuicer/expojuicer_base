@@ -6,7 +6,7 @@ import { translate } from 'admin-on-rest';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-import { changeImportMapping as changeImportMappingAction } from '../../../redux/actions';
+import { changeImportMapping as changeImportMappingAction } from '../redux/actions';
 
 import get from 'lodash/get';
 

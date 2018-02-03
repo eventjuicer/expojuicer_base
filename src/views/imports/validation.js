@@ -11,16 +11,18 @@ const containsOneEmailPerLine = line =>
   line && line.indexOf('@') > 0 && (line.match(/@/g) || []).length === 1;
 
 export const validate = values => {
-  console.log(values);
+
 
   const errors = {};
 
-  if (!values.imported_manually && !values.imported_json) {
+  if (!values.imported_manually && !values.imported_json)
+  {
     errors.imported_manually = ['No input detected...'];
     errors.imported_json = ['No file detected...'];
   }
 
-  if (values.imported_manually) {
+  if (values.imported_manually)
+  {
     if (
       !values.imported_manually.every((el, idx, arr) =>
         containsOneEmailPerLine(el)
@@ -31,7 +33,9 @@ export const validate = values => {
   }
 
   if (values.imported_json) {
-    if (!values.imported_json.every((el, idx, arr) => !'email' in el)) {
+
+    if (! values.imported_json.every((el, idx, arr) => 'email' in el)) {
+
       errors.imported_json = ['At least email address must be selected...'];
     }
 

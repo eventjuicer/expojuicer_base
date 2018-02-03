@@ -3,11 +3,15 @@ import {
   SPECIAL_MESSAGE_SHOW,
   SHOW_MODAL,
   CLOSE_MODAL,
-  IMPORT_CHANGE_MAPPING,
-  IMPORT_RESET_MAPPING,
-  IMPORT_CHANGE_DATA,
-  RESOURCE_LIMIT_SHOW
+
+  RESOURCE_LIMIT_SHOW,
+
 } from './types';
+
+
+import {importReducer} from '../views/imports/redux/reducers';
+
+
 
 const changeThemeReducer = (previousState = 'light', { type, payload }) => {
   if (type === CHANGE_THEME) {
@@ -50,27 +54,8 @@ const resourceLimitReducer = (previousState = {}, payload) => {
   }
 };
 
-const importReducer = (previousState = { data: {}, mappings: {} }, payload) => {
-  switch (payload.type) {
-    case IMPORT_CHANGE_MAPPING:
-      return {
-        ...previousState,
-        mappings: { ...previousState.mappings, [payload.index]: payload.value }
-      };
-      break;
 
-    case IMPORT_RESET_MAPPING:
-      return { ...previousState, mappings: {} };
-      break;
 
-    case IMPORT_CHANGE_DATA:
-      return { data: payload.data, mappings: {} };
-      break;
-
-    default:
-      return previousState;
-  }
-};
 
 export default {
   import: importReducer,

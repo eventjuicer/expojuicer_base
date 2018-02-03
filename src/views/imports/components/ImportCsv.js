@@ -4,10 +4,19 @@ import compose from 'recompose/compose';
 import { translate } from 'admin-on-rest';
 
 import Dropzone from 'react-dropzone';
+
+
+import IconButton from 'material-ui/IconButton';
+import IconRemove from 'material-ui/svg-icons/content/remove-circle-outline';
+
 import Mappings from './Mappings';
 import styles from '../../../styles/dropzone';
 
-import { changeImportData as changeImportDataAction } from '../../../redux/actions';
+import {
+  changeImportData,
+  resetImport
+} from '../redux/actions';
+
 import { Parse } from '../../../api/csv';
 
 class CsvImport extends React.Component {
@@ -54,34 +63,45 @@ class CsvImport extends React.Component {
     this.outputResult(newData);
   };
 
+
+  onReset = () =>
+  {
+    const {resetImport} = this.props;
+    resetImport();
+  }
+
   onDrop = (acceptedFiles, rejectedFiles, onload) => {
     //reset!
-    this.props.changeImportData();
 
-    acceptedFiles.forEach(file => {
+    const {resetImport, changeImportData} = this.props;
+
+    resetImport();
+
+    acceptedFiles.forEach((file, i) => {
+
       const reader = new FileReader();
 
-      reader.onload = event =>
+      reader.onload = event => {
+
         Parse(event.target.result).then(({ data }) => {
-          this.props.changeImportData(data.filter(row => Array.isArray(row)));
+           changeImportData(data.filter(row => Array.isArray(row)));
         });
 
-      //this.parseTextToCsv(event.target.result);
-      /*
-      reader.onabort = () => console.log('file reading was aborted');
-      reader.onerror = () => console.log('file reading has failed');
-  */
+      }
+
       reader.readAsText(file);
-    }, this);
+    });
   };
 
   render() {
-    const { translate, input, meta, data, mappings } = this.props;
+    const { translate, input, meta, data, mappings, file } = this.props;
 
     return (
       <div>
         <div>
-          <Dropzone
+
+         {
+           !data.length ? <Dropzone
             accept="text/csv"
             multiple={false}
             onDrop={this.onDrop}
@@ -90,7 +110,8 @@ class CsvImport extends React.Component {
             <p style={{ textAlign: 'center' }}>
               Drop files or click here to select files to upload.
             </p>
-          </Dropzone>
+          </Dropzone> : <p>Success! file loaded! <IconButton onClick={this.onReset}><IconRemove color="red" /></IconButton></p>
+        }
         </div>
 
         {meta.touched &&
@@ -108,7 +129,7 @@ const mapStateToProps = state => state.import;
 
 const enhance = compose(
   translate,
-  connect(mapStateToProps, { changeImportData: changeImportDataAction })
+  connect(mapStateToProps, { changeImportData, resetImport })
 );
 
 export default enhance(CsvImport);

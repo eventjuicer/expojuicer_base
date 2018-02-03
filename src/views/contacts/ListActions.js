@@ -12,7 +12,7 @@ const inviteListActionsStyle = {
 
 const InviteListActions = ({ basePath, data, refresh }) => (
   <CardActions style={inviteListActionsStyle}>
-    <CreateButton basePath="/imports" />
+    <CreateButton basePath="/imports" label="resources.contacts.actions.import" />
 
     <FlatButton
       primary

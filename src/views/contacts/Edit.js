@@ -1,17 +1,38 @@
 import React from 'react';
-import { Edit, SimpleForm, TextInput } from 'admin-on-rest';
-import Icon from 'material-ui/svg-icons/social/person';
+
+import {
+
+  Edit,
+  SimpleForm,
+  TextInput,
+  LongTextInput,
+  ReferenceArrayInput,
+  SelectArrayInput
+
+
+ } from 'admin-on-rest';
+
+import {validate as validateContact} from "./validation";
 
 import { Title } from './Shared';
 
-export const InviteIcon = Icon;
 
 const ViewEdit = props => (
   <Edit title={<Title />} {...props}>
-    <SimpleForm redirect="list" submitOnEnter={false}>
-      <TextInput source="profile.fname" style={{ display: 'inline-block' }} />
+
+    <SimpleForm
+      redirect="list"
+      submitOnEnter={false}
+       validate={validateContact}
+      >
+
       <TextInput
-        source="profile.lname"
+        source="data.fname"
+        style={{ display: 'inline-block' }}
+      />
+
+      <TextInput
+        source="data.lname"
         style={{ display: 'inline-block', marginLeft: 32 }}
       />
 
@@ -24,16 +45,20 @@ const ViewEdit = props => (
       />
 
       <TextInput
-        source="profile.phone"
+        source="data.phone"
         options={{ fullWidth: true }}
         style={{ width: 544 }}
       />
 
-      {/* <LongTextInput
-          label="resources.visitors.tabs.message"
-          source="invitation"
+      <ReferenceArrayInput source="contactlist_ids" reference="contactlists" allowEmpty>
+         <SelectArrayInput optionText="name" />
+      </ReferenceArrayInput>
+
+   <LongTextInput
+
+          source="comment"
           style={{ maxWidth: 544 }}
-        /> */}
+        />
     </SimpleForm>
   </Edit>
 );
