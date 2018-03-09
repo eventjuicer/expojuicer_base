@@ -15,25 +15,29 @@ class Monitor extends React.PureComponent {
   };
 
   onClick = event => {
+
     const { services, name, children } = this.props;
 
     const elem = React.Children.only(children);
 
-    // const result = copy(text, options);
-    //
-    // if (onCopy) {
-    //   onCopy(text, result);
-    // }
-
-    // Bypass onClick if it was present
-    if (elem && elem.props && typeof elem.props.onClick === 'function') {
+    //bypass click...if present
+    if (elem && elem.props && typeof elem.props.onClick === 'function')
+    {
       elem.props.onClick(event);
     }
 
-    slack(`clicked ${name}`);
+    services.map(service => {
+
+      if(typeof service === 'function')
+      {
+        service(`clicked ${name}`);
+      }
+
+    });
   };
 
   render() {
+
     const { name: _name, services: _services, children, ...props } = this.props;
 
     const elem = React.Children.only(children);

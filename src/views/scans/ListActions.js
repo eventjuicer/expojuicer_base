@@ -1,8 +1,11 @@
 import React from 'react';
 import { CardActions } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-import NavigationRefresh from 'material-ui/svg-icons/navigation/refresh';
+import IconRefresh from 'material-ui/svg-icons/navigation/refresh';
+import IconDownload from 'material-ui/svg-icons/file/file-download';
+
 //import { ListButton } from 'admin-on-rest';
+import {getToken} from '../../api/helpers';
 
 const style = {
   zIndex: 2,
@@ -29,16 +32,15 @@ const Actions = ({
         context: 'button'
       })}
 
+    <FlatButton primary href={`https://api.eventjuicer.com/v1/restricted/scans?download=1&x-token=${ getToken() }`} label="Export" icon={<IconDownload />} />
+
     <FlatButton
       primary
       label="refresh"
       onClick={refresh}
-      icon={<NavigationRefresh />}
+      icon={<IconRefresh />}
     />
-    {/*
-            <FlatButton primary label="Custom Action" onClick={()=> console.log()} />
 
-          */}
   </CardActions>
 );
 
