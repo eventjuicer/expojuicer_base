@@ -70,27 +70,26 @@ class Creatives extends React.Component {
     return (
       <Card>
         <Heading first={true}>
-          Do you want to join the contest? We recommend using promo materials
-          provided below.
+          {translate("resources.creatives.heading")}
         </Heading>
 
         <Wrapper>{this.renderLinks()}</Wrapper>
 
-        <Subheading>Wait ...there is more!</Subheading>
+        <Subheading>{translate("resources.creatives.subheading")}</Subheading>
 
         <Body />
 
         <Wrapper>
           <Tabs>
             <Tab
-              label="newsletters"
+              label={translate("resources.creatives.newsletters")}
               onActive={handleActive}
               icon={<IconEmail />}
             >
               <div style={{ marginTop: 30 }}>{this.renderNewsletters()}</div>
             </Tab>
 
-            <Tab label="banners" onActive={handleActive} icon={<IconImages />}>
+            <Tab label={translate("resources.creatives.banners")} onActive={handleActive} icon={<IconImages />}>
               <Wrapper>
                 <img
                   src="https://files.ecommerceberlin.com/eb3/600x200.jpg"
@@ -98,7 +97,7 @@ class Creatives extends React.Component {
                 />
               </Wrapper>
 
-              <CardTitle title="Choose size" />
+              <CardTitle title={translate("resources.creatives.choose_size")} />
               {this.renderImages()}
             </Tab>
           </Tabs>

@@ -67,7 +67,7 @@ const ViewCreate = props => (
       />
 
       <ReferenceArrayInput source="contactlist_ids" reference="contactlists" allowEmpty>
-         <CheckboxGroupInput  translateChoice={false}/>
+         <CheckboxGroupInput  translateChoice={true}/>
       </ReferenceArrayInput>
 
       <ReferenceInput source="creative_id" reference="creatives" allowEmpty>

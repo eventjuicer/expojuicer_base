@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import Bulb from 'material-ui/svg-icons/image/brightness-1';
 //import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
 import Warning from 'material-ui/svg-icons/alert/warning';
+import IconReward from 'material-ui/svg-icons/action/info'
 
 import { translate, Textfield } from 'admin-on-rest';
 

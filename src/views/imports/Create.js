@@ -20,7 +20,7 @@ import { validate as validateInvites } from './validation';
 import { Heading, Subheading, Body } from '../../components/Typography';
 
 const ViewCreate = props => (
-  <Create title="Import contacts" {...props}>
+  <Create title="resources.imports.fields.title" {...props}>
     <TabbedForm
       redirect="list"
       submitOnEnter={false}

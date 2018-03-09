@@ -53,7 +53,7 @@ class Newsletter extends React.Component {
 
     return (
       <Card>
-        <CardHeader title={creative.name} />
+        <CardHeader title={ translate(`resources.creatives.versions.${creative.name}`)} />
 
         {newsletter && (
           <div>
@@ -64,7 +64,7 @@ class Newsletter extends React.Component {
                 primary={true}
                 download={true}
                 target="_blank"
-                label="Download HTML"
+                label={translate("resources.creatives.actions.download_html")}
                 icon={<IconDownload />}
                 href={newsletterLink(creative.content, 'download')}
               />
@@ -73,14 +73,14 @@ class Newsletter extends React.Component {
                 primary={true}
                 download={true}
                 target="_blank"
-                label="Download .zip"
+                label={translate("resources.creatives.actions.download_zip")}
                 icon={<IconZip />}
                 href={newsletterLink(creative.content, 'zip')}
               />
 
               <CopyToClipboardButton
                 text={newsletter}
-                label="Copy HTML Source"
+                label={translate("resources.creatives.actions.copy_html_to_clipboard")}
               />
             </CardActions>
           </div>

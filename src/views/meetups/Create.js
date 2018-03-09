@@ -7,29 +7,35 @@ import {
   TextInput,
   required,
   email,
-  minLength
+  minLength,
 } from 'admin-on-rest';
 
 import get from 'lodash/get';
 import qs from 'query-string';
 
 import { validate } from './validation';
-import { getUserFullName, getUserData } from '../../api/helpers';
+import { getUserFullName, getUserData, getUserCompany } from '../../api/helpers';
 
 const ViewCreate = props => (
-  <Create title="Send meeting request" {...props}>
+  <Create title="aor.page.meeting_request" {...props}>
     <SimpleForm redirect="list" submitOnEnter={false} validate={validate}>
       <DisabledInput
         source="participant_id"
         defaultValue={get(qs.parse(props.location.search), 'participant_id', 0)}
       />
 
-      <LongTextInput source="message" style={{ maxWidth: 700 }} />
+      <LongTextInput
+      source="message_create"
+      validate={[required, minLength(10)]}
+      style={{ maxWidth: 700 }}
+
+      />
 
       <TextInput
         source="data.from_name"
         validate={[required, minLength(4)]}
         options={{ fullWidth: true }}
+        style={{ width: 544 }}
         defaultValue={getUserFullName()}
       />
 

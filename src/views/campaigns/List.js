@@ -29,10 +29,10 @@ const ViewList = props => (
         // onRowSelection: test => console.log(test)
       }}
     >
-      <TextField source="fname" label="First name" />
-      <TextField source="lname" label="Last name" />
-      <TextField source="cname2" label="Company" />
-      <TextField source="position" label="Position" />
+      <TextField source="fname" />
+      <TextField source="lname" />
+      <TextField source="cname2" />
+      <TextField source="position" />
     </Datagrid>
   </List>
 );

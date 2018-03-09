@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import compose from 'recompose/compose';
 
 import {
-  translate,
   showNotification as showNotificationAction
 } from 'admin-on-rest';
 
@@ -15,9 +13,8 @@ import IconCopy from 'material-ui/svg-icons/content/content-copy';
 
 const CopyToClipboardButton = ({
   text,
-  translate,
   showNotification,
-  label = 'Copy to clipboard',
+  label = 'Copy To Clipboard',
   raised = false
 }) => (
   <CopyToClipboard
@@ -32,11 +29,7 @@ const CopyToClipboardButton = ({
   </CopyToClipboard>
 );
 
-const enhance = compose(
-  translate,
-  connect(null, {
-    showNotification: showNotificationAction
-  })
-);
 
-export default enhance(CopyToClipboardButton);
+export default connect(null, {
+  showNotification: showNotificationAction
+})(CopyToClipboardButton);

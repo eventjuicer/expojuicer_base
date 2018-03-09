@@ -24,7 +24,7 @@ const htmlCode = ({ name, act_as, link, image }) => {
 const CopyTrackingLink = link => (
   <CopyToClipboardButton
     text={link}
-    label="Copy tracking link to clipboard"
+    label={translate("resources.creatives.actions.copy_tracking_link_to_clipboard")}
     raised={true}
   />
 );
@@ -39,7 +39,7 @@ const Creative = ({ creative, showModal, translate }) => (
     <CardActions>
       <CopyToClipboardButton
         text={htmlCode(creative)}
-        label="Copy embed code"
+        label={translate("resources.creatives.actions.copy_embed_code")}
         raised={true}
       />
 
@@ -48,12 +48,12 @@ const Creative = ({ creative, showModal, translate }) => (
           <SecondaryButton
             download={true}
             target="_blank"
-            label="Download"
+            label={translate("resources.creatives.actions.download")}
             icon={<IconDownload />}
             href={`${creative.image}?dl=1`}
             onClick={() =>
               showModal({
-                title: 'Image downloaded',
+                title: 'image_downloaded',
                 body: `Important! Please remember that you have to use your tracking link.`,
                 buttons: [<CopyTrackingLink link={creative.link} />]
               })
@@ -63,7 +63,7 @@ const Creative = ({ creative, showModal, translate }) => (
       )}
 
       <SecondaryButton
-        label="Preview"
+        label={translate("resources.creatives.actions.preview")}
         icon={<IconPreview />}
         onClick={() =>
           showModal({
@@ -73,7 +73,7 @@ const Creative = ({ creative, showModal, translate }) => (
             buttons: [
               <CopyToClipboardButton
                 text={htmlCode(creative)}
-                label="Copy embed code"
+                label={translate("resources.creatives.actions.copy_embed_code")}
                 raised={true}
               />
             ]

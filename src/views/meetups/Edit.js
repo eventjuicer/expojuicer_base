@@ -13,7 +13,7 @@ import { validate } from './validation';
 //import { getUserFullName, getUserData } from '../../api/helpers';
 
 const ViewEdit = props => (
-  <Edit title="Check invitation details" {...props}>
+  <Edit title="resources.meetups.fields.participant.profile.title" {...props}>
     <SimpleForm submitOnEnter={false} validate={validate}>
       <FullNameField source="admin.profile" label="Creator" />
 

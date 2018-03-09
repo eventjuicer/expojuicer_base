@@ -17,7 +17,7 @@ const Actions = ({ basePath, data, refresh }) => (
     <DeleteButton basePath={basePath} record={data} />
     <FlatButton
       primary
-      label="Refresh"
+      label="aor.action.refresh"
       onClick={refresh}
       icon={<NavigationRefresh />}
     />

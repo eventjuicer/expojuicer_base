@@ -2,7 +2,8 @@ import React from 'react';
 import pure from 'recompose/pure';
 import get from 'lodash/get';
 
-const PositionField = ({ record = {}, size = 25 }) =>
+
+const PositionField = ({label, record = {}, size = 25 }) =>
   get(record, 'stats.sessions') > 0 ? (
     <strong> {get(record, 'stats.sessions')}</strong>
   ) : (

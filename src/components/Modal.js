@@ -30,7 +30,7 @@ const Modal = ({ modal, closeModal, translate }) => {
       title={get(modal, 'title', 'Info')}
       actions={[
         ...buttons,
-        [<FlatButton label="Close" onClick={closeModal} />]
+        [<FlatButton label={translate("aor.action.close")} onClick={closeModal} />]
       ]}
       modal={false}
       open={modal ? true : false}

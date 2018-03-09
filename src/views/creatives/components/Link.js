@@ -14,13 +14,14 @@ const Creative = ({ creative, translate }) => (
   <Card containerStyle={{ backgroundColor: colorBg }}>
     <CardHeader
       style={{ backgroundColor: colorHeader }}
-      title={creative.name}
+      title={translate('resources.creatives.types.link.title')}
     />
 
     <CardText>{creative.link}</CardText>
 
     <CardActions>
-      <CopyToClipboardButton text={creative.link} raised={true} />
+
+      <CopyToClipboardButton text={creative.link} raised={true} label={translate("resources.creatives.actions.copy_to_clipboard")} />
 
       {'shareable' in creative &&
         creative.shareable && (
