@@ -99,7 +99,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
       primaryText={translate('resources.scans.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
-    / >
+    />
 
     <MenuItemLink
       to="/scans"
@@ -110,7 +110,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 
 
-  /*
+
 
      <Subheader>Your library</Subheader>
 
@@ -123,12 +123,15 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
     <Divider />
 
+
+  {/*
+
   <WithPermission value="megakozak">
 
 
     </WithPermission>
 
-*/
+*/}
 
     <Divider />
 
