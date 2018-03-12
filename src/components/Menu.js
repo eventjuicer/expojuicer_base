@@ -25,6 +25,8 @@ import IconLanguage from 'material-ui/svg-icons/action/language';
 import Modal from './Modal';
 import Chatlio from '../services/Chatlio';
 
+
+
 const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
   <div>
@@ -94,12 +96,12 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
       <Subheader>Your leads</Subheader>
 
-    <MenuItemLink
+    {/* <MenuItemLink
       to="/badgescannerinfo"
       primaryText={translate('resources.scans.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
-    />
+    /> */}
 
     <MenuItemLink
       to="/scans"
@@ -114,12 +116,12 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
      <Subheader>Your library</Subheader>
 
-    <MenuItemLink
+    {/* <MenuItemLink
       to="/newsletters"
       primaryText={translate('resources.newsletters.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
-    />
+    /> */}
 
     <Divider />
 

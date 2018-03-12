@@ -53,7 +53,7 @@ class Newsletter extends React.Component {
 
     return (
       <Card>
-        <CardHeader title={ translate(`resources.creatives.versions.${creative.name}`)} />
+        <CardHeader title={ `rosurces.creatives.version.E-mail tmeplate - english`} />
 
         {newsletter && (
           <div>

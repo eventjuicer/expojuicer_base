@@ -4,8 +4,9 @@ import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import Bulb from 'material-ui/svg-icons/image/brightness-1';
 //import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
 import Warning from 'material-ui/svg-icons/alert/warning';
-import IconReward from 'material-ui/svg-icons/action/info'
+import IconReward from 'material-ui/svg-icons/action/info';
 
+import TextField from 'admin-on-rest';
 import { translate, Textfield } from 'admin-on-rest';
 
 import {
@@ -17,6 +18,8 @@ import {
 } from '../../styles/colors';
 
 //import Photogrid from './Photogrid';
+
+
 
 const rewarded = (prize, position, sessions) => {
   const level = 'level' in prize ? prize.level : 0;
@@ -46,12 +49,17 @@ const avatar = (prize, position, sessions) => {
   return <Bulb color={disabledHeader} />;
 };
 
-const conditions = ({ min, max, level }) => {
+const conditions = ({ min, max, level}) => {
   const levelInfo = level ? `, minimum ${level} points.` : '';
+    // const must_be_winner = {
+    //
+    // };
 
   if (min === max) {
     if (min === 1) {
-      return `You must be the Winner`;
+
+      return "";
+
     }
 
     return `Only for position #${min}${levelInfo}`;
