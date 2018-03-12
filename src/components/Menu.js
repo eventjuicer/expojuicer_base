@@ -32,6 +32,23 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
   <div>
     <DashboardMenuItem onTouchTap={onMenuTap} />
 
+    <Subheader>{translate("menu.sections.crucial")}</Subheader>
+
+    <MenuItemLink
+      to="/companydata"
+      primaryText={translate('resources.companydata.name')}
+      onClick={onMenuTap}
+      leftIcon={<IconLanguage />}
+      />
+
+    <MenuItemLink
+      to="/representatives"
+      primaryText={translate('resources.representatives.name')}
+      onClick={onMenuTap}
+      leftIcon={<IconLanguage />}
+      />
+
+
     <Subheader>{translate("menu.sections.promote")}</Subheader>
 
       <MenuItemLink
@@ -143,6 +160,8 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
         onClick={onMenuTap}
         leftIcon={<IconLanguage />}
         />
+
+
 
     {logout}
 
