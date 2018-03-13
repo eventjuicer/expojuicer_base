@@ -49,16 +49,14 @@ const avatar = (prize, position, sessions) => {
   return <Bulb color={disabledHeader} />;
 };
 
-const conditions = ({ min, max, level}) => {
+const conditions = ({ min, max, level}, translate) => {
   const levelInfo = level ? `, minimum ${level} points.` : '';
-    // const must_be_winner = {
-    //
-    // };
+
 
   if (min === max) {
     if (min === 1) {
 
-      return "";
+      return translate("prizes.must_be_winner");
 
     }
 
@@ -89,7 +87,7 @@ const Prize = ({ translate, prize, position, sessions }) => (
         </CardText> */}
 
     <CardHeader
-      title={conditions(prize)}
+      title={conditions(prize, translate)}
       avatar={avatar(prize, position, sessions)}
     />
   </Card>

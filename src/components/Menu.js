@@ -111,7 +111,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 
 
-      <Subheader>Your leads</Subheader>
+    <Subheader>{translate('menu.sections.leads')}</Subheader>
 
     {/* <MenuItemLink
       to="/badgescannerinfo"
@@ -131,7 +131,7 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 
 
-     <Subheader>Your library</Subheader>
+  <Subheader>{translate('menu.sections.library')}</Subheader>
 
     {/* <MenuItemLink
       to="/newsletters"

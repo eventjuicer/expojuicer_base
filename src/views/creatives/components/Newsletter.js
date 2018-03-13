@@ -49,11 +49,11 @@ class Newsletter extends React.Component {
 
   render() {
     const { translate, creative } = this.props;
-    const { newsletter } = this.state;
+    const { newsletter} = this.state;
 
     return (
       <Card>
-        <CardHeader title={ `rosurces.creatives.version.E-mail tmeplate - english`} />
+        <CardHeader title={translate(`resources.creatives.version.${creative.lang}`)} />
 
         {newsletter && (
           <div>

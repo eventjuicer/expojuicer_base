@@ -58,7 +58,6 @@ const ViewList = props => (
       <TextField source="email" sortable={false} />
 
       <ReferenceArrayField
-        label="Lists"
         reference="contactlists"
         source="contactlist_ids"
         sortable={false}
@@ -68,9 +67,9 @@ const ViewList = props => (
         </SingleFieldList>
       </ReferenceArrayField>
 
-      <TextField source="import.name" sortable={false} />
+      <TextField source="data.name" sortable={false} />
       <FullNameField source="data" sortable={false} />
-      
+
       <TextField source="data.phone" sortable={false} />
 
 
