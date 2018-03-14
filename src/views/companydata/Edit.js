@@ -8,10 +8,11 @@ import VarLabelTextField from '../../fields/VarLabelTextField'
 import VarTextInput from '../../fields/VarTextInput'
 import { Field } from 'redux-form';
 import { validate } from './validation';
+import {translate} from 'admin-on-rest';
 
 const ViewEdit = props => (
 
-  <Edit {...props} title="Edit">
+  <Edit {...props} title="aor.action.edit">
     <SimpleForm  submitOnEnter={false} validate={validate}>
 
       <VarLabelTextField source="name" />
@@ -27,9 +28,11 @@ const ViewEdit = props => (
           'keywords' : [
             'logistics',
             'payment',
-            'platform',
+            'e-shop_platform',
             'sales_generation',
-            'development'
+            'development',
+            'e-mail marketing',
+            
           ]}}
       />
 
@@ -38,4 +41,4 @@ const ViewEdit = props => (
 
 )
 
-export default ViewEdit;
+export default translate(ViewEdit);

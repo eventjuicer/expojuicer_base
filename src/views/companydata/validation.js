@@ -19,14 +19,21 @@ export const validate = ({name, value}) => {
         errors["value"] = 'Must contain valid link'
       }
 
+      break;
+
     case "keywords":
+
 
       if(value && Array.isArray(value) && value.length > 3)
       {
           errors["value"] = 'Only 3 keywords may be selected'
       }
 
+      break;
+
     default:
+
+
   }
   return errors;
 };

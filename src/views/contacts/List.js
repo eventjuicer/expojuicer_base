@@ -1,14 +1,10 @@
 import React from 'react';
 import {
-  translate,
   Datagrid,
-  Filter,
   List,
-  TextInput,
   TextField,
   EditButton,
   ReferenceArrayField,
-  ReferenceManyField,
   SingleFieldList,
   ChipField
 } from 'admin-on-rest';
@@ -18,11 +14,11 @@ import FullNameField from '../../fields/FullNameField';
 
 import ListActions from './ListActions';
 
-const VisitorFilter = props => (
-  <Filter {...props}>
-    <TextInput label="pos.search" source="q" alwaysOn />
-  </Filter>
-);
+// const VisitorFilter = props => (
+//   <Filter {...props}>
+//     <TextInput label="pos.search" source="q" alwaysOn />
+//   </Filter>
+// );
 
 const ViewList = props => (
   <List

@@ -19,11 +19,9 @@ const newsletterLink = (link, type) => {
   switch (type) {
     case 'zip':
       return `${base}&zip=1`;
-      break;
-
+  
     case 'download':
       return `${base}&dl=1`;
-      break;
 
     default:
       return base;

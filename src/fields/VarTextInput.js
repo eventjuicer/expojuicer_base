@@ -21,7 +21,7 @@ const buildChoices = (choices, resource, prefix) => {
 
 const VarTextInput = props => {
 
-  const { input, label, meta, record, resource, html, checkboxes} = props;
+  const { record, resource, html, checkboxes} = props;
 
   const name = record.name;
 

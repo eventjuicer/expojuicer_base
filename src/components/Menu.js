@@ -5,7 +5,7 @@ import {
   getResources,
   translate,
   DashboardMenuItem,
-  WithPermission
+  // WithPermission
 } from 'admin-on-rest';
 import compose from 'recompose/compose';
 
@@ -18,7 +18,7 @@ import IconPeople from 'material-ui/svg-icons/social/people';
 import IconStatus from 'material-ui/svg-icons/action/today';
 import IconTrend from 'material-ui/svg-icons/action/trending-up';
 import IconShare from 'material-ui/svg-icons/av/volume-up';
-import IconRewards from 'material-ui/svg-icons/action/favorite';
+// import IconRewards from 'material-ui/svg-icons/action/favorite';
 import IconImports from 'material-ui/svg-icons/communication/contact-mail';
 import IconLanguage from 'material-ui/svg-icons/action/language';
 
@@ -71,19 +71,19 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 
 
-      <MenuItemLink
+       <MenuItemLink
         to="/contacts"
         primaryText={translate('resources.contacts.menu')}
         onClick={onMenuTap}
         leftIcon={<IconImports />}
       />
-
+{/*
       <MenuItemLink
         to="/rewards"
         primaryText={translate('resources.rewards.menu')}
         onClick={onMenuTap}
         leftIcon={<IconRewards />}
-      />
+      /> */}
 
       <MenuItemLink
         to="/creatives"
@@ -111,27 +111,27 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
 
 
 
-    <Subheader>{translate('menu.sections.leads')}</Subheader>
+    {/* <Subheader>{translate('menu.sections.leads')}</Subheader>
 
-    {/* <MenuItemLink
+    <MenuItemLink
       to="/badgescannerinfo"
       primaryText={translate('resources.scans.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
-    /> */}
+    />
 
     <MenuItemLink
       to="/scans"
       primaryText={translate('resources.scans.menu')}
       onClick={onMenuTap}
       leftIcon={<IconTrend />}
-    />
+    /> */}
 
 
 
 
 
-  <Subheader>{translate('menu.sections.library')}</Subheader>
+  <Subheader>{translate('menu.sections.settings')}</Subheader>
 
     {/* <MenuItemLink
       to="/newsletters"

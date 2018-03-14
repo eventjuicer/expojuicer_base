@@ -9,7 +9,7 @@ import Prize from './Prize';
 
 import { getUserData } from '../../api/helpers';
 import { httpClient } from '../../api/restClient';
-import { Heading, Subheading, Body } from '../../components/Typography';
+import { Heading, Body } from '../../components/Typography';
 
 class Stats extends React.Component {
   state = {

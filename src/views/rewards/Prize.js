@@ -1,20 +1,16 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardTitle} from 'material-ui/Card';
 
 import Bulb from 'material-ui/svg-icons/image/brightness-1';
 //import Rejected from 'material-ui/svg-icons/action/lightbulb-outline';
 import Warning from 'material-ui/svg-icons/alert/warning';
-import IconReward from 'material-ui/svg-icons/action/info';
-
-import TextField from 'admin-on-rest';
-import { translate, Textfield } from 'admin-on-rest';
+// import IconReward from 'material-ui/svg-icons/action/info';
+import { translate } from 'admin-on-rest';
 
 import {
-  failure,
   success,
   disabledBg,
   disabledHeader,
-  disabledSubheader
 } from '../../styles/colors';
 
 //import Photogrid from './Photogrid';
@@ -50,7 +46,7 @@ const avatar = (prize, position, sessions) => {
 };
 
 const conditions = ({ min, max, level}, translate) => {
-  const levelInfo = level ? `, minimum ${level} points.` : '';
+  const levelInfo = level ? `, minimum ${level}` + translate('prizes.points') : '';
 
 
   if (min === max) {
@@ -60,11 +56,11 @@ const conditions = ({ min, max, level}, translate) => {
 
     }
 
-    return `Only for position #${min}${levelInfo}`;
+    return translate("prizes.position_2") + `${min}${levelInfo}`;
   }
 
-  return `Your position must be beetween #${min} and #${max}${levelInfo}`;
-};
+  return translate("prizes.position_1") + `${min}` + translate("prizes.and") + `${max}${levelInfo}`;
+}
 
 const Prize = ({ translate, prize, position, sessions }) => (
   <Card
