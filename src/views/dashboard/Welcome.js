@@ -37,7 +37,7 @@ export default translate(({ style, translate }) => (
       </CardText>
     </Card>
 
-    <Wrapper>
+    {/* <Wrapper>
       <Tabs>
         <Tab label="Send of equipment" >
           <div>
@@ -54,7 +54,7 @@ export default translate(({ style, translate }) => (
           </div>
         </Tab>
       </Tabs>
-    </Wrapper>
+    </Wrapper> */}
 
 
 
