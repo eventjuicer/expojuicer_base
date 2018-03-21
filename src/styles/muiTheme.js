@@ -1,4 +1,7 @@
+
+import Provider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import _get from 'lodash/get'
 
 import {
   red100,
@@ -13,14 +16,17 @@ import {
 
 //https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 
-const myTheme = {
+
+
+
+const customTheme = {
   //  spacing: spacing,
     //fontFamily: 'Lato, Roboto, sans-serif',
     palette: {
       // primary1Color: grey200, /*table alternate rows!*/
       primary2Color: grey300,
       primary3Color: grey300,
-      accent1Color: grey300,
+      accent1Color: red500,
       accent2Color: grey700, /*pagination + table alt rows onHover  */
       accent3Color: grey700, /*table column names */
       // textColor: darkBlack,
@@ -108,5 +114,8 @@ const myTheme = {
 
 };
 
+export const getTheme = () => getMuiTheme(customTheme)
 
-export default getMuiTheme(myTheme)
+export const getColorsFromTheme = () => _get(getTheme(), "palette", {})
+
+export {  Provider }
