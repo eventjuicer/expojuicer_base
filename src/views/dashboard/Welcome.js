@@ -30,9 +30,9 @@ export default translate(({ style, translate }) => (
           width="800"
           height="450"
           src="https://www.youtube.com/embed/adF7n7297u8?rel=0&amp;showinfo=0"
-          frameborder="0"
+          frameBorder="0"
           allow="autoplay; encrypted-media"
-          allowfullscreen
+          allowFullScreen
         />
       </CardText>
     </Card>
