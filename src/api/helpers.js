@@ -81,7 +81,7 @@ export const getToken = () => {
 };
 
 export const getCompanyName = () => {
-  return getUserData('company.name', getUserData('profile.cname2'));
+  return getUserData('company.profile.name', getUserData('company.slug', getUserData('profile.cname2')));
 };
 
 export const getCompanyId = () => {
