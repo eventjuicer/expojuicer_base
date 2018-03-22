@@ -16,12 +16,12 @@ import {
 
 //https://github.com/mui-org/material-ui/blob/master/src/styles/getMuiTheme.js
 
-
+const selectedTheme = `${process.env.REACT_APP_THEME}`;
 
 
 const customTheme = {
   //  spacing: spacing,
-    //fontFamily: 'Lato, Roboto, sans-serif',
+    fontFamily: "'Lato', 'Helvetica', sans-serif",
     palette: {
       // primary1Color: grey200, /*table alternate rows!*/
       primary2Color: grey300,
