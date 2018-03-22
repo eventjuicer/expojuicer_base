@@ -19,7 +19,7 @@ import { getColorsFromTheme, Provider } from '../styles/muiTheme';
 const Logins = props => {
 
   const { theme } = props;
-  const { primary1Color, accent1Color } = getColorsFromTheme();
+  const { accent1Color } = getColorsFromTheme();
 
   return (
     <Provider muiTheme={theme}>
