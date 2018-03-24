@@ -5,6 +5,7 @@ import Wrapper from '../../components/Wrapper';
 
 import { translate } from 'admin-on-rest';
 
+
 //import Avatar from 'material-ui/Avatar';
 //import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
 // import HomeIcon from 'material-ui/svg-icons/action/home';
@@ -21,7 +22,7 @@ export default translate(({ style, translate }) => (
 
     <CardText>{translate('dashboard.welcome.description')}</CardText>
 
-    <Card>
+    {/* <Card>
       <CardHeader title={translate("dashboard.tutorial")} />
 
       <CardText>
@@ -35,26 +36,10 @@ export default translate(({ style, translate }) => (
           allowfullscreen
         />
       </CardText>
-    </Card>
+    </Card> */}
 
-    <Wrapper>
-      <Tabs>
-        <Tab label="Send of equipment" >
-          <div>
-            <p>Jakiś tekst. Wysyłać możecie chuj wie kiedy.</p>
-          </div>
-        </Tab>
 
-        <Tab label="Exhibition details" >
-          <div>
-            <p>Znowu jakiś tekst</p>
-            <img
-              src="https://files.ecommerceberlin.com/eb3/600x200.jpg"
-            />
-          </div>
-        </Tab>
-      </Tabs>
-    </Wrapper>
+
 
 
 
@@ -72,6 +57,8 @@ export default translate(({ style, translate }) => (
       />
     </CardActions> */}
   </Card>
+
+
 
 
 ));
