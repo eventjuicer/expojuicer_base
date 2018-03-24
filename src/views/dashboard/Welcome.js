@@ -31,15 +31,36 @@ export default translate(({ style, translate }) => (
           width="800"
           height="450"
           src="https://www.youtube.com/embed/adF7n7297u8?rel=0&amp;showinfo=0"
-          frameborder="0"
+          frameBorder="0"
           allow="autoplay; encrypted-media"
-          allowfullscreen
+          allowFullScreen
         />
       </CardText>
     </Card> */}
 
 
+<<<<<<< HEAD
 
+=======
+    {/* <Wrapper>
+      <Tabs>
+        <Tab label="Send of equipment" >
+          <div>
+            <p>Jakiś tekst. Wysyłać możecie chuj wie kiedy.</p>
+          </div>
+        </Tab>
+
+        <Tab label="Exhibition details" >
+          <div>
+            <p>Znowu jakiś tekst</p>
+            <img
+              src="https://files.ecommerceberlin.com/eb3/600x200.jpg"
+            />
+          </div>
+        </Tab>
+      </Tabs>
+    </Wrapper> */}
+>>>>>>> 01302cccb73f094d4d594aa691f63b0e92413386
 
 
 
