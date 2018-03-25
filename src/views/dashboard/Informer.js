@@ -16,7 +16,7 @@ const styles = {
 
 const Informer = ({translate}) => (
 
-<Card>
+<Card style={{display: 'none'}}>
   <CardTitle
     title="Info dla Wystawców"
   />
