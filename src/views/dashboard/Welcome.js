@@ -39,6 +39,9 @@ export default translate(({ style, translate }) => (
     </Card> */}
 
 
+<<<<<<< HEAD
+
+=======
     {/* <Wrapper>
       <Tabs>
         <Tab label="Send of equipment" >
@@ -57,7 +60,7 @@ export default translate(({ style, translate }) => (
         </Tab>
       </Tabs>
     </Wrapper> */}
-
+>>>>>>> 01302cccb73f094d4d594aa691f63b0e92413386
 
 
 
