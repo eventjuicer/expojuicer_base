@@ -22,7 +22,21 @@ const styles = {
   subheading: {
     fontSize: '1.25em',
     lineHeight: 1.4
-  }
+  },
+
+  border: {
+    fontSize: '1.25em',
+    lineHeight: 0.4,
+    marginLeft: 40,
+    marginTop: '2em'
+  },
+
+  title: {
+    // paddingBottom: '.2em',
+    fontSize: '1.5em',
+    lineHeight: 1.334,
+    paddingTop: '1em'
+  },
 };
 
 export default styles;

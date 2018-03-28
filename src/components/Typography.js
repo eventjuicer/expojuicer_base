@@ -38,4 +38,18 @@ const Tparagraph = ({ first, children }) => (
 
 const Paragraph = pure(Tparagraph);
 
-export { Heading, Subheading, Paragraph, Paragraph as Body };
+const Tborder = ({ first, children }) => (
+  <h3
+    style={{
+      ...styles.paragraph,
+      ...styles.border,
+      ...(first ? styles.first : {})
+    }}
+  >
+    {children}
+  </h3>
+);
+
+const Border = pure(Tborder);
+
+export { Heading, Subheading, Paragraph, Paragraph as Body, Border };
