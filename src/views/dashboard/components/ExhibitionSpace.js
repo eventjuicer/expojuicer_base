@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Heading, Subheading, Body } from '../../../components/Typography';
-import { Card, CardTitle } from 'material-ui/Card';
 import Wrapper from '../../../components/Wrapper';
 import Divider from 'material-ui/Divider';
 
@@ -31,7 +30,9 @@ const ExhibitionSpace = ({translate}) => (
       </Body>
 
 
-    <Subheading>{translate("informer.subheading.equipment")}</Subheading>
+    <Subheading>{
+      translate("informer.subheading.equipment")}
+    </Subheading>
 
       <Body>
         <ul>

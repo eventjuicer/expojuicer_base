@@ -1,12 +1,7 @@
 import React from 'react';
 
-import { Heading, Subheading, Body, Border} from '../../../components/Typography';
-import { Card, CardTitle } from 'material-ui/Card';
+import { Heading, Subheading } from '../../../components/Typography';
 import Wrapper from '../../../components/Wrapper';
-import Divider from 'material-ui/Divider';
-
-import { Link } from 'react-router-dom';
-
 
 import {translate} from 'admin-on-rest';
 

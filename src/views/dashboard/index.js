@@ -6,7 +6,6 @@ import { AppBarMobile } from 'admin-on-rest';
 
 import Welcome from './Welcome';
 import Informer from './Informer';
-import ExhibitionSpace from './ExhibitionSpace'
 
 
 const styles = {

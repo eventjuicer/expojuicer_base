@@ -3,9 +3,6 @@ import React from 'react';
 import pure from 'recompose/pure';
 import styles from '../../../styles/typography';
 
-import { Heading } from '../../../components/Typography';
-import Wrapper from '../../../components/Wrapper';
-
 import { translate } from 'admin-on-rest';
 
 

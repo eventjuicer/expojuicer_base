@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, CardTitle, CardHeader, CardText } from 'material-ui/Card';
-import { Tabs, Tab } from 'material-ui/Tabs';
-import Wrapper from '../../components/Wrapper';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
+
 
 import { translate } from 'admin-on-rest';
 

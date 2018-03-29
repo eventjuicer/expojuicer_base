@@ -2,9 +2,7 @@ import React from 'react';
 
 import { translate } from 'admin-on-rest';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import { Card, CardTitle } from 'material-ui/Card';
-import { Heading } from '../../components/Typography';
-import Wrapper from '../../components/Wrapper';
+import { Card } from 'material-ui/Card';
 
 
 
@@ -20,7 +18,7 @@ const Informer = ({translate, Heading }) => (
 
 
 <Card>
-  
+
   <Title />
 
   {/* <CardTitle

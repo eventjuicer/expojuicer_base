@@ -1,12 +1,8 @@
 import React from 'react';
 
 import { Heading, Subheading, Body, Border} from '../../../components/Typography';
-import { Card, CardTitle } from 'material-ui/Card';
 import Wrapper from '../../../components/Wrapper';
 import Divider from 'material-ui/Divider';
-
-import { Link } from 'react-router-dom';
-
 
 import {translate} from 'admin-on-rest';
 
@@ -57,7 +53,7 @@ const Shipment = ({translate}) => (
 
       <br></br>
     <Heading>
-      Dostawy materiałów na halę, odbędą się w godzinach:
+      {translate("informer.heading.deliver")}
     </Heading>
 
       <Subheading>
