@@ -33,8 +33,8 @@ const Menu = ({ resources, onMenuTap, logout, translate }) => (
     <DashboardMenuItem onTouchTap={onMenuTap} />
 
     {
-      menuItems.map(section => <div><Subheader>{translate(`menu.sections.${section.name}`)}</Subheader>{
-        section.items.map(item => showableMenuItems.indexOf(item.name)>-1 && <MenuItemLink
+      menuItems.map((section, i) => <div key={i}><Subheader>{translate(`menu.sections.${section.name}`)}</Subheader>{
+        section.items.map((item, j) => showableMenuItems.indexOf(item.name)>-1 && <MenuItemLink key={j}
           to={item.to}
           primaryText={ translate(item.label) }
           onClick={onMenuTap}
