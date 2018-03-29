@@ -16,6 +16,20 @@ const Theading = ({ first, children }) => (
 
 const Heading = pure(Theading);
 
+const TheadingMargin = ({ first, children }) => (
+  <h2
+    style={{
+      ...styles.headingMargin,
+      ...styles.heading,
+      ...(first ? styles.first : {})
+    }}
+  >
+    {children}
+  </h2>
+);
+
+const HeadingMargin = pure(TheadingMargin);
+
 const Tsubheading = ({ first, children }) => (
   <h3
     style={{
@@ -52,4 +66,4 @@ const Tborder = ({ first, children }) => (
 
 const Border = pure(Tborder);
 
-export { Heading, Subheading, Paragraph, Paragraph as Body, Border };
+export { Heading, HeadingMargin, Subheading, Paragraph, Paragraph as Body, Border };

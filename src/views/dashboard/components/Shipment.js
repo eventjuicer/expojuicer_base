@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Subheading, Body, Border} from '../../../components/Typography';
+import { Heading, HeadingMargin, Subheading, Body, Border} from '../../../components/Typography';
 import Wrapper from '../../../components/Wrapper';
 import Divider from 'material-ui/Divider';
 
@@ -19,27 +19,37 @@ const Shipment = ({translate}) => (
 
         <Border>
           EXPO Kraków
+          <p>{translate("informer.body.describe")}</p>
           <p>Galicyjska 9</p>
           <p>31-586 Kraków{translate('informer.subheading.country')}</p>
         </Border>
 
-        <br></br>
-        <Body>
-          <IconError /> {translate("informer.body.describe")}
-        </Body>
 
     <Divider></Divider>
 
-      <br></br>
-   <Heading>
+  <HeadingMargin>
+    {translate("informer.heading.deliver")}
+  </HeadingMargin>
+
+    <Body>
+      <ul>
+        <li>{translate("informer.subheading.date.first")}</li>
+        <li>{translate("informer.subheading.date.second")}</li>
+      </ul>
+
+        <IconError /> <mark>{translate("informer.subheading.deliver")}</mark>
+    </Body>
+
+    <Divider></Divider>
+
+
+   <HeadingMargin>
       {translate("informer.heading.sped")}
-   </Heading>
+   </HeadingMargin>
 
-        <img src= 'http://files.fp20.org/0Q432v1f0d3E/download/pobrane%20(1).jpeg' />
-
-        <Border>
+        <Subheading>
           {translate("informer.border.contact_person")}
-        </Border>
+        </Subheading>
 
         <Border>
           Marcin Frontczak
@@ -48,22 +58,6 @@ const Shipment = ({translate}) => (
           <p>tel. kom.: +48 501 710 984</p>
           <p><a href="http://www.transmeble.com.pl/">www.transmeble.com.pl</a></p>
         </Border>
-
-    <Divider></Divider>
-
-      <br></br>
-    <Heading>
-      {translate("informer.heading.deliver")}
-    </Heading>
-
-      <Subheading>
-        <ul>
-          <li>{translate("informer.subheading.date.first")}</li>
-          <li>{translate("informer.subheading.date.second")}</li>
-        </ul>
-
-          <IconError /> {translate("informer.subheading.deliver")}
-      </Subheading>
 
 
   </Wrapper>

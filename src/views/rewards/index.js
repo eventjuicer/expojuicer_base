@@ -62,7 +62,7 @@ class Stats extends React.Component {
 
             <Body>
               {translate("prizes.place")}
-              {sessions ? `#${position}` : `unknown`}
+              {sessions ? `#${position}` : translate('prizes.unknown')}
             </Body>
 
             {prizes &&

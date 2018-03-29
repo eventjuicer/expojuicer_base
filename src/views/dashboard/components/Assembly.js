@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Heading, Subheading } from '../../../components/Typography';
+import { Heading, HeadingMargin, Subheading, Body } from '../../../components/Typography';
 import Wrapper from '../../../components/Wrapper';
+
 
 import {translate} from 'admin-on-rest';
 
@@ -16,24 +17,25 @@ const Assembly = ({translate}) => (
     {translate("informer.heading.assembly")}
   </Heading>
 
-    <Subheading>
+    <Body>
       <ul>
         <li>{translate("informer.subheading.assembly.first")}</li>
         <li>{translate("informer.subheading.assembly.second")}</li>
       </ul>
-    </Subheading>
+    </Body>
 
-  <Heading>
+
+  <HeadingMargin>
     {translate("informer.heading.disassembly")}
-  </Heading>
+  </HeadingMargin>
 
-    <Subheading>
+    <Body>
       <ul>
         <li>{translate("informer.subheading.disassembly")}</li>
       </ul>
-    </Subheading>
+    </Body>
 
-  <Heading>
+  {/* <Heading>
     {translate("informer.heading.unloading")}
   </Heading>
 
@@ -43,7 +45,7 @@ const Assembly = ({translate}) => (
         <li>{translate("informer.subheading.unloading.info_2")}</li>
         <li>{translate("informer.subheading.unloading.info_3")}</li>
       </ul>
-    </Subheading>
+    </Subheading> */}
 </Wrapper>
 
 );

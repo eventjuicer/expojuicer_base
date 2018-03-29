@@ -6,6 +6,7 @@ import { AppBarMobile } from 'admin-on-rest';
 
 import Welcome from './Welcome';
 import Informer from './Informer';
+import Contact from './components/Contact';
 
 
 const styles = {
