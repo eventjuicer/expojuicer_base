@@ -14,38 +14,27 @@ const Assembly = ({translate}) => (
 <Wrapper>
 
   <Heading>
-    {translate("informer.heading.assembly")}
+    {translate("informer.assembly.assembly")}
   </Heading>
 
     <Body>
       <ul>
-        <li>{translate("informer.subheading.assembly.first")}</li>
-        <li>{translate("informer.subheading.assembly.second")}</li>
+        <li>{translate("informer.assembly.options.april24")}</li>
+        <li>{translate("informer.assembly.options.april25")}</li>
       </ul>
     </Body>
 
 
   <HeadingMargin>
-    {translate("informer.heading.disassembly")}
+    {translate("informer.assembly.disassembly")}
   </HeadingMargin>
 
     <Body>
       <ul>
-        <li>{translate("informer.subheading.disassembly")}</li>
+        <li>{translate("informer.assembly.april25")}</li>
       </ul>
     </Body>
 
-  {/* <Heading>
-    {translate("informer.heading.unloading")}
-  </Heading>
-
-    <Subheading>
-      <ul>
-        <li>{translate("informer.subheading.unloading.info_1")}</li>
-        <li>{translate("informer.subheading.unloading.info_2")}</li>
-        <li>{translate("informer.subheading.unloading.info_3")}</li>
-      </ul>
-    </Subheading> */}
 </Wrapper>
 
 );

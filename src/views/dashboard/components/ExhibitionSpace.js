@@ -16,35 +16,35 @@ const ExhibitionSpace = ({translate, style}) => (
 <Wrapper>
 
   <Heading>
-    {translate("informer.heading.exhibition_space")}
+    {translate("informer.basic.exhibition_space")}
   </Heading>
 
     <Subheading>
-      {translate("informer.subheading.area")}
+      {translate("informer.basic.area")}
     </Subheading>
 
       <Body>
         <ul>
-          <li>{translate("informer.body.area_1")}</li>
-          <li>{translate("informer.body.area_2")}</li>
+          <li>{translate("informer.basic.stand_options.standard")}</li>
+          <li>{translate("informer.basic.stand_options.grand")}</li>
         </ul>
       </Body>
 
 
     <Subheading>{
-      translate("informer.subheading.equipment")}
+      translate("informer.basic.equipment")}
     </Subheading>
 
       <Body>
         <ul>
-          <li>{translate("informer.body.equipment.hocker")}</li>
-          <li>{translate("informer.body.equipment.table")}</li>
-          <li>{translate("informer.body.equipment.voucher")}</li>
-          <li>{translate("informer.body.equipment.wifi")}</li>
-          <li>{translate("informer.body.equipment.electricity")}</li>
+          <li>{translate("informer.basic.equipment_options.hocker")}</li>
+          <li>{translate("informer.basic.equipment_options.table")}</li>
+          <li>{translate("informer.basic.equipment_options.voucher")}</li>
+          <li>{translate("informer.basic.equipment_options.wifi")}</li>
+          <li>{translate("informer.basic.equipment_options.electricity")}</li>
         </ul>
 
-        <IconError /> <mark>{translate("informer.subheading.backwall")}</mark>
+        <IconError /> <mark>{translate("informer.basic.backwall")}</mark>
       </Body>
 
 
@@ -53,26 +53,38 @@ const ExhibitionSpace = ({translate, style}) => (
   <Divider></Divider>
 
   <HeadingMargin>
-    {translate("informer.heading.add_equipment")}
+    {translate("informer.basic.add_equipment")}
   </HeadingMargin>
 
     <Body>
+
       <ul>
-        <li>{translate("informer.subheading.carpeting")}<a href="mailto:targiehandlu@targiehandlu.com.pl">targiehandlu@targiehandlu.com.pl</a></li>
-        <li>{translate("informer.subheading.add_equipment")}</li>
-        <li><a href="https://admin.targiehandlu.pl/zabudowa" target="_blank">{translate("informer.subheading.see")}</a>{translate("informer.subheading.construction")}<a href="mailto:joanna.bartoszewicz@allinevent.pl">joanna.bartoszewicz@allinevent.pl</a></li>
+        <li>{translate("informer.basic.carpeting")}<a href="mailto:targiehandlu@targiehandlu.com.pl">targiehandlu@targiehandlu.com.pl</a></li>
       </ul>
+
+      <p></p>
+
+      <ul>
+        <li>{translate("informer.basic.add_eq_contact")}</li>
+      </ul>
+
+      <p></p>
+
+      <ul>
+        <li><a href="https://admin.targiehandlu.pl/zabudowa" target="_blank">{translate("informer.basic.see")}</a>{translate("informer.basic.construction")}<a href="mailto:joanna.bartoszewicz@allinevent.pl">joanna.bartoszewicz@allinevent.pl</a></li>
+      </ul>
+
     </Body>
 
     <Divider></Divider>
 
   <HeadingMargin>
-    {translate("informer.heading.representative")}
+    {translate("informer.basic.representative")}
   </HeadingMargin>
 
     <Body>
-      {translate("informer.body.reps_info")}<Link to={{ pathname: '/representatives' }}>
-      {translate('resources.representatives.name')}</Link>.
+      {translate("informer.basic.reps_info")}<Link to={{ pathname: '/representatives' }}>
+      {translate('informer.basic.representative')}</Link>.
     </Body>
 
 </Wrapper>
