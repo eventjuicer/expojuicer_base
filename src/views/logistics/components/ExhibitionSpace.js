@@ -71,7 +71,8 @@ const ExhibitionSpace = ({translate, style}) => (
       <p></p>
 
       <ul>
-        <li><a href="https://admin.targiehandlu.pl/zabudowa" target="_blank">{translate("informer.basic.see")}</a>{translate("informer.basic.construction")}<a href="mailto:joanna.bartoszewicz@allinevent.pl">joanna.bartoszewicz@allinevent.pl</a></li>
+        <li>
+          <Link to={{ pathname: '/logistics/arrangement' }}>{translate("informer.basic.see")}</Link>{translate("informer.basic.construction")}<a href="mailto:booths@targiehandlu.pl">booths@targiehandlu.pl</a></li>
       </ul>
 
     </Body>
