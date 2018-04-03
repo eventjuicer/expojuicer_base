@@ -1,6 +1,5 @@
 import React from 'react';
 import pure from 'recompose/pure';
-import classNames from 'classnames'
 
 //import NoResults from './NoResults';
 const styles = {
@@ -11,10 +10,10 @@ const styles = {
     margin: 20
   },
   top : {
-
+    marginTop: 40
   },
   bottom : {
-
+    marginBottom : 40
   }
 }
 
