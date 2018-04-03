@@ -12,6 +12,10 @@ export const validateToken = token => {
 //     localStorage.setItem();
 // }
 
+export const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export const lsGet = key => JSON.parse(localStorage.getItem(key))
 export const lsSet = (key, value) => localStorage.setItem(key, JSON.stringify(value))
 
