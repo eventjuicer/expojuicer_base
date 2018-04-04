@@ -41,7 +41,7 @@ const Actions = ({ basePath, data, refresh, resource, translate, ...rest }) => (
 
     <FlatButton
       primary
-      label="Refresh"
+      label={translate('aor.action.refresh')}
       onClick={refresh}
       icon={<Refresh />}
     />
