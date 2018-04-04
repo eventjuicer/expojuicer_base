@@ -31,7 +31,8 @@ const styles = {
   avatar : {
     width : 80,
     height : 80,
-    marginTop:20
+    marginTop : 20,
+    color : '#666666'
   }
 }
 
