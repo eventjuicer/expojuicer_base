@@ -122,6 +122,9 @@ class App extends React.Component {
           edit={CompanyDataEdit}
         />
 
+        <Resource
+          name="tasks"
+        />
 
         <Resource
           name="contactlists"
