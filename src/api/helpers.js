@@ -96,7 +96,7 @@ export const fetchHtml = url => {
   // });
 };
 
-export const refreshUserData = (token = getToken) => {
+export const refreshUserData = (token = getToken()) => {
   const options = {
     headers: new Headers({
       Accept: 'application/json',
