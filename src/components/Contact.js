@@ -10,13 +10,17 @@ const styles = {
     // width : 80,
     // height : 80,
     marginTop : 20,
+  },
+  link : {
+    textDecoration : 'none',
+    color : '#000000'
   }
 }
 
 const Contact = ({translate, avatar, phone, email}) => (
 
 
-  <Card>
+  <Card style={{boxShadow : 'none'}}>
          <CardHeader
 
            style={{padding: 12}}
@@ -29,7 +33,7 @@ const Contact = ({translate, avatar, phone, email}) => (
            }
 
            subtitle={<CardHeader title={
-              <span><a href={`mailto:${email}`}>{email}</a> {phone}</span>
+              <span><a href={`mailto:${email}`} style={styles.link}>{email}</a> {phone}</span>
            } />}
 
            avatar={<Avatar size={80}  src={resolveAssetPath(avatar)} style={styles.avatar} />}
