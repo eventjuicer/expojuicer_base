@@ -6,6 +6,20 @@ import slugify from 'slugify'
 export const validateToken = token => {
   return /^[a-z0-9]{32,40}$/.test(token);
 };
+
+
+export const resolveAssetPath = (path) => {
+
+  if(/^http/.test(path)){
+    return path
+  }
+
+  if(path.charAt(0) === "/"){
+    path = path.slice(1)
+  }
+  return `${process.env.PUBLIC_URL}/${path}`;
+}
+
 //
 // export const storeResourceLimit = (resource, limit) => {
 //     const limits = JSON.parse(localStorage.getItem('limits') || "{}");
