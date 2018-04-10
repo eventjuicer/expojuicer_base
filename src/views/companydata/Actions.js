@@ -13,7 +13,7 @@ import {
   // DeleteButton
 } from 'admin-on-rest';
 
-import { getProfileUrl } from '../../api/helpers'
+import { getProfileUrl } from '../../helpers'
 
 const style = {
   zIndex: 2,

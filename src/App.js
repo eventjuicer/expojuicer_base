@@ -19,7 +19,7 @@ import reducers from './redux/reducers';
 import translations from './i18n';
 import Dashboard from './views/dashboard';
 
-import {getLocale} from './api/helpers'
+import {getLocale} from './helpers'
 import {getTheme} from './styles/muiTheme'
 
 

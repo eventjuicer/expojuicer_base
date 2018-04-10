@@ -3,7 +3,7 @@ import React from 'react';
 import { translate } from 'admin-on-rest';
 import Avatar from 'material-ui/Avatar';
 import { Card, CardHeader, CardTitle } from 'material-ui/Card';
-import {resolveAssetPath} from '../api/helpers'
+import {resolveAssetPath} from '../helpers'
 
 const styles = {
   avatar : {
