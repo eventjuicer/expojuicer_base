@@ -17,28 +17,28 @@ const ViewCreate = props => (
     <SimpleForm redirect="list" submitOnEnter={false} validate={validate}>
 
       <TextInput
-        source="fields.fname"
+        source="profile.fname"
         validate={[required, minLength(4)]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
       />
 
       <TextInput
-        source="fields.lname"
+        source="profile.lname"
         validate={[required, minLength(4)]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
       />
 
       <TextInput
-        source="fields.position"
+        source="profile.position"
         validate={[required, minLength(4)]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
       />
 
       <TextInput
-        source="fields.phone"
+        source="profile.phone"
         validate={[required, minLength(4)]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}
@@ -46,7 +46,7 @@ const ViewCreate = props => (
 
       <TextInput
         type="email"
-        source="fields.email"
+        source="profile.email"
         validate={[required, email]}
         options={{ fullWidth: true }}
         style={{ width: 544 }}

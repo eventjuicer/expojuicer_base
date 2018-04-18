@@ -77,15 +77,24 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
         url = `${apiUrl}/${resource}`;
         options.method = 'POST';
 
+        switch (resource) {
+
+          case 'representatives':
+
+            const ticket_id = `${process.env.REACT_APP_REP_TICKET_ID}`
+            params.data = {
+                fields : params.data.profile,
+                ticket_id
+            }
+          break;
+
+          default:
+
+        }
+
         console.log(params.data);
 
-        switch (resource) {
-          case 'invites':
-            options.body = JSON.stringify(params.data);
-            break;
-          default:
-            options.body = JSON.stringify(params.data);
-        }
+        options.body = JSON.stringify(params.data);
 
         break;
       case DELETE:
