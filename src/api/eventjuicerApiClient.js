@@ -9,7 +9,7 @@ import {
   fetchUtils
 } from 'admin-on-rest';
 
-// import {} from './helpers';
+import {transform} from '../helpers';
 
 /**
  * Maps admin-on-rest queries to a json-server powered REST API
@@ -71,30 +71,15 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => {
       case UPDATE:
         url = `${apiUrl}/${resource}/${params.id}`;
         options.method = 'PUT';
-        options.body = JSON.stringify(params.data);
+
+        options.body = JSON.stringify(  transform( resource, params.data) );
         break;
+
       case CREATE:
+
         url = `${apiUrl}/${resource}`;
         options.method = 'POST';
-
-        switch (resource) {
-
-          case 'representatives':
-
-            const ticket_id = `${process.env.REACT_APP_REP_TICKET_ID}`
-            params.data = {
-                fields : params.data.profile,
-                ticket_id
-            }
-          break;
-
-          default:
-
-        }
-
-        console.log(params.data);
-
-        options.body = JSON.stringify(params.data);
+        options.body = JSON.stringify( transform( resource, params.data) );
 
         break;
       case DELETE:
