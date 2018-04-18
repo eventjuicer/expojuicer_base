@@ -2,7 +2,9 @@ import React from 'react';
 import {
   Edit,
   SimpleForm,
-  TextField,
+  TextInput,
+  required,
+  minLength
 } from 'admin-on-rest';
 
 import { validate } from './validation';
@@ -11,12 +13,35 @@ const ViewEdit = props => (
 
   <Edit  {...props}>
 
-    <SimpleForm submitOnEnter={false} validate={validate}>
+    <SimpleForm submitOnEnter={false}>
 
-      <TextField source="profile.fname" />
-      <TextField source="profile.lname" />
-      <TextField source="profile.position" />
-      <TextField source="profile.phone" />
+      <TextInput
+        source="profile.fname"
+        validate={[required, minLength(3)]}
+        options={{ fullWidth: true }}
+        style={{ width: 544 }}
+      />
+
+      <TextInput
+        source="profile.lname"
+        validate={[required, minLength(3)]}
+        options={{ fullWidth: true }}
+        style={{ width: 544 }}
+      />
+
+      <TextInput
+        source="profile.position"
+        validate={[required, minLength(3)]}
+        options={{ fullWidth: true }}
+        style={{ width: 544 }}
+      />
+
+      <TextInput
+        source="profile.phone"
+        validate={[required, minLength(9)]}
+        options={{ fullWidth: true }}
+        style={{ width: 544 }}
+      />
 
     </SimpleForm>
   </Edit>
