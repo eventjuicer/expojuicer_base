@@ -3,7 +3,6 @@ import React from 'react';
 
 //import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
-import IconPeople from 'material-ui/svg-icons/social/people';
 import IconStatus from 'material-ui/svg-icons/action/today';
 import IconTrend from 'material-ui/svg-icons/action/trending-up';
 import IconShare from 'material-ui/svg-icons/av/volume-up';
@@ -13,7 +12,8 @@ import IconLanguage from 'material-ui/svg-icons/action/language';
 import IconSetting from 'material-ui/svg-icons/action/settings';
 
 import {
-  PackageVariantClosed as IconLogistics
+  PackageVariantClosed as IconLogistics,
+  AccountMultiple as IconPeople
 } from 'mdi-material-ui'
 
 
@@ -37,7 +37,7 @@ const menuItems = [
       name : "representatives",
       to : "/representatives",
       label : "resources.representatives.menu",
-      icon : <IconSetting />
+      icon : <IconPeople />
     }
   ]},
   {
@@ -65,6 +65,12 @@ const menuItems = [
       to : "/rewards",
       label : "resources.rewards.menu",
       icon : <IconRewards />
+    },
+    {
+      name : "newsletters",
+      to : "/newsletters",
+      label : "resources.newsletters.menu",
+      icon : <IconTrend />
     },
     {
       name : "creatives",
@@ -108,12 +114,7 @@ const menuItems = [
   {
     name : "settings",
     items : [
-      {
-        name : "newsletters",
-        to : "/newsletters",
-        label : "resources.newsletters.menu",
-        icon : <IconTrend />
-      },{
+    {
         name : "configuration",
         to : "/configuration",
         label : "pos.configuration",

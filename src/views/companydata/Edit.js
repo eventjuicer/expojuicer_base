@@ -38,6 +38,9 @@ const ViewEdit = props => (
             'countries' :  [
               'national', 'europe', 'global', 'other'
             ],
+            'lang' :  [
+              'en', 'pl', 'de'
+            ],
           }
         }
 
@@ -59,7 +62,8 @@ const ViewEdit = props => (
             'customer_support',
             'analytics',
             'international_sales',
-            'omnichannel'
+            'omnichannel',
+            'infrastructure'
           ]}}
       />
 

@@ -1,6 +1,6 @@
 
 import { put, takeEvery, all, call } from 'redux-saga/effects';
-import { refreshUserData } from '../../api/helpers';
+import { refreshUserData } from '../../helpers';
 
 import _get from 'lodash/get'
 
