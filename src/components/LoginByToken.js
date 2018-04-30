@@ -10,7 +10,7 @@ import {
 import qs from 'query-string';
 import get from 'lodash/get';
 import styles from '../styles/landing';
-import { validateToken } from '../api/helpers';
+import { validateToken } from '../helpers';
 
 class LoginByToken extends Component {
   state = {
@@ -40,8 +40,7 @@ class LoginByToken extends Component {
         <h2 style={styles.centered}>{translate('auth.unauthorized')}</h2>
 
         <p style={styles.centered}>
-          Please contact with sales support if you cannot access this
-          application .
+          {translate("auth.support")}
         </p>
       </div>
     );

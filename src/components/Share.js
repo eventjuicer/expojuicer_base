@@ -1,33 +1,46 @@
 import React from 'react';
 import Button from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import { translate } from 'admin-on-rest';
 
 //escape() will not encode: @*/+
 //encodeURI() will not encode: ~!@#$&*()=:/,;?+'
 //encodeURIComponent() will not encode: ~!*()'
+import {
+    Linkedin,
+    Facebook,
+    Twitter
+} from 'mdi-material-ui'
 
-const title = () => {
-  return encodeURIComponent(`Let's meet there!`);
-};
 
-const Share = ({ translate, type, target }) => {
-  const encTarget = encodeURIComponent(target);
+const Icons = {
+  linkedin : Linkedin,
+  facebook : Facebook,
+  twitter : Twitter
+}
 
+const _escape = (str) => encodeURIComponent(str)
+
+const Share = ({ translate, type, target, title, description, disabled }) => {
+
+  const Icon = Icons[type]
   let link = '';
+
+  const _title = title ? _escape( translate(title) ) : ''
+  const _description = description ? _escape( translate(description) ) : ''
+  const _target = _escape(target)
 
   switch (type) {
     case 'linkedin':
-      link = `https://www.linkedin.com/shareArticle?mini=true&url=${encTarget}&title=${title()}&summary=${''}`;
+      link = `https://www.linkedin.com/shareArticle?mini=true&url=${ _target }&title=${ _title }&summary=${ _description }`;
 
       break;
 
     case 'facebook':
-      link = `https://www.facebook.com/sharer/sharer.php?u=${encTarget}`;
+      link = `https://www.facebook.com/sharer/sharer.php?u=${ _target }`;
       break;
 
     case 'twitter':
-      link = `https://twitter.com/home?status=${encTarget}`;
+      link = `https://twitter.com/home?status=${ _target }`;
 
       break;
 
@@ -37,27 +50,18 @@ const Share = ({ translate, type, target }) => {
   return (
     <Button
       label={translate(`actions.share_${type}`)}
-      icon={<FontIcon className={`fa fa-${type}`} />}
+      icon={<Icon />}
       href={link}
       target="_blank"
+      disabled={disabled}
     />
   );
 };
 
-/*
-
-<Button
-  label={translate('pos.share_twitter')}
-icon={<FontIcon className="fa fa-twitter" />}
-href={ tt() }
-/>
-
-<Button
-  label={translate('pos.share_facebook')}
-icon={<FontIcon className="fa fa-facebook" />}
-href={ fb() }
-/>
-
-*/
+Share.defaultProps = {
+  title : "",
+  description : "",
+  disabled : false
+}
 
 export default translate(Share);

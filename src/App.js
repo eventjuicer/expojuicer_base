@@ -2,6 +2,7 @@
 import React from 'react';
 import { Admin, Resource, Delete } from 'admin-on-rest';
 
+
 import AppBarTitle from './components/AppBarTitle';
 import Logins from './components/Logins';
 import Logout from './components/Logout';
@@ -18,6 +19,10 @@ import reducers from './redux/reducers';
 import translations from './i18n';
 import Dashboard from './views/dashboard';
 
+import {getLocale} from './helpers'
+import {getTheme} from './styles/muiTheme'
+
+
 import {
   ViewList as MeetupList,
   ViewEdit as MeetupEdit,
@@ -28,6 +33,15 @@ import {
   ViewList as CompanyDataList,
   ViewEdit as CompanyDataEdit
 } from './views/companydata';
+
+
+import {
+  ViewList as RepresentativeList,
+  ViewEdit as RepresentativeEdit,
+  ViewCreate as RepresentativeCreate
+} from './views/representatives';
+
+
 
 import {
   ViewList as VisitorList
@@ -40,6 +54,15 @@ import {
   ViewEdit as CreativeEdit,
   ViewCreate as CreativeCreate
 } from './views/creatives';
+
+import {
+  ViewList as BannerList
+} from './views/banners';
+
+import {
+  ViewList as NewsletterList
+} from './views/newsletters';
+
 
 import {
   ViewList as CampaignList,
@@ -83,7 +106,9 @@ class App extends React.Component {
         loginPage={Logins}
         logoutButton={Logout}
         menu={Menu}
+        locale={ getLocale() }
         messages={translations}
+        theme={ getTheme() }
       >
         <Resource
           name="imports"
@@ -108,6 +133,18 @@ class App extends React.Component {
 
 
         <Resource
+          name="representatives"
+          list={RepresentativeList}
+          edit={RepresentativeEdit}
+          create={RepresentativeCreate}
+        />
+
+
+        <Resource
+          name="tasks"
+        />
+
+        <Resource
           name="contactlists"
           list={ContactlistList}
           edit={ContactlistEdit}
@@ -128,13 +165,9 @@ class App extends React.Component {
         <Resource name="contacts" list={ContactList} edit={ContactEdit} />
 
         <Resource name="creatives" list={CreativeList} edit={CreativeEdit} />
+        <Resource name="newsletters" list={NewsletterList} />
+        <Resource name="banners" list={BannerList}  />
 
-        <Resource
-          name="newsletters"
-          list={CreativeList}
-          edit={CreativeEdit}
-          create={CreativeCreate}
-        />
         <Resource
           name="scans"
           options={{ label: 'Scans' }}

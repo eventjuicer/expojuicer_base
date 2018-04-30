@@ -14,7 +14,7 @@ import get from 'lodash/get';
 import qs from 'query-string';
 
 import { validate } from './validation';
-import { getUserFullName, getUserData } from '../../api/helpers';
+import { getUserFullName, getUserData } from '../../helpers';
 
 const ViewCreate = props => (
   <Create title="aor.page.meeting_request" {...props}>
@@ -25,10 +25,10 @@ const ViewCreate = props => (
       />
 
       <LongTextInput
-      source="message_create"
+      source="message"
       validate={[required, minLength(10)]}
       style={{ maxWidth: 700 }}
-
+      defaultValue={getUserData('company.profile.invitation_template')}
       />
 
       <TextInput
