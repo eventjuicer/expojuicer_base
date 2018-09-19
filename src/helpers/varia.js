@@ -65,15 +65,15 @@ export const updatePerms = (redirectTo) => rawFetchApi("/settings", null, (data)
 
 }, redirectTo);
 
-export const hasAccessTo = (perms, endpoint, action) => {
+export const hasAccessTo = (perms, strOrArr, action) => {
 
-  if(perms.trim() === "*"){
+  if(perms && perms.trim() === "*"){
     return true;
   }
 
-  return perms.indexOf(endpoint) > -1 
-}
+  return [].concat(strOrArr).some(asset => perms.indexOf(asset) > -1 )
 
+}
 
 export const checkAccessFor = (redirectTo) => {
   const permissions = lsGet("permissions");
