@@ -397,13 +397,13 @@ export default {
 
     upgrades : {
 
-      name : "Zakup usługi dodatkowe",
-      menu : "Usługi dodatkowe",
+      name : "Purchase additional services",
+      menu : "Add Services",
 
       booth : {
         fullprint : {
-          name : "Kompleksowa zabudowa FULLPRINT",
-          description : "DOTYCZY TYLKO STOISK 3x2m. Chcesz przyjść na gotowe stoisko? Oto opcja dla Twojej firmy.",
+          name : "Full booth arrangement (fullprint)",
+          description : "Only for standard booth 3x2m. Chcesz przyjść na gotowe stoisko? Oto opcja dla Twojej firmy.",
           specs : "Specyfikacja plików do druku: a) LADA - 100x100cm, TIFF, 120dpi (skala 1:1) b) ŚCIANKA - 300x250cm, TIFF, 120 dpi (skala 1:1)"
         },
         counter : {

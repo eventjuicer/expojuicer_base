@@ -440,36 +440,42 @@ export default {
         },
         flooring : {
           name : "Dodatkowe meble, wykładzina",
-          description : "Jeśli standardowe umeblowanie (2 wysokie stołki)  wydaje się Tobie niewystarczające - jest możliwość dodania wykładziny oraz 2 dodatkowych stołków barowych "
+          description : "Jeśli standardowe umeblowanie (2 wysokie stołki)  wydaje się Tobie niewystarczające - jest możliwość dodania wykładziny oraz 2 dodatkowych stołków barowych ",
+          specs : ""
         },
         osb : {
           name : "Kompleksowa zabudowa OSB",
-          description : "DOTYCZY TYLKO STOISK 3x2m. Chcesz przyjść na gotowe stoisko? Oto opcja dla Twojej firmy. "
+          description : "DOTYCZY TYLKO STOISK 3x2m. Chcesz przyjść na gotowe stoisko? Oto opcja dla Twojej firmy. ",
+          specs : "Specyfikacja plików do druku: a) LADA - 100x100cm, TIFF, 120dpi (skala 1:1) b) ŚCIANKA - 300x250cm, TIFF, 120 dpi (skala 1:1)"
         }
       },
 
       misc : {
         leaflets : {
           name : "Prawo do dystrybucji ulotek",
-          description : "Jeśli chcesz wynająć hostessy aby prowadziły działania reklamowe poza stoiskiem musisz wykupić zezwolenie organizatora."
+          description : "Jeśli chcesz wynająć hostessy aby prowadziły działania reklamowe poza stoiskiem musisz wykupić zezwolenie organizatora.",
+          specs : ""
         },
         welcomepacks : {
           name : "2 dodatkowe vouchery + 1 karta parkingowa",
-          description : "W ramach standardowej oferty stoiska otrzymujesz 4 welcome packi, w których znajdują się 4 vouchery cateringowe oraz 1 karta parkingowa. Jeśli potrzebujesz dodatkowej karty parkingowej i/lub dodatkowych voucherów obiadowych, kup ten pakiet."
+          description : "W ramach standardowej oferty stoiska otrzymujesz 4 welcome packi, w których znajdują się 4 vouchery cateringowe oraz 1 karta parkingowa. Jeśli potrzebujesz dodatkowej karty parkingowej i/lub dodatkowych voucherów obiadowych, kup ten pakiet.",
+          specs : ""
         },
         electricity : {
           name : "Niezależne podłączenie prądu 3kW",
-          description : "Potrzebujesz więcej niż standardowe 300W? Wykup niezależne podłączenie prądu. "
+          description : "Potrzebujesz więcej niż standardowe 300W? Wykup niezależne podłączenie prądu. ",
+          specs : ""
         },
         display : {
-          name : "TV 50 cali + statyw",
-          description : "TV z wejściem HDMI i USB. Dostarczany na stoisko."
+          name : "50inch LED display",
+          description : "Delivered to your booth. Allows to connect HDMI device or display from USB pendrive",
+          specs : ""
         }
       },
 
       actions : {
 
-        details : "Szczegóły i zakup"
+        details : "Check details & buy"
 
       } 
 
