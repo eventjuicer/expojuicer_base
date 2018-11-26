@@ -105,6 +105,41 @@ export default {
 
   },
 
+
+  common : {
+
+    sales : {
+      starts : "sales starts",
+      ends : "sales ends",
+      net : "+23% VAT",
+      gross : "includes 23% VAT",
+      remaining : "Remaining",
+      pcs : "pcs",
+    
+    },
+    
+    actions : {
+      buy : "Buy now!"
+    },
+
+    statuses : {
+      unavailable : "Unavailable",
+      already_bought : "Already bought",
+      success : "Success!"
+    },
+
+    langs : {
+
+        pl : "polski",
+        en : "english",
+        de : "deutsch",
+
+    },
+
+  },
+
+
+
   menu : {
 
     sections : {
@@ -359,6 +394,67 @@ export default {
 
 
   resources: {
+
+    upgrades : {
+
+      name : "Purchase additional services",
+      menu : "Add Services",
+
+      booth : {
+        fullprint : {
+          name : "Full booth arrangement (fullprint)",
+          description : "Only for standard (not Grand) booths - 3x2m. Do you want to come to fully prepared booth? Full print backwall, branded counter, carpet flooring and leaflets holder can await for your company's representatives.",
+          specs : "To complete this order we need some graphic design! Please prepare them and send to booths@targiehandlu.pl. Specs:  a) Counter - 100x100cm, TIFF, 120dpi (scale 1:1) b) Back wall - 300x250cm, TIFF, 120 dpi (scale 1:1)"
+        },
+        counter : {
+          name : "Fullprint counter + flooring",
+          description : "This is a recommended option if you have your branding/advertising elements like textile ad wall or roll-ups. This option is a cost-saver and provides some luxury :) (flooring) and convenience (counter)",
+          specs : "To complete this order we need some graphic design! Please prepare them and send to booths@targiehandlu.pl. Counter - 100x100cm, TIFF, 120dpi (scale 1:1) "
+        },
+        flooring : {
+          name : "Additional furniture + flooring",
+          description : "2 high chairs and 1 high table are included in basic offer. If you need more furniture please upgrade with this package. You will get carpet flooring and additional 2 high chairs.",
+          specs : ""
+        },
+        osb : {
+          name : "Full booth arrangement OSB",
+          description : "Only for standard (not Grand) booths - 3x2m. Do you want to come to fully prepared booth? OSB back wall with minimalistic graphics (your company logotype), branded counter, carpet flooring and leaflets holder. ",
+          specs : "To complete this order we need some graphics design! Please prepare them and send to booths@targiehandlu.pl. Specs: company logotype in vector format (ai, pdf, eps)."
+
+        }
+      },
+
+      misc : {
+        leaflets : {
+          name : "Permission for marketing outside booth",
+          description : "If you want to engange a hostess in order to distribute leaflets you are asked to purchase a permission. Does not include printing materials and distribution.",
+          specs : ""
+        },
+        welcomepacks : {
+          name : "2 additional vouchers + parking card",
+          description : "There are 4 welcome packs (including 4 vouchers and 1 parking card) per booth. If you need more vouchers or more parking card - buy this option.",
+          specs : ""
+        },
+        electricity : {
+          name : "3000 Watts electricity",
+          description : "As a standard option you will get only 300 Watt. This is sufficient when having 1-2 laptops and 1 bigger display but insufficient if you are planning to have some additional equipment. Buy this option to avoid surprises. ",
+          specs : ""
+        },
+        display : {
+          name : "50inch LED display",
+          description : "Huge LED display with a stand, delivered to your booth. You can connect via HDMI or use USB pendrive",
+          specs : ""
+        }
+      },
+
+      actions : {
+
+        details : "Check details and buy!"
+
+      } 
+
+    },
+
 
     companydata : {
 
