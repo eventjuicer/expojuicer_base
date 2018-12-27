@@ -1,6 +1,6 @@
 //import 'babel-polyfill';
 import React from 'react';
-import { Admin, Resource, Delete } from 'admin-on-rest';
+import { Admin, Resource, Delete, fetchUtils } from 'admin-on-rest';
 
 
 import AppBarTitle from './components/AppBarTitle';
@@ -93,9 +93,25 @@ import { ViewList as ScanList, ViewEdit as ScanEdit } from './views/scans';
 import { ViewList as RankingList } from './views/ranking';
 
 
-
 class App extends React.Component {
+
+  state = {
+    texts : translations
+  }
+
+  componentDidMount(){
+    
+    const localiseUrl = encodeURIComponent(`https://localise.biz/api/export/all.json?format=multi&pretty&key=${process.env.REACT_APP_LOCALISE}`)
+
+    fetchUtils.fetchJson(`https://api.eventjuicer.com/v1/services/no-cors?url=${localiseUrl}`)
+    .then(response => response.json)
+    .then(texts => this.setState({texts}) )  
+  }
+
   render() {
+
+    const {texts} = this.state;
+
     return (
       <Admin
         catchAll={NotFound}
@@ -110,7 +126,7 @@ class App extends React.Component {
         logoutButton={Logout}
         menu={Menu}
         locale={ getLocale() }
-        messages={translations}
+        messages={ texts }
         theme={ getTheme() }
       >
        {(permissions) => [
