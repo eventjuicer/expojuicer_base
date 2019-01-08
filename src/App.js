@@ -96,7 +96,7 @@ import { ViewList as RankingList } from './views/ranking';
 class App extends React.Component {
 
   state = {
-    texts : translations
+    texts : null
   }
 
   componentDidMount(){
@@ -111,6 +111,14 @@ class App extends React.Component {
   render() {
 
     const {texts} = this.state;
+
+    if(!texts){
+      return (
+        <div className="loader-container">
+          <div className="loader">Loading...</div>
+        </div>
+      )
+    }
 
     return (
       <Admin

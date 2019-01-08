@@ -56,6 +56,10 @@ const Configuration = ({
   </Restricted>
 );
 
+Configuration.defaultProps = {
+  locales : `${process.env.REACT_APP_LOCALES}`.split(",")
+}
+
 const mapStateToProps = state => ({
   theme: state.theme,
   locale: state.locale

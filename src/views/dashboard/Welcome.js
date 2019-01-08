@@ -17,7 +17,7 @@ export default translate(({ style, translate }) => (
     <CardText>{translate('dashboard.welcome.description')}</CardText>
 
     <div style={{margin: 10, paddingBottom: 50}}>
-      <Contact />
+      {/* <Contact /> */}
     </div>
 
   </Card>
