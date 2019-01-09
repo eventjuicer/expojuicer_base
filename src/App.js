@@ -16,12 +16,11 @@ import restClient from './api/restClient';
 import sagas from './redux/sagas';
 import reducers from './redux/reducers';
 
-import translations from './i18n';
+import translations from './localise';
 import Dashboard from './views/dashboard';
 
 import {getLocale, hasAccessTo} from './helpers'
 import {getTheme} from './styles/muiTheme'
-
 
 import {
   ViewList as MeetupList,
@@ -95,30 +94,30 @@ import { ViewList as RankingList } from './views/ranking';
 
 class App extends React.Component {
 
-  state = {
-    texts : null
-  }
+  // state = {
+  //   texts : null
+  // }
 
-  componentDidMount(){
+  // componentDidMount(){
     
-    const localiseUrl = encodeURIComponent(`https://localise.biz/api/export/all.json?format=multi&pretty&key=${process.env.REACT_APP_LOCALISE}`)
+  //   const localiseUrl = encodeURIComponent(`https://localise.biz/api/export/all.json?format=multi&pretty&key=${process.env.REACT_APP_LOCALISE}`)
 
-    fetchUtils.fetchJson(`https://api.eventjuicer.com/v1/services/no-cors?url=${localiseUrl}`)
-    .then(response => response.json)
-    .then(texts => this.setState({texts}) )  
-  }
+  //   fetchUtils.fetchJson(`https://api.eventjuicer.com/v1/services/no-cors?url=${localiseUrl}`)
+  //   .then(response => response.json)
+  //   .then(texts => this.setState({texts}) )  
+  // }
 
   render() {
 
-    const {texts} = this.state;
+    // const {texts} = this.state;
 
-    if(!texts){
-      return (
-        <div className="loader-container">
-          <div className="loader">Loading...</div>
-        </div>
-      )
-    }
+    // if(!texts){
+    //   return (
+    //     <div className="loader-container">
+    //       <div className="loader">Loading...</div>
+    //     </div>
+    //   )
+    // }
 
     return (
       <Admin
@@ -134,7 +133,7 @@ class App extends React.Component {
         logoutButton={Logout}
         menu={Menu}
         locale={ getLocale() }
-        messages={ texts }
+        messages={ translations }
         theme={ getTheme() }
       >
        {(permissions) => [
