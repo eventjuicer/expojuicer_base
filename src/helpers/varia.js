@@ -86,7 +86,7 @@ export const hasAccessTo = (perms, strOrArr, action) => {
     return false;
   }
 
-  if(perms && perms.trim() === "*"){
+  if(perms && perms.trim() === "*" || `${process.env.REACT_APP_FULL_ACCESS_ACCOUNT}` == getCompanyId() ){
     return true;
   }
 
