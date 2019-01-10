@@ -26,7 +26,7 @@ const customThemes = {
     //  spacing: spacing,
       fontFamily: "'Lato', 'Helvetica', sans-serif",
       palette: {
-        primary1Color: '#fdd835', /*table alternate rows!*/
+        primary1Color: '#000000', /*table alternate rows!*/
         primary2Color: grey300,
         primary3Color: grey300,
         accent1Color: red500,
@@ -44,6 +44,7 @@ const customThemes = {
     appBar: {
       color: '#fdd835',
       titleFontWeight: 300,
+      textColor : '#000000'
     },
 
     tableRow: {
@@ -74,20 +75,24 @@ const customThemes = {
         // color: transparent,
         // buttonFilterColor: '#999999',
         // disabledTextColor: fade(palette.textColor, 0.3),
-       textColor: red700,
-        primaryTextColor: red700,
-    //    secondaryTextColor: palette.accent1Color,
+      //  textColor: '#ffffff',
+      //  primaryColor: '#000000',
+      //  secondaryTextColor: '#ffffff',
         // fontSize: typography.fontStyleButtonFontSize,
         // fontWeight: typography.fontWeightMedium,
       },
 
     raisedButton: {
-        // color: palette.alternateTextColor,
-        // textColor: palette.textColor,
-        primaryColor: red700,
-        // primaryTextColor: palette.alternateTextColor,
-        // secondaryColor: palette.accent1Color,
-        // secondaryTextColor: palette.alternateTextColor,
+        
+      //  // color: palette.alternateTextColor,
+      //   // textColor: palette.textColor,
+      //   textColor: '#ffffff',
+      //   primaryColor: '#000000',
+      //   // primaryTextColor: palette.alternateTextColor,
+        
+      //   secondaryColor: palette.accent1Color,
+      //   secondaryTextColor: palette.alternateTextColor,
+        
         // disabledColor: darken(palette.alternateTextColor, 0.1),
         // disabledTextColor: fade(palette.textColor, 0.3),
         // fontSize: typography.fontStyleButtonFontSize,
