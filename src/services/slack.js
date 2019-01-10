@@ -26,7 +26,8 @@ const slack = message => {
   options.method = 'POST';
   options.body = JSON.stringify(buildMessage(message));
 
-  return fetchUtils.fetchJson(`${process.env.REACT_APP_SLACK}`, options).catch(error => console.log(error));
+  return fetchUtils.fetchJson(`${process.env.REACT_APP_SLACK}`, options);
+
 };
 
 export default slack;
