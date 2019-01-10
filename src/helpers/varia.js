@@ -43,7 +43,7 @@ export const lsGet = (key, ifNotFound = "") => {
 export const lsSet = (key, value) => localStorage.setItem(key, JSON.stringify(value))
 
 export const getLocale = () => {
-  return lsGet("locale") || process.env.REACT_APP_LOCALE || "en"
+  return lsGet("locale") || `${process.env.REACT_APP_LOCALE}` || "en"
 }
 
 export const getToken = () => {
@@ -193,7 +193,7 @@ export const slug = (str = "") => slugify(str, {
 export const removeSlashes = (str = "") => str.replace(/^\/|\/$/g, '')
 
 export const getFullUrl = (str) => {
-  const homepage = removeSlashes(process.env.REACT_APP_HOMEPAGE)
+  const homepage = removeSlashes(`${process.env.REACT_APP_HOMEPAGE}`)
   return `${homepage}/${removeSlashes(str)}`
 }
 

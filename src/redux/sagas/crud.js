@@ -19,12 +19,17 @@ function* handleSlackNotification({meta, payload, requestPayload}) {
 
   const {resource} = meta
 
-  const userData = yield call(slack, `Updated *${resource}*`);
-  // Instructing middleware to dispatch corresponding action.
-  yield put({
-    type: 'SLACK_NOTIFICATION_STATUS',
-    userData
-  });
+  try {
+    const userData = yield call(slack, `Updated *${resource}*`);
+    // Instructing middleware to dispatch corresponding action.
+    yield put({
+      type: 'SLACK_NOTIFICATION_STATUS',
+      userData
+    });
+  } catch (error) {
+    console.log("check slack config!")
+  }
+  
 }
 
 function* onResourceUpdate(data) {
