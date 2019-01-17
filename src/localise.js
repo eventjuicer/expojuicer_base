@@ -452,7 +452,8 @@ const languages = {
                         "name": "PR Manager"
                     },
                     "sales_manager": {
-                        "name": "Contact person for Visitors"
+                        "name": "Contact person for Visitors",
+                        "description": ""
                     },
                     "xing": {
                         "name": "Xing company profile"
@@ -483,7 +484,7 @@ const languages = {
                     },
                     "lang_choices": {
                         "en": "english",
-                        "pl": "polski",
+                        "pl": "",
                         "de": "deutsch"
                     }
                 },
@@ -499,9 +500,11 @@ const languages = {
                         "fname": "First name",
                         "lname": "Last name",
                         "position": "Position",
-                        "phone": "Phone"
+                        "phone": "Phone",
+                        "email": "E-mail address"
                     }
-                }
+                },
+                "noresults": "No records... Add new representatives"
             },
             "rewards": {
                 "menu": "Rewards",
@@ -1215,7 +1218,8 @@ const languages = {
                         "name": "PR Manager"
                     },
                     "sales_manager": {
-                        "name": "Kontaktperson für Besucher"
+                        "name": "Kontaktperson für Besucher",
+                        "description": ""
                     },
                     "xing": {
                         "name": "Xing Firmenprofil"
@@ -1223,7 +1227,7 @@ const languages = {
                 },
                 "fields": {
                     "countries_choices": {
-                        "national": "Poland",
+                        "national": "Germany",
                         "europe": "Europe",
                         "global": "World",
                         "other": "Other"
@@ -1246,7 +1250,7 @@ const languages = {
                     },
                     "lang_choices": {
                         "en": "english",
-                        "pl": "polski",
+                        "pl": "",
                         "de": "deutsch"
                     }
                 },
@@ -1262,9 +1266,11 @@ const languages = {
                         "fname": "Vorname",
                         "lname": "Nachname",
                         "position": "Position",
-                        "phone": "Phone"
+                        "phone": "Phone",
+                        "email": "E-mail adresse"
                     }
-                }
+                },
+                "noresults": "No records... Add new representatives"
             },
             "rewards": {
                 "menu": "Belohnungen",
@@ -1528,4 +1534,4 @@ const languages = {
 }
 
 
-export default languages
+export default languages;
