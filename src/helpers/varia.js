@@ -172,7 +172,7 @@ export const getCompanyId = () => {
 
 export const opengraphImage = (key = "logotype", lang = "pl") => {
 
-  return `https://res.cloudinary.com/eventjuicer/image/upload/c_fit,g_center,h_220,w_600,y_30,l_c_${getCompanyId()}_${key}/template_4_${lang}.png`
+  return `https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_BUCKET_NAME}/image/upload/c_fit,g_center,h_220,w_600,y_30,l_c_${getCompanyId()}_${key}/template_4_${lang}.png`
 
 }
 
