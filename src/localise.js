@@ -1,5 +1,4 @@
 const languages = {
-    
     "en": {
         "aor": {
             "action": {
@@ -580,7 +579,8 @@ const languages = {
                 "langs": {
                     "pl": "POLSKI",
                     "en": "ENGLISH",
-                    "undefined": ""
+                    "undefined": "",
+                    "de": "GERMAN"
                 },
                 "version": {
                     "english": "E-mail template - english",
@@ -1346,7 +1346,8 @@ const languages = {
                 "langs": {
                     "pl": "POLSKI",
                     "en": "ENGLISH",
-                    "undefined": ""
+                    "undefined": "",
+                    "de": "DEUTSCH"
                 },
                 "version": {
                     "english": "E-mail template - english",
@@ -1534,4 +1535,4 @@ const languages = {
     }
 }
 
-export default languages;
+export default languages
