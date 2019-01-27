@@ -17,7 +17,6 @@ import CopyToClipboardButton from '../../../components/CopyToClipboardButton';
 import Requirements from '../../../components/Requirements';
 
 import {
-  opengraphImage,
   getProfileUrl
 } from '../../../helpers'
 
@@ -66,7 +65,7 @@ const Creative = ({ creative, translate, showModal }) => (
           onClick={() =>
             showModal({
               title: translate("resources.creatives.links.preview"),
-              body: <div><img src={opengraphImage(creative.name, creative.lang)} alt="" style={{maxWidth : 900}} /></div>,
+              body: <div><img src={creative.template} alt="" style={{maxWidth : 900}} /></div>,
             })
           }
 
