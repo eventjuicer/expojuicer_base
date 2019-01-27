@@ -1,4 +1,5 @@
 const languages = {
+    
     "en": {
         "aor": {
             "action": {
@@ -163,24 +164,24 @@ const languages = {
             "name": "Ranking & Rewards",
             "must_be_winner": "You must be #1",
             "position_2": "Only for position #",
-            "position_1": "Your position must be beetween #",
+            "position_1": "Your position must be between #",
             "and": " and #",
             "points": " points.",
             "place": "Your current position: ",
             "unknown": "#unknown",
             "presentation": {
                 "title": "Presentation slot",
-                "description": "A 30-minute presentation slot at the expo. Your presentation will be added to the official E-Commerce Berlin Expo presentations agenda.",
+                "description": "A 30-minute presentation slot on one of the four stages. Your presentation will be added to the official E-Commerce Berlin Expo 2019 presentations agenda.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "It will be carried out during the event and then published on the fanpage of the E-commerce Berlin Expo and the ecommercegermany.com portal",
+                "description": "A video interview will be conducted with one of your company representatives at the expo. The video interview will be published on the EBE Youtube channel and the social media channels (Facebook, Twitter, LinkedIn). ",
                 "image": ""
             },
             "brand_highlight": {
-                "title": "Logo highlight",
-                "description": "Your logo will be displayed on the official E-commerce Berlin Expo website among the leading e-commerce companies.",
+                "title": "Logo Highlight",
+                "description": "Your logotype will be displayed in a prime location on the official E-commerce Berlin Expo website among leading e-commerce companies.",
                 "image": ""
             },
             "leaflets": {
@@ -189,12 +190,12 @@ const languages = {
                 "image": ""
             },
             "earlybird": {
-                "title": "Access to earl-bird sales",
-                "description": "Next E-commerce Berlin Expo edition will be held in Berlin (February, 2020)."
+                "title": "Access to Early-Bird Sales",
+                "description": "Receive access to early-bird prices for the exhibition spaces at the next E-commerce Berlin Expo in February 2020. You will be able to see the entire floor plan to choose the best location for your booth, before anyone else ! "
             },
             "meetups": {
-                "title": "Mega package of invitations",
-                "description": "You will receive 50 personal invitations to use in your Exhibitor panel.",
+                "title": "Mega Package of Invitations",
+                "description": "You will receive 50 personal invitations which you will be able to send to visitors who are registered to attend the E-commerce Berlin Expo 2019. Set up meetings with your leads and use your time at the expo  effectively! ",
                 "image": ""
             },
             "scanner": {
@@ -203,13 +204,13 @@ const languages = {
                 "image": ""
             },
             "rollups": {
-                "title": "Roll-up in the Business Lounge",
-                "description": "Your company will have a unique opportunity to present your logotype near the catering area for exhibitors and visitors.",
+                "title": "Roll-up next to the entrance \n",
+                "description": "Your company's logotype will be displayed at the immediate entrance to the exhibition hall. ",
                 "image": ""
             },
             "blog": {
-                "title": "A guest article on the ecommercegermany.com portal",
-                "description": "One-time inclusion of company content on the ecommercegermany.com portal. The article will be promoted in the newsletter and on the Facebook, Linked and Twitter channels of the E-commerce Berlin Expo.",
+                "title": "A guest article on the E-commerce Berlin Expo Blog",
+                "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo. ",
                 "image": ""
             }
         },
@@ -521,7 +522,7 @@ const languages = {
                 "menu": "Ranking",
                 "name": "Ranking",
                 "limit": "",
-                "subtitle": "You earn points by showing your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every unique page view of the E-commerce Berlin Expo homepage with your tracking link equals 1 point.",
+                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo homepage equals 1 point.",
                 "fields": {
                     "stats": "Points",
                     "domain": "Domain",
@@ -671,8 +672,8 @@ const languages = {
                 }
             },
             "campaigns": {
-                "menu": "Email campaigns",
-                "name": "Email campaigns",
+                "menu": "Email Campaigns",
+                "name": "Email Campaigns",
                 "creative": "Create new campaign",
                 "noresults": "This feature is not yet enabled for your company.",
                 "noresultsmore": "However...",
@@ -926,27 +927,27 @@ const languages = {
             }
         },
         "prizes": {
-            "name": "Ranking & Rewards",
+            "name": "Platzierung & Preise",
             "must_be_winner": "You must be #1",
             "position_2": "Only for position #",
-            "position_1": "Your position must be beetween #",
+            "position_1": "Eure Platzierung muss zwischen # sein",
             "and": " and #",
             "points": " points.",
-            "place": "Your current position: ",
-            "unknown": "#unknown",
+            "place": "Deine aktuelle Platzierung:",
+            "unknown": "#unbekannt",
             "presentation": {
-                "title": "Presentation slot",
-                "description": "A 30-minute presentation slot at the expo. Your presentation will be added to the official E-Commerce Berlin Expo presentations agenda.",
+                "title": "Präsentation",
+                "description": "Eine 30-minütige Präsentation auf einen der vier Bühnen. Eure Präsentation wird in die offizielle E-commerce Berlin Expo 2019 Agenda mit aufgenommen.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "It will be carried out during the event and then published on the fanpage of the E-commerce Poland Expo and the ehandelmag.com portal.",
+                "description": "Ein Video Interview wird mit einem Vertreter eurer Firma auf der Expo durchgeführt. Das Video Interview wird auf dem EBE Youtube Kanal sowie sämtlichen Social Media Kanälen veröffentlicht. ",
                 "image": ""
             },
             "brand_highlight": {
                 "title": "Logo highlight",
-                "description": "Your logo will be displayed on the official E-commerce Poland Expo website among the leading e-commerce companies.",
+                "description": "Dein Logo wird auf der E-commerce Berlin Expo Webseite neben den führenden Unternehmen erscheinen.",
                 "image": ""
             },
             "leaflets": {
@@ -955,12 +956,12 @@ const languages = {
                 "image": ""
             },
             "earlybird": {
-                "title": "Access to earl-bird sales",
-                "description": "Next E-commerce Poland Expo edition will be held in Warsaw (7th of November)."
+                "title": "Zugang zu Early-Bird Sales",
+                "description": "Erhalte Early-Bird Preise für die Stände auf der nächsten E-commerce Berlin Expo im Februar 2020. Du bekommst Zugang zur gesamten Ausstellungsfläche um die beste Location für deinen Stand zu wählen, vor allen anderen!"
             },
             "meetups": {
-                "title": "Mega package of invitations",
-                "description": "You will receive 50 personal invitations to use in your Exhibitor panel.",
+                "title": "Mega-Paket - Einladungen",
+                "description": "Du erhältst 50 persönliche Einladung welche du an Besucher der E-commerce Berlin Expo 2019 schicken kannst. Arrangiere Meetings mit potentiellen Kunden und nutze deine Zeit auf der Expo effektiv! ",
                 "image": ""
             },
             "scanner": {
@@ -969,13 +970,13 @@ const languages = {
                 "image": ""
             },
             "rollups": {
-                "title": "Roll-up in the Business Lounge",
-                "description": "Your company will have a unique opportunity to present your logotype near the catering area for exhibitors and visitors.",
+                "title": "Roll-up am Eingang der Ausstellerfläche",
+                "description": "Euer Firmenlogo wird am Eingang der Ausstellerfläche aufgehängt.",
                 "image": ""
             },
             "blog": {
-                "title": "A guest article on the ehandelmag.com portal",
-                "description": "One-time inclusion of company content on the ehandelmag.com portal. The blogpost will be promoted on the Facebook and Twitter channels of the E-Commerce Poland Expo.",
+                "title": "Ein Gastartikel auf dem E-commerce Berlin Expo Blog",
+                "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo. ",
                 "image": ""
             }
         },
@@ -1273,9 +1274,9 @@ const languages = {
                 "noresults": "No records... Add new representatives"
             },
             "rewards": {
-                "menu": "Belohnungen",
-                "name": "Belohnungen",
-                "body_text_1": "Um in der Platzierung",
+                "menu": "Preise",
+                "name": "Preise",
+                "body_text_1": "To participate in the ",
                 "body_text_2": " and be able to win rewards you must use dedicated tracking link. See ",
                 "body_text_3": " for details."
             },
@@ -1437,8 +1438,8 @@ const languages = {
                 }
             },
             "campaigns": {
-                "menu": "Email campaigns",
-                "name": "Email campaigns",
+                "menu": "E-Mail Kampagnen",
+                "name": "E-Mail Kampagnen",
                 "creative": "Create new campaign",
                 "noresults": "This feature is not yet enabled for your company.",
                 "noresultsmore": "However...",
@@ -1459,8 +1460,8 @@ const languages = {
                 }
             },
             "imports": {
-                "menu": "Imported contacts",
-                "name": "Imported contacts",
+                "menu": "Importierte Kontakte",
+                "name": "Importierte Kontakte",
                 "fields": {
                     "title": "Import contacts",
                     "name": "Import's name",
@@ -1480,7 +1481,7 @@ const languages = {
                 }
             },
             "contacts": {
-                "menu": "Imported Contacts",
+                "menu": "Importierte Kontakte",
                 "name": "Contacts",
                 "noresults": "Results not found",
                 "fields": {
@@ -1501,7 +1502,7 @@ const languages = {
                     }
                 },
                 "actions": {
-                    "import": "Add/Import Contacts"
+                    "import": "Kontakte hinzufügen/importieren"
                 }
             },
             "visitors": {
@@ -1532,6 +1533,5 @@ const languages = {
         }
     }
 }
-
 
 export default languages;
