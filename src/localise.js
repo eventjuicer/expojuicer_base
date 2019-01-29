@@ -764,6 +764,11 @@ const languages = {
             "participants-by-code": {
                 "name": "Participants"
             }
+        },
+        "tutorials": {
+            "competition": {
+                "title": "How to use promotional materials and win valuable prizes"
+            }
         }
     },
     "de": {
@@ -1531,8 +1536,13 @@ const languages = {
             "participants-by-code": {
                 "name": "Participants"
             }
+        },
+        "tutorials": {
+            "competition": {
+                "title": "wie man Werbematerial verwendet und wertvolle Preise gewinnt"
+            }
         }
     }
 }
 
-export default languages
+export default languages;
