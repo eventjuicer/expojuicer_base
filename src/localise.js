@@ -637,14 +637,14 @@ const languages = {
                 "menu": "RSVPs",
                 "name": "RSVPs",
                 "limit": " %{limit} invite(s) left.",
-                "subtitle": "You receive 5 invitation for free. For every additional 5 points in the ranking, you earn 1 additional invite for a meeting.- I.e. A company with 50 points wins 10 invites.",
+                "subtitle": "At the beginning, you have 15 invitations. If you participate in the contest, which is integrated in the dashboard and you achieve at least 20 points, you get a mega package of invitations (50 additional invitations). This means, you will have 65 invitations for sure. \n\nFor every 5 more points you will get one more invitation. \nA company with 50 points should have 75 invitations in total. \n",
                 "noresults": "Navigate to Browse participants to invite some people.",
                 "noresultsmore": "",
                 "fields": {
                     "message": "Message",
                     "message_create": "Type in your message",
                     "creative_id": "Choose your template",
-                    "comment": "Private comment",
+                    "comment": "Comment",
                     "participant_id": "",
                     "status": {
                         "agreed": "Confirmed",
@@ -774,12 +774,12 @@ const languages = {
     "de": {
         "aor": {
             "action": {
-                "delete": "Delete",
+                "delete": "Löschen",
                 "show": "Show",
                 "list": "List",
                 "save": "Save",
                 "create": "Erstellen",
-                "edit": "Edit",
+                "edit": "Bearbeiten",
                 "cancel": "Cancel",
                 "refresh": "Aktualisieren",
                 "preview": "Preview",
@@ -1408,15 +1408,15 @@ const languages = {
             "meetups": {
                 "menu": "RSVPs",
                 "name": "RSVPs",
-                "limit": " %{limit} invite(s) left.",
-                "subtitle": "Du erhältst zunächst 5 Einladungen für Meetings. Für jeweils 5 Punkte in der Platzierung, erhältst du eine weitere Einladung. - z.B. Eine Firma mit 50 Punkten gewinnt 10 weitere Einladungen. ",
+                "limit": " %{limit} Einladung(en) übrig",
+                "subtitle": "Am Anfang hast du 15 Einladungen. Wenn du im Wettbewerb, welcher innerhalb des Dashboards gerade läuft, mindestens 20 Punkte erreichst, erhältst du das sog. Mega Paket an Einladungen (50 Stück.) Somit wärst du bei 65 Einladungen. \n\nFür jede weitere 5 Punkte bekommst du eine Einladung dazu. \nErreicht jemand 50 Punkte, dann hat man 75 Einladungen insgesam\n",
                 "noresults": "Navigate to Browse participants to invite some people.",
                 "noresultsmore": "",
                 "fields": {
-                    "message": "Message",
-                    "message_create": "Type in your message",
+                    "message": "Nachricht",
+                    "message_create": "Nachricht eingeben",
                     "creative_id": "Choose your template",
-                    "comment": "Private comment",
+                    "comment": "Kommentar",
                     "participant_id": "",
                     "status": {
                         "agreed": "Confirmed",
@@ -1430,7 +1430,7 @@ const languages = {
                     "participant": {
                         "name": "Name",
                         "profile": {
-                            "title": "Check invitation details",
+                            "title": "Überprüfen der Einladungen",
                             "fname": "Vorname",
                             "lname": "Nachname",
                             "cname2": "Firma",
@@ -1517,10 +1517,10 @@ const languages = {
                 "tabs": {
                     "invitation": "Send invitation",
                     "subject": "Subject",
-                    "message": "Message"
+                    "message": "Nachricht"
                 },
                 "actions": {
-                    "invite": "Invite"
+                    "invite": "EINLADEN"
                 },
                 "fields": {
                     "creative": "Select newsletter",
@@ -1545,4 +1545,4 @@ const languages = {
     }
 }
 
-export default languages;
+export default languages
