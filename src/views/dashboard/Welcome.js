@@ -20,6 +20,15 @@ export default translate(({ style, translate }) => (
 
       <SectionTitle label="tutorials.competition.title" />
 
+       <iframe 
+        width="800" 
+        height="452" 
+        src="https://www.youtube.com/embed/_H4bpaB7hbg" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen />
+
+
       <iframe 
         width="800" 
         height="452" 
@@ -27,6 +36,9 @@ export default translate(({ style, translate }) => (
         frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen />
+
+
+        
 
       {/* <Contact /> */}
     </div>
