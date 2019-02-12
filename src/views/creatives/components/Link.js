@@ -23,6 +23,16 @@ import {
 import Warning from 'material-ui/svg-icons/alert/warning';
 
 
+const filterSharables = (creative) => {
+
+  const allSharables = ["facebook", "twitter", "linkedin"];
+
+  if("services" in creative && Array.isArray(creative.services)){
+    return allSharables.filter(value => -1 !== creative.services.indexOf(value));
+  }
+
+  return allSharables;
+}
 
 const isEnabled = (creative) => ("enabled" in creative && creative.enabled)
 
@@ -80,14 +90,13 @@ const Creative = ({ creative, translate, showModal }) => (
 
 
 
-      {'shareable' in creative &&
-        creative.shareable && (
-          <span>
-           <Share type="facebook" target={ getProfileUrl(creative.link) }   disabled={!isEnabled(creative)} />
-            <Share type="linkedin" target={ getProfileUrl(creative.link) }   disabled={!isEnabled(creative)} />
-            <Share type="twitter" target={ getProfileUrl(creative.link) }   disabled={!isEnabled(creative)} />
-        </span>
-        )}
+       <span>{
+        
+        'shareable' in creative && creative.shareable ? filterSharables(creative).map(service =>  <Share type={service} target={ getProfileUrl(creative.link) }   disabled={!isEnabled(creative)} />) : null 
+        
+      }  </span>
+      
+      
 
     </CardActions>
   </Card>
