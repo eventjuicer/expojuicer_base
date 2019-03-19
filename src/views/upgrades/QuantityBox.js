@@ -54,7 +54,9 @@ class QuantityBox extends React.Component {
         upgradeCreate({
             ticket_id: data.id,
             locale : locale,
-            quantity : itemsCount
+            quantity : itemsCount,
+            template : `${process.env.REACT_APP_UPGRADES_TEMPLATE}`,
+            cc :  `${process.env.REACT_APP_UPGRADES_CC}`,
         });
 
     }
