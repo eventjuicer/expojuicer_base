@@ -48,7 +48,7 @@ const CustomIterator = ({ ids, data, basePath, locale, translate, push }) => (
                 overlay={
                 <CardTitle 
                     title={
-                        data[id].bookable  ? 
+                        data[id].bookable > 0  ? 
                         `${ get(data[id], `price.${locale}`) } ${locale==="pl" ? "PLN" : "EUR"} ${translate("common.sales.net")}` : 
                         `${translate("common.statuses.unavailable")}`
                     } 
