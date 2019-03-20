@@ -42,6 +42,11 @@ import {
 } from './views/representatives';
 
 
+import {
+  ViewList as PurchaseList
+  // ViewEdit as VisitorEdit,
+  // ViewEdit as VisitorShow,
+} from './views/purchases';
 
 import {
   ViewList as VisitorList
@@ -138,6 +143,12 @@ class App extends React.Component {
       >
        {(permissions) => [
 
+
+
+<Resource name="companydata" list={CompanyDataList} edit={CompanyDataEdit} />,
+
+<Resource name="purchases" list={PurchaseList} />,
+
 <Resource
 name="imports"
 list={hasAccessTo(permissions, "imports", "list") ?  ImportList : null}
@@ -153,11 +164,7 @@ create={hasAccessTo(permissions, "meetups", "create") ? MeetupCreate  : null}
 remove={hasAccessTo(permissions, "meetups", "remove") ? Delete  : null}
 />,
 
-<Resource
-name="companydata"
-list={hasAccessTo(permissions, "companydata", "list") ? CompanyDataList : null}
-edit={hasAccessTo(permissions, "companydata", "edit") ? CompanyDataEdit : null}
-/>,
+
 
 
 <Resource
@@ -176,10 +183,6 @@ show={hasAccessTo(permissions, "upgrades", "edit") ? UpgradeShow : null}
 />,
 
 <Resource
-name="tasks"
-/>,
-
-<Resource
 name="contactlists"
 list={hasAccessTo(permissions, "contactlists", "list") ? ContactlistList : null}
 edit={hasAccessTo(permissions, "contactlists", "edit") ? ContactlistEdit : null}
@@ -190,6 +193,7 @@ create={hasAccessTo(permissions, "contactlists", "create") ? ContactlistCreate :
   name="visitors" 
   list={hasAccessTo(permissions, "visitors", "list") ? VisitorList : null} 
 />,
+
 
 <Resource
   name="campaigns"
@@ -230,8 +234,9 @@ create={hasAccessTo(permissions, "contactlists", "create") ? ContactlistCreate :
   options={{ label: 'Scans' }}
   list={hasAccessTo(permissions, "scans", "list") ? ScanList : null}
   edit={hasAccessTo(permissions, "scans", "edit") ? ScanEdit : null}
-/>
+/>,
 
+<Resource name="tasks" />
        ]} 
       </Admin>
     );
