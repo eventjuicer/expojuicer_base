@@ -7,7 +7,7 @@ const PurchaseTicketsField = ({basePath, showItems, record, resource, translate,
 
         record.tickets.map(ticket => {
 
-            const name = locale in ticket.names ? ticket.names[locale] : "";
+            const name = locale in ticket.names && ticket.names[locale].length ? ticket.names[locale] : ticket.names.en;
             return <span key={ticket.id}>{`${showItems && name ? translate(name) : ''} ${ticket.quantity} ${translate("common.sales.pcs")}`}<br/></span>
 
         })
@@ -15,7 +15,9 @@ const PurchaseTicketsField = ({basePath, showItems, record, resource, translate,
 }
 
 PurchaseTicketsField.defaultProps = {
-    record : {},
+    record : {
+        tickets : []
+    },
     addLabel : true,
     showItems : false
 }  
