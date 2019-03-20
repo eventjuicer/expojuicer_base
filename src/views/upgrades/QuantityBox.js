@@ -10,7 +10,7 @@ import MenuItem from 'material-ui/MenuItem';
 
 import {connect} from 'react-redux'
 import compose from 'recompose/compose'
-import {upgradeCreate} from '../../redux/actions';
+import {purchaseCreate} from '../../redux/actions';
 
 
 class QuantityBox extends React.Component {
@@ -48,10 +48,10 @@ class QuantityBox extends React.Component {
 
     handleBuy = () => {
 
-        const {upgradeCreate, data, locale} = this.props;
+        const {purchaseCreate, data, locale} = this.props;
         const {itemsCount} = this.state;
 
-        upgradeCreate({
+        purchaseCreate({
             ticket_id: data.id,
             locale : locale,
             quantity : itemsCount,
@@ -111,7 +111,7 @@ QuantityBox.defaultProps = {
 
 const enhance = compose(
     translate,
-    connect(null, {upgradeCreate})
+    connect(null, {purchaseCreate})
 )
 
 export default enhance(QuantityBox)
