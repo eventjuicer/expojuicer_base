@@ -106,15 +106,20 @@ const languages = {
                 "net": "net",
                 "gross": "net",
                 "remaining": "Remaining",
-                "pcs": "pcs"
+                "pcs": "pcs",
+                "bookable": "remaining"
             },
             "actions": {
-                "buy": "Buy now!"
+                "buy": "Buy now!",
+                "modify": "Cancel",
+                "quantity": "Quantity"
             },
             "statuses": {
                 "unavailable": "Unavailable",
                 "already_bought": "Already bought",
-                "success": "Success!"
+                "success": "Success!",
+                "cancelled": "Cancelled",
+                "ok": "Confirmed"
             },
             "langs": {
                 "pl": "polski",
@@ -235,7 +240,7 @@ const languages = {
             "welcome": {
                 "title": "Welcome to Exhibitor's Panel!",
                 "subtitle": " ",
-                "description": "This is the administration panel for exhibitors which allows you to promote your presence at the E-commerce Berlin Expo 2019. The options provided here will help you schedule meetings with registered attendees, invite your clients and get additional promotional services at the event.",
+                "description": "This is the administration panel for exhibitors which allows you to promote your presence at the E-commerce Berlin Expo 2020. The options provided here will help you schedule meetings with registered attendees, invite your clients and get additional promotional services at the event.",
                 "aor_button": "Link",
                 "demo_button": "Link #2"
             }
@@ -302,7 +307,7 @@ const languages = {
         },
         "resources": {
             "upgrades": {
-                "name": "Weitere Standdienste erwerben",
+                "name": "Purchase additional services",
                 "menu": "Add services",
                 "booth": {
                     "fullprint": {
@@ -317,7 +322,7 @@ const languages = {
                     },
                     "flooring": {
                         "name": "9 sqm carpet lay",
-                        "description": "4 high chairs and 2 high table are included in basic offer. If you need carpet on your exhibition please upgrade with this package. You will get carpet flooring.",
+                        "description": "2 high chairs and 1 high table are included in basic offer. If you need carpet on your exhibition please upgrade with this package. You will get carpet flooring.",
                         "specs": "Available colors: light grey, dark grey, red, orange, blue, green, red)\nPlease inform branding supplier which color you'd like to use: Joanna Bartoszewicz on booths@ecommerceberlin.com"
                     },
                     "osb": {
@@ -376,11 +381,16 @@ const languages = {
                         "name": "20x deck chair in the chillout/coffee zone's with your logo",
                         "description": "20x deck chair in the chillout/coffee zone's with your logo",
                         "specs": ""
-                    }
+                    },
+                    "lanyards": {
+                        "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
+                    },
+                    "stagepatron": "Stage Patronage"
                 },
                 "actions": {
                     "details": "Check details and buy!"
-                }
+                },
+                "dialog": "Select quantity and confirm your order"
             },
             "companydata": {
                 "name": "Company data",
@@ -763,11 +773,19 @@ const languages = {
             },
             "participants-by-code": {
                 "name": "Participants"
+            },
+            "purchases": {
+                "menu": "Purchases"
             }
         },
         "tutorials": {
             "competition": {
                 "title": "How to use promotional materials and win valuable prizes"
+            }
+        },
+        "visitors": {
+            "form": {
+                "submit": "REGISTER FOR FREE"
             }
         }
     },
@@ -878,15 +896,20 @@ const languages = {
                 "net": "net",
                 "gross": "net",
                 "remaining": "Remaining",
-                "pcs": "pcs"
+                "pcs": "pcs",
+                "bookable": "Anzahl"
             },
             "actions": {
-                "buy": "Buy now!"
+                "buy": "Buy now!",
+                "modify": "Löschen",
+                "quantity": "Anzahl"
             },
             "statuses": {
                 "unavailable": "Unavailable",
                 "already_bought": "Already bought",
-                "success": "Success!"
+                "success": "Success!",
+                "cancelled": "Gestrichen",
+                "ok": "Bestätigt"
             },
             "langs": {
                 "pl": "polski",
@@ -1007,7 +1030,7 @@ const languages = {
             "welcome": {
                 "title": "Willkommen zum Ausstellerforum!",
                 "subtitle": " ",
-                "description": "Hier findet ihr das Administrationsforum für Aussteller der E-commerce Berlin Expo 2019. Ihr könnt innerhalb des Forums, Meetings mit registrierten Besuchern arrangieren, Klienten zum Event einladen und sogar erweiterte Materialien für eure Teilnahme an der Expo gewinnen.",
+                "description": "Hier findet ihr das Administrationsforum für Aussteller der E-commerce Berlin Expo 2020. Ihr könnt innerhalb des Forums, Meetings mit registrierten Besuchern arrangieren, Klienten zum Event einladen und sogar erweiterte Materialien für eure Teilnahme an der Expo gewinnen.",
                 "aor_button": "Link",
                 "demo_button": "Link #2"
             }
@@ -1074,7 +1097,7 @@ const languages = {
         },
         "resources": {
             "upgrades": {
-                "name": "Purchase additional services",
+                "name": "Weitere Standdienste erwerben",
                 "menu": "Dienste hinzufügen",
                 "booth": {
                     "fullprint": {
@@ -1089,7 +1112,7 @@ const languages = {
                     },
                     "flooring": {
                         "name": "Teppichbelag 9m2",
-                        "description": "4 Hocker und 2 Tische sind in dieser Leistung inbegriffen. Falls Sie einen Teppich benötigen, buchen Sie bitte diese Option",
+                        "description": "2 Hocker und 1 Tische sind in dieser Leistung inbegriffen. Falls Sie einen Teppich benötigen, buchen Sie bitte diese Option",
                         "specs": "Zusatzinformation (verfügbare Farben): Hellgrau, dunkelgrau, rot, orange, grün, blau \nBitte kontaktieren Sie unseren externen Kontakt, Joanna Bartoszewicz,  bzgl. der Farbauswahl per E-Mail an: booths@ecommerceberlin.com"
                     },
                     "osb": {
@@ -1148,11 +1171,16 @@ const languages = {
                         "name": "Sponsoring von Liegestühlen in der Kaffeezone",
                         "description": "Wollen Sie, dass die Besucher auf von Ihnen gebrandeten Stühlen entspannen und die Expo aus einer ruhigeren Atmosphäre betrachten? Dann ist dieses Paket genau das richtige. Durch diese Möglichkeit bieten wir Ihnen an, 20 angefertigte, mit Ihrem Logo bedruckte Liegestühle zur Entspannung bereitzustellen",
                         "specs": ""
-                    }
+                    },
+                    "lanyards": {
+                        "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
+                    },
+                    "stagepatron": "Stage Patronage"
                 },
                 "actions": {
                     "details": "Check details and buy!"
-                }
+                },
+                "dialog": "Anzahl wählen und bestaetigen"
             },
             "companydata": {
                 "name": "Firma",
@@ -1535,11 +1563,19 @@ const languages = {
             },
             "participants-by-code": {
                 "name": "Participants"
+            },
+            "purchases": {
+                "menu": "Bestellung"
             }
         },
         "tutorials": {
             "competition": {
                 "title": "wie man Werbematerial verwendet und wertvolle Preise gewinnt"
+            }
+        },
+        "visitors": {
+            "form": {
+                "submit": "KOSTENLOS REGISTRIEREN"
             }
         }
     }
