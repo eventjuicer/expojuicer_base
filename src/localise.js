@@ -337,7 +337,7 @@ const languages = {
                     },
                     "grandflooring": {
                         "name": "18 sqm carpet lay",
-                        "description": "6 high chairs and 2 high table are included in basic offer. If you need carpet on your exhibition please upgrade with this package. You will get carpet flooring.",
+                        "description": "4 high chairs and 2 high table are included in basic offer. If you need carpet on your exhibition please upgrade with this package. You will get carpet flooring.",
                         "specs": "Available colors: light grey, dark grey, red, orange, blue, green, red) Please inform branding supplier which color you'd like to use: Joanna Bartoszewicz on booths@ecommerceberlin.com"
                     }
                 },
@@ -353,9 +353,9 @@ const languages = {
                         "specs": ""
                     },
                     "electricity": {
-                        "name": "3000 Watts electricity",
-                        "description": "As a standard option you will get only 300 Watt. This is sufficient when having 1-2 laptops and 1 bigger display but insufficient if you are planning to have some additional equipment. Buy this option to avoid surprises. ",
-                        "specs": ""
+                        "name": "1000 Watts electricity connection",
+                        "description": "Attention! The standard electric power connected to the stand is up to 500W. If you want to plug-in more items we recommend you to increase the power output. 1000W service is sufficient for having 2-3 laptops and 1 bigger display.",
+                        "specs": "1000W service is insufficient if you are planning to have additional equipment e.g. coffee machine"
                     },
                     "display": {
                         "name": "50inch LED display",
@@ -385,7 +385,13 @@ const languages = {
                     "lanyards": {
                         "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
                     },
-                    "stagepatron": "Stage Patronage"
+                    "stagepatron": "Stage Patronage",
+                    "electricity3kw": {
+                        "0": "3kW electricity connection",
+                        "name": "3000 Watts electricity connection",
+                        "description": "Attention!  The electricity in the regular offer is 500W. If you want to plug-in more items we recommend you to increase the power up to 3kw",
+                        "specs": "Only this service allows you to connect devices with high power consumption! e.g. coffee machine"
+                    }
                 },
                 "actions": {
                     "details": "Check details and buy!"
@@ -1127,7 +1133,7 @@ const languages = {
                     },
                     "grandflooring": {
                         "name": "Teppichbelag 18m2",
-                        "description": "6 Hocker und 2 Tische sind in dieser Leistung inbegriffen. Falls Sie einen Teppich benötigen, buchen Sie bitte diese Option",
+                        "description": "4 Hocker und 2 Tische sind in dieser Leistung inbegriffen. Falls Sie einen Teppich benötigen, buchen Sie bitte diese Option",
                         "specs": "Hellgrau, dunkelgrau, rot, orange, grün, blau Bitte kontaktieren Sie unseren externen Kontakt, Joanna Bartoszewicz,  bzgl. der Farbauswahl per E-Mail an: booths@ecommerceberlin.com"
                     }
                 },
@@ -1143,9 +1149,9 @@ const languages = {
                         "specs": ""
                     },
                     "electricity": {
-                        "name": "3000 Watts electricity",
-                        "description": "As a standard option you will get only 300 Watt. This is sufficient when having 1-2 laptops and 1 bigger display but insufficient if you are planning to have some additional equipment. Buy this option to avoid surprises. ",
-                        "specs": ""
+                        "name": "1000W Stromleistung",
+                        "description": "Bitte beachten! Im regulären Fall enthält dein Paket eine Stromleistung in Höhe von 500W. Falls mehrere Geräte angeschlossen werden sollen, empfehlen wir ein Upgrade der Stromleistung. Falls die Geräte mehr Strom verbrauchen, dann empfehlen wir das Stromupgrade in Höhe von 3kW. 1kW empfehlen wir für den Anschluss von 2-3 Laptops + ein größerer Bildschirm.",
+                        "specs": "1000W sind unzureichend für den Anschluss einer Kaffeemaschine beispielsweise."
                     },
                     "display": {
                         "name": "50 Zoll LED Bildschirm",
@@ -1175,7 +1181,13 @@ const languages = {
                     "lanyards": {
                         "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
                     },
-                    "stagepatron": "Stage Patronage"
+                    "stagepatron": "Stage Patronage",
+                    "electricity3kw": {
+                        "0": "3kW electricity connection",
+                        "name": "3000W Stromleistung",
+                        "description": "Bitte beachten! Im regulären Fall enthält dein Paket eine Stromleistung in Höhe von 500W. Falls mehrere Geräte angeschlossen werden sollen, empfehlen wir ein Upgrade der Stromleistung. Falls die Geräte mehr Strom verbrauchen, dann empfehlen wir das Stromupgrade in Höhe von 3kW",
+                        "specs": "Nur mit der 3kw Leistung wäre es möglich, eine Kaffeemaschine problemlos laufen zu lassen. Eine kleiner Stromleitung, wie z.B. 1kW, ermöglich dies nicht."
+                    }
                 },
                 "actions": {
                     "details": "Check details and buy!"
@@ -1581,4 +1593,4 @@ const languages = {
     }
 }
 
-export default languages
+export default languages;
