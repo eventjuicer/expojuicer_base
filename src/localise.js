@@ -119,13 +119,16 @@ const languages = {
                 "already_bought": "Already bought",
                 "success": "Success!",
                 "cancelled": "Cancelled",
-                "ok": "Confirmed"
+                "ok": "Confirmed",
+                "new": "Processing",
+                "confirmed": "Confirmed"
             },
             "langs": {
                 "pl": "polski",
                 "en": "english",
                 "de": "deutsch"
-            }
+            },
+            "thankyou": "Thank you for your order"
         },
         "menu": {
             "sections": {
@@ -915,13 +918,16 @@ const languages = {
                 "already_bought": "Already bought",
                 "success": "Success!",
                 "cancelled": "Gestrichen",
-                "ok": "Bestätigt"
+                "ok": "Bestätigt",
+                "new": "in Bearbeitung",
+                "confirmed": "Confirmed"
             },
             "langs": {
                 "pl": "polski",
                 "en": "english",
                 "de": "deutsch"
-            }
+            },
+            "thankyou": "Danke für Deine Bestellung"
         },
         "menu": {
             "sections": {
@@ -1593,4 +1599,4 @@ const languages = {
     }
 }
 
-export default languages;
+export default languages
