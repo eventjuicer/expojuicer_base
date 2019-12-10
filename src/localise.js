@@ -119,9 +119,10 @@ const languages = {
                 "already_bought": "Already bought",
                 "success": "Success!",
                 "cancelled": "Cancelled",
-                "ok": "Confirmed",
+                "ok": "Finalized",
                 "new": "Processing",
-                "confirmed": "Confirmed"
+                "confirmed": "Confirmed",
+                "hold": "Waiting for payment"
             },
             "langs": {
                 "pl": "polski",
@@ -918,9 +919,10 @@ const languages = {
                 "already_bought": "Already bought",
                 "success": "Success!",
                 "cancelled": "Gestrichen",
-                "ok": "Bestätigt",
+                "ok": "Beendet",
                 "new": "in Bearbeitung",
-                "confirmed": "Confirmed"
+                "confirmed": "Confirmed",
+                "hold": "Waiting for payment"
             },
             "langs": {
                 "pl": "polski",
