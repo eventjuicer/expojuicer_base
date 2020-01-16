@@ -548,7 +548,7 @@ const languages = {
                 "menu": "Ranking",
                 "name": "Ranking",
                 "limit": "",
-                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo website equals 1 point. \n\n> The ranking refreshes once a day. Your company's position on the last day of the contest (6:00 AM, Feb 5, 2020) determines a prize from the rewards list.",
+                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo website equals 1 point. \n\n> The ranking refreshes once a day. The points can be collected until 11:59 PM CET on the 4th of February, 2020. The final results will be announced at 1:00 PM CET on the 5th of February, 2020.",
                 "fields": {
                     "stats": "Points",
                     "domain": "Domain",
@@ -664,7 +664,7 @@ const languages = {
                 "menu": "RSVPs",
                 "name": "RSVPs",
                 "limit": " %{limit} invite(s) left.",
-                "subtitle": "At the beginning, you have 15 invitations. If you participate in the contest, which is integrated in the dashboard and you achieve at least 20 points, you get a mega package of invitations (50 additional invitations). This means, you will have 65 invitations for sure. \n\nFor every 5 more points you will get one more invitation. \nA company with 50 points should have 75 invitations in total. \n",
+                "subtitle": "At the beginning, you have 30 invitations. If you participate in the contest, which is integrated in the dashboard and you achieve at least 50 points, you get a mega package of invitations (50 additional invitations). You can add it up to 200 records (for 200 points), which is a limit per company. \n\n > *The maximum limit of invitations per company: 200 records.",
                 "noresults": "Navigate to Browse participants to invite some people.",
                 "noresultsmore": "",
                 "fields": {
