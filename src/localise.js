@@ -179,22 +179,22 @@ const languages = {
             "unknown": "#unknown",
             "presentation": {
                 "title": "Presentation slot",
-                "description": "A 30-minute presentation slot on one of the four stages. Your presentation will be added to the official E-Commerce Berlin Expo 2019 presentations agenda.",
+                "description": "A 30-minute presentation slot on one of the three main stages. Your presentation slot will take place at 3:50 PM, and will be added to the official E-Commerce Berlin Expo 2020 agenda.\n\n> *important! Each of the three winning contestants has to earn at least 250 points in the contest to receive this prize.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "A video interview will be conducted with one of your company representatives at the expo. The video interview will be published on the EBE Youtube channel and the social media channels (Facebook, Twitter, LinkedIn). ",
+                "description": "A video interview will be conducted with one of your company representatives at the expo. The video interview will be published on the EBE Youtube channel and the social media channels (Facebook, Twitter, LinkedIn). \n\n> *important! Earning a minimum of 100 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "brand_highlight": {
                 "title": "Logo Highlight",
-                "description": "Your logotype will be displayed in a prime location on the official E-commerce Berlin Expo website among leading e-commerce companies.",
+                "description": "Your logotype will be displayed in a prime location on the official E-commerce Berlin Expo website among leading e-commerce companies.\n\n> *important! Earning a minimum of 100 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "leaflets": {
                 "title": "Permission of Distribution of flyers",
-                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor",
+                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor\n\n> *important! Earning a minimum of 30 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "earlybird": {
@@ -203,23 +203,26 @@ const languages = {
             },
             "meetups": {
                 "title": "Mega Package of Invitations",
-                "description": "You will receive 50 personal invitations which you will be able to send to visitors who are registered to attend the E-commerce Berlin Expo 2019. Set up meetings with your leads and use your time at the expo  effectively! ",
+                "description": "Every 30 scored points grant you a package of 50 invitations in our matchmaking tool.\nNot enough? Keep scoring points!\nIf you score another 30 points, you will get an extra package of 50 invitations. You can add it up to 200 records (for 120 points), which is a limit per company.\nWith this matchmaking tool, you will be able to send messages to the visitors who signed up for the E-commerce Berlin Expo 2020. Set up meetings with your leads and make the most of the Expo!\n\n> *The maximum limit of invitations per company: 200 records. ",
                 "image": ""
             },
             "scanner": {
                 "title": "Badge scanner mobile app",
-                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.",
+                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "rollups": {
                 "title": "Roll-up next to the entrance \n",
-                "description": "Your company's logotype will be displayed at the immediate entrance to the exhibition hall. ",
+                "description": "Your company's logotype will be displayed at the immediate entrance to the exhibition hall.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "blog": {
                 "title": "A guest article on the E-commerce Berlin Expo Blog",
-                "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo. ",
+                "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo. \n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
                 "image": ""
+            },
+            "badgesponsor": {
+                "title": "Logotype on the visitors badge"
             }
         },
         "fields": {
@@ -271,7 +274,7 @@ const languages = {
                     "wifi": "WiFi password",
                     "electricity": "electric socket (300 W)"
                 },
-                "backwall": "The maximum dimensions of the back wall are 3 m wide x 2.5 m high",
+                "backwall": "The maximum dimensions of the back wall are 3 m wide x 3 m high (for the 9sqm exhibition space), 6 m x 3 m (for 18sqm exhibition space)",
                 "add_equipment": "Additional equipment",
                 "carpeting": "If you want a carpeting in your stand in any color of your choice - contact us at: ",
                 "add_eq_contact": "Do you need additional furniture, vouchers, electricity or you want to rent a TV screen? Talk to us!",
@@ -289,10 +292,10 @@ const languages = {
                 "form": "",
                 "deliver_hours": "Delivers of the materials will take place in the following hours:",
                 "date": {
-                    "day_before_event": "April 24 (4:00 PM)",
-                    "event_day": "February 18 (8:00 AM)"
+                    "day_before_event": "",
+                    "event_day": "February 7 (9:00 AM)"
                 },
-                "deliver": "Materials can be delivered to the Expo no earlier than February 18",
+                "deliver": "Materials can be delivered to the Expo no earlier than February 7",
                 "sped": "The official forwarding agent of the Expo is Transmeble International Sp. z o.o.",
                 "contact_person": "Contact person:"
             },
@@ -303,10 +306,10 @@ const languages = {
                 "go_to_info": "",
                 "tape": "",
                 "options": {
-                    "day_before_event": "February 19 (from 2:00 PM)",
-                    "event_day": "February 19 (8:00 AM - 9:30 AM)"
+                    "day_before_event": "February 12 (from 1:00 PM)",
+                    "event_day": "February 13 (8:00 AM - 9:30 AM)"
                 },
-                "event_day": "February 20 (5:15 PM - 8:00 PM)"
+                "event_day": "February 13 (5:15 PM - 10:00 PM)"
             }
         },
         "resources": {
@@ -541,7 +544,7 @@ const languages = {
                 "menu": "Ranking",
                 "name": "Ranking",
                 "limit": "",
-                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo homepage equals 1 point.",
+                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo website equals 1 point. \n\n> The ranking refreshes once a day. Your company's position on the last day of the contest (6:00 AM, Feb 5, 2020) determines a prize from the rewards list.",
                 "fields": {
                     "stats": "Points",
                     "domain": "Domain",
@@ -797,6 +800,11 @@ const languages = {
             "form": {
                 "submit": "REGISTER FOR FREE"
             }
+        },
+        " prizes": {
+            "badgesponsor": {
+                "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020.\n\n> *important! The winner has to earn at least 500 points in the contest to receive this prize."
+            }
         }
     },
     "de": {
@@ -979,22 +987,22 @@ const languages = {
             "unknown": "#unbekannt",
             "presentation": {
                 "title": "Präsentation",
-                "description": "Eine 30-minütige Präsentation auf einen der vier Bühnen. Eure Präsentation wird in die offizielle E-commerce Berlin Expo 2019 Agenda mit aufgenommen.",
+                "description": "Eine 30-minütige Präsentation auf einer der drei Hauptbühnen. Deine Präsentation wird um 15:50 Uhr stattfinden und offiziell Teil der Agenda der E-commerce Berlin Expo 2020 sein. \n\n*Wichtig! Jeder von den drei Gewinnern muss mindestens 250 Punkte erzielen, um diesen Preis zu bekommen.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "Ein Video Interview wird mit einem Vertreter eurer Firma auf der Expo durchgeführt. Das Video Interview wird auf dem EBE Youtube Kanal sowie sämtlichen Social Media Kanälen veröffentlicht. ",
+                "description": "Ein Video Interview wird mit einem Vertreter eurer Firma auf der Expo durchgeführt. Das Video Interview wird auf dem EBE Youtube Kanal sowie sämtlichen Social Media Kanälen veröffentlicht.\n\n> *Wichtig! 100 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
                 "image": ""
             },
             "brand_highlight": {
                 "title": "Logo highlight",
-                "description": "Dein Logo wird auf der E-commerce Berlin Expo Webseite neben den führenden Unternehmen erscheinen.",
+                "description": "Dein Logo wird auf der E-commerce Berlin Expo Webseite neben den führenden Unternehmen erscheinen.\n\n> *Wichtig! 100 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
                 "image": ""
             },
             "leaflets": {
                 "title": "Permission of Distribution of flyers",
-                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor",
+                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor\n\n> *Wichtig! 30 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
                 "image": ""
             },
             "earlybird": {
@@ -1003,23 +1011,26 @@ const languages = {
             },
             "meetups": {
                 "title": "Mega-Paket - Einladungen",
-                "description": "Du erhältst 50 persönliche Einladung welche du an Besucher der E-commerce Berlin Expo 2019 schicken kannst. Arrangiere Meetings mit potentiellen Kunden und nutze deine Zeit auf der Expo effektiv! ",
+                "description": "30 erzielte Punkte bringen dir 50 zusätzliche Einladungen in unserem Matchmaking-Tool. \n\nDas reicht nicht? Dann weiter Punkte sammeln. :) \nWenn du nochmal 30 Punkte erzielst, dann bekommst du noch mal 50 Einladungen. Das Maximum beträgt 200 Einladungen (bei 120 Punkten), was auch das Limit für jedes Unternehmen ist. \n\nMit diesem Tool hast du die Möglichkeit die Besucher der Expo, die sich registriert haben für die E-commerce Berlin Expo, anzuschreiben um Termine zu vereinbaren und somit einen noch besseren Outcome zu bekommen. \n\n> *Das Maximum an Einladungen beträgt 200 Leads pro Unternehmen. ",
                 "image": ""
             },
             "scanner": {
                 "title": "Badge scanner mobile app",
-                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.",
+                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.\n\n> *Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
                 "image": ""
             },
             "rollups": {
-                "title": "Roll-up am Eingang der Ausstellerfläche",
-                "description": "Euer Firmenlogo wird am Eingang der Ausstellerfläche aufgehängt.",
+                "title": "Roll-up am Eingang der Ausstellerfläche\n\n*Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "description": "Euer Firmenlogo wird am Eingang der Ausstellerfläche aufgehängt.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
                 "image": ""
             },
             "blog": {
                 "title": "Ein Gastartikel auf dem E-commerce Berlin Expo Blog",
-                "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo. ",
+                "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo. \n\n> *Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
                 "image": ""
+            },
+            "badgesponsor": {
+                "title": "Logotype on the visitors badge"
             }
         },
         "fields": {
@@ -1071,7 +1082,7 @@ const languages = {
                     "wifi": "WiFi password",
                     "electricity": "electric socket (300 W)"
                 },
-                "backwall": "The maximum dimensions of the back wall are 3 m wide x 2.5 m high",
+                "backwall": "The maximum dimensions of the back wall are 3 m wide x 3 m high (for the 9sqm exhibition space), 6 m x 3 m (for 18sqm exhibition space)",
                 "add_equipment": "Additional equipment",
                 "carpeting": "If you want a carpeting in your stand in any color of your choice - contact us at: ",
                 "add_eq_contact": "Do you need additional furniture, vouchers, electricity or you want to rent a TV screen? Talk to us!",
@@ -1082,17 +1093,17 @@ const languages = {
             },
             "shipment": {
                 "address": "Shipping address:",
-                "describe": "E-commerce Poland Expo [booth number, COMPANY NAME]",
+                "describe": "E-commerce Berlin Expo [booth number, COMPANY NAME]",
                 "country": ", Poland",
                 "contact_number": "",
                 "fill_in_form": "",
                 "form": "",
                 "deliver_hours": "Delivers of the materials will take place in the following hours:",
                 "date": {
-                    "day_before_event": "April 24 (4:00 PM)",
-                    "event_day": "February 18 (8:00 AM)"
+                    "day_before_event": "",
+                    "event_day": "February 7 (9:00 AM)"
                 },
-                "deliver": "Materials can be delivered to the Expo no earlier than February 18",
+                "deliver": "Materials can be delivered to the Expo no earlier than February 7",
                 "sped": "The official forwarding agent of the Expo is Transmeble International Sp. z o.o.",
                 "contact_person": "Contact person:"
             },
@@ -1103,10 +1114,10 @@ const languages = {
                 "go_to_info": "",
                 "tape": "",
                 "options": {
-                    "day_before_event": "February 19 (from 2:00 PM)",
-                    "event_day": "February 19 (8:00 AM - 9:30 AM)"
+                    "day_before_event": "February 12 (from 1:00 PM)",
+                    "event_day": "February 13 (8:00 AM - 9:30 AM)"
                 },
-                "event_day": "February 20 (5:15 PM - 8:00 PM)"
+                "event_day": "February 13 (5:15 PM - 10:00 PM)"
             }
         },
         "resources": {
@@ -1329,8 +1340,8 @@ const languages = {
             "rewards": {
                 "menu": "Preise",
                 "name": "Preise",
-                "body_text_1": "To participate in the ",
-                "body_text_2": " and be able to win rewards you must use dedicated tracking link. See ",
+                "body_text_1": "",
+                "body_text_2": "",
                 "body_text_3": " for details."
             },
             "logistics": {
@@ -1341,7 +1352,7 @@ const languages = {
                 "menu": "Platzierung",
                 "name": "Platzierung",
                 "limit": "",
-                "subtitle": "Du gewinnst Punkte, indem du deine Teilnahme an der Expo als Aussteller promotest. Nutze das Werbematerial, welches wir vorbereitet haben. Jeder Klick auf die E-commerce Berlin Expo Homepage mit deinem persönlich angestellten Link ergibt ein Punkt.",
+                "subtitle": "Du gewinnst Punkte, indem du deine Teilnahme an der Expo als Aussteller promotest. Nutze das Werbematerial, welches wir vorbereitet haben. Jeder Klick auf die E-commerce Berlin Expo Website mit deinem persönlich angestellten Link ergibt ein Punkt.\n\n> *Das Ranking wird täglich aktualisiert. Die Position deines Unternehmens am letzten Tag des Wettbewerbes (6:00 Uhr Morgens, am 5.02.20) entscheidet darüber, welchen Preis ihr bekommt.",
                 "fields": {
                     "stats": "Punkte",
                     "domain": "Domain",
@@ -1563,26 +1574,26 @@ const languages = {
                 "menu": "Teilnehmer finden",
                 "name": "Teilnehmer finden",
                 "tabs": {
-                    "invitation": "Send invitation",
-                    "subject": "Subject",
+                    "invitation": "",
+                    "subject": "",
                     "message": "Nachricht"
                 },
                 "actions": {
                     "invite": "EINLADEN"
                 },
                 "fields": {
-                    "creative": "Select newsletter",
+                    "creative": "",
                     "profile": {
                         "fname": "Vorname",
                         "lname": "Nachname",
                         "cname2": "Firma",
-                        "position": "Position",
-                        "domain": "Domain"
+                        "position": "",
+                        "domain": ""
                     }
                 }
             },
             "participants-by-code": {
-                "name": "Participants"
+                "name": ""
             },
             "purchases": {
                 "menu": "Bestellung"
@@ -1596,6 +1607,11 @@ const languages = {
         "visitors": {
             "form": {
                 "submit": "KOSTENLOS REGISTRIEREN"
+            }
+        },
+        " prizes": {
+            "badgesponsor": {
+                "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt. \n\n> *Wichtig! Um diesen Preis zu bekommen braucht der Gewinner mindestens 500 Punkte."
             }
         }
     }
