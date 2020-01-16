@@ -179,50 +179,54 @@ const languages = {
             "unknown": "#unknown",
             "presentation": {
                 "title": "Presentation slot",
-                "description": "A 30-minute presentation slot on one of the three main stages. Your presentation slot will take place at 3:50 PM, and will be added to the official E-Commerce Berlin Expo 2020 agenda.\n\n> *important! Each of the three winning contestants has to earn at least 250 points in the contest to receive this prize.",
+                "description": "A 30-minute presentation slot on one of the three main stages. Your presentation slot will take place at 3:50 PM, and will be added to the official E-Commerce Berlin Expo 2020 agenda.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "A video interview will be conducted with one of your company representatives at the expo. The video interview will be published on the EBE Youtube channel and the social media channels (Facebook, Twitter, LinkedIn). \n\n> *important! Earning a minimum of 100 points is a required condition of receiving the prize.",
+                "description": "A video interview will be conducted with one of your company representatives at the expo. The video interview will be published on the EBE Youtube channel and the social media channels (Facebook, Twitter, LinkedIn).",
                 "image": ""
             },
             "brand_highlight": {
                 "title": "Logo Highlight",
-                "description": "Your logotype will be displayed in a prime location on the official E-commerce Berlin Expo website among leading e-commerce companies.\n\n> *important! Earning a minimum of 100 points is a required condition of receiving the prize.",
+                "description": "Your logotype will be displayed in a prime location on the official E-commerce Berlin Expo website among leading e-commerce companies.",
                 "image": ""
             },
             "leaflets": {
                 "title": "Permission of Distribution of flyers",
-                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor\n\n> *important! Earning a minimum of 30 points is a required condition of receiving the prize.",
+                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor.",
                 "image": ""
             },
             "earlybird": {
                 "title": "Access to Early-Bird Sales",
-                "description": "Receive access to early-bird prices for the exhibition spaces at the next E-commerce Berlin Expo in February 2020. You will be able to see the entire floor plan to choose the best location for your booth, before anyone else ! "
+                "description": "Receive access to early-bird prices for the exhibition spaces at the next E-commerce Berlin Expo in February 2021. You will be able to see the entire floor plan to choose the best location for your booth, before anyone else ! "
             },
             "meetups": {
                 "title": "Mega Package of Invitations",
-                "description": "Every 30 scored points grant you a package of 50 invitations in our matchmaking tool.\nNot enough? Keep scoring points!\nIf you score another 30 points, you will get an extra package of 50 invitations. You can add it up to 200 records (for 120 points), which is a limit per company.\nWith this matchmaking tool, you will be able to send messages to the visitors who signed up for the E-commerce Berlin Expo 2020. Set up meetings with your leads and make the most of the Expo!\n\n> *The maximum limit of invitations per company: 200 records. ",
+                "description": "Every 50 scored points grant you a package of 50 invitations in our matchmaking tool.\nNot enough? Keep scoring points!\nIf you score another 50 points, you will get an extra package of 50 invitations. You can add it up to 200 records (for 200 points), which is a limit per company.\nWith this matchmaking tool, you will be able to send messages to the visitors who signed up for the E-commerce Berlin Expo 2020. Set up meetings with your leads and make the most of the Expo!\n\n> *The maximum limit of invitations per company: 200 records. ",
                 "image": ""
             },
             "scanner": {
                 "title": "Badge scanner mobile app",
-                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
+                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.",
                 "image": ""
             },
             "rollups": {
                 "title": "Roll-up next to the entrance \n",
-                "description": "Your company's logotype will be displayed at the immediate entrance to the exhibition hall.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
+                "description": "Your company's logotype will be displayed at the immediate entrance to the exhibition hall.",
                 "image": ""
             },
             "blog": {
                 "title": "A guest article on the E-commerce Berlin Expo Blog",
-                "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo. \n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
+                "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo.",
                 "image": ""
             },
             "badgesponsor": {
                 "title": "Logotype on the visitors badge"
+            },
+            "badges": {
+                "title": "Logotype on the visitors badge",
+                "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020."
             }
         },
         "fields": {
@@ -803,7 +807,7 @@ const languages = {
         },
         " prizes": {
             "badgesponsor": {
-                "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020.\n\n> *important! The winner has to earn at least 500 points in the contest to receive this prize."
+                "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020.\n"
             }
         }
     },
@@ -987,50 +991,54 @@ const languages = {
             "unknown": "#unbekannt",
             "presentation": {
                 "title": "Präsentation",
-                "description": "Eine 30-minütige Präsentation auf einer der drei Hauptbühnen. Deine Präsentation wird um 15:50 Uhr stattfinden und offiziell Teil der Agenda der E-commerce Berlin Expo 2020 sein. \n\n*Wichtig! Jeder von den drei Gewinnern muss mindestens 250 Punkte erzielen, um diesen Preis zu bekommen.",
+                "description": "Eine 30-minütige Präsentation auf einer der drei Hauptbühnen. Deine Präsentation wird um 15:50 Uhr stattfinden und offiziell Teil der Agenda der E-commerce Berlin Expo 2020 sein.",
                 "image": ""
             },
             "video_interview": {
                 "title": "Video Interview",
-                "description": "Ein Video Interview wird mit einem Vertreter eurer Firma auf der Expo durchgeführt. Das Video Interview wird auf dem EBE Youtube Kanal sowie sämtlichen Social Media Kanälen veröffentlicht.\n\n> *Wichtig! 100 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "description": "Ein Video Interview wird mit einem Vertreter eurer Firma auf der Expo durchgeführt. Das Video Interview wird auf dem EBE Youtube Kanal sowie sämtlichen Social Media Kanälen veröffentlicht.",
                 "image": ""
             },
             "brand_highlight": {
                 "title": "Logo highlight",
-                "description": "Dein Logo wird auf der E-commerce Berlin Expo Webseite neben den führenden Unternehmen erscheinen.\n\n> *Wichtig! 100 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "description": "Dein Logo wird auf der E-commerce Berlin Expo Webseite neben den führenden Unternehmen erscheinen.",
                 "image": ""
             },
             "leaflets": {
-                "title": "Permission of Distribution of flyers",
-                "description": "Distribution of flyer at the venue by a hostess (*) Costs of production, hostess hire and delivery are borne by the sponsor\n\n> *Wichtig! 30 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "title": "Verteilen von Flyern Durch Hostessen",
+                "description": "Das Verteilen von Flyern nicht nur am Stand\n*Die Produktion der Flyer und das Engagieren einer Hostesse/ eines Hostessen und die damit verbundenen Kosten obliegen dem Sponsor",
                 "image": ""
             },
             "earlybird": {
                 "title": "Zugang zu Early-Bird Sales",
-                "description": "Erhalte Early-Bird Preise für die Stände auf der nächsten E-commerce Berlin Expo im Februar 2020. Du bekommst Zugang zur gesamten Ausstellungsfläche um die beste Location für deinen Stand zu wählen, vor allen anderen!"
+                "description": "Erhalte Early-Bird Preise für die Stände auf der nächsten E-commerce Berlin Expo im Februar 2021. Du bekommst Zugang zur gesamten Ausstellungsfläche um die beste Location für deinen Stand zu wählen, vor allen anderen!"
             },
             "meetups": {
                 "title": "Mega-Paket - Einladungen",
-                "description": "30 erzielte Punkte bringen dir 50 zusätzliche Einladungen in unserem Matchmaking-Tool. \n\nDas reicht nicht? Dann weiter Punkte sammeln. :) \nWenn du nochmal 30 Punkte erzielst, dann bekommst du noch mal 50 Einladungen. Das Maximum beträgt 200 Einladungen (bei 120 Punkten), was auch das Limit für jedes Unternehmen ist. \n\nMit diesem Tool hast du die Möglichkeit die Besucher der Expo, die sich registriert haben für die E-commerce Berlin Expo, anzuschreiben um Termine zu vereinbaren und somit einen noch besseren Outcome zu bekommen. \n\n> *Das Maximum an Einladungen beträgt 200 Leads pro Unternehmen. ",
+                "description": "50 erzielte Punkte bringen dir 50 zusätzliche Einladungen in unserem Matchmaking-Tool. \n\nDas reicht nicht? Dann weiter Punkte sammeln. :\nWenn du nochmal 50 Punkte erzielst, dann bekommst du noch mal 50 Einladungen. Das Maximum beträgt 200 Einladungen (bei 200 Punkten), was auch das Limit für jedes Unternehmen ist. \n\nMit diesem Tool hast du die Möglichkeit die Besucher der Expo, die sich registriert haben für die E-commerce Berlin Expo, anzuschreiben um Termine zu vereinbaren und somit einen noch besseren Outcome zu bekommen. \n\n> *Das Maximum an Einladungen beträgt 200 Leads pro Unternehmen. ",
                 "image": ""
             },
             "scanner": {
                 "title": "Badge scanner mobile app",
-                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.\n\n> *Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "description": "You will get an access to dedicated visitor badge scanner app. Each booth representative of your company would be able to gather visitor data and export results to .xls or .csv.",
                 "image": ""
             },
             "rollups": {
                 "title": "Roll-up am Eingang der Ausstellerfläche\n\n*Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
-                "description": "Euer Firmenlogo wird am Eingang der Ausstellerfläche aufgehängt.\n\n> *important! Earning a minimum of 50 points is a required condition of receiving the prize.",
+                "description": "Euer Firmenlogo wird am Eingang der Ausstellerfläche aufgehängt.",
                 "image": ""
             },
             "blog": {
                 "title": "Ein Gastartikel auf dem E-commerce Berlin Expo Blog",
-                "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo. \n\n> *Wichtig! 50 Punkte müssen erzielt werden, um diesen Preis zu bekommen.",
+                "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo.",
                 "image": ""
             },
             "badgesponsor": {
-                "title": "Logotype on the visitors badge"
+                "title": "Exklusives Branding der Besucherpässe"
+            },
+            "badges": {
+                "title": "Exklusives Branding der Besucherpässe",
+                "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt."
             }
         },
         "fields": {
@@ -1611,7 +1619,7 @@ const languages = {
         },
         " prizes": {
             "badgesponsor": {
-                "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt. \n\n> *Wichtig! Um diesen Preis zu bekommen braucht der Gewinner mindestens 500 Punkte."
+                "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt."
             }
         }
     }
