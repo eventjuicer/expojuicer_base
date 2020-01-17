@@ -548,7 +548,7 @@ const languages = {
                 "menu": "Ranking",
                 "name": "Ranking",
                 "limit": "",
-                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo website equals 1 point. \n\n> The ranking refreshes once a day. The points can be collected until 11:59 PM CET on the 4th of February, 2020. The final results will be announced at 1:00 PM CET on the 5th of February, 2020.",
+                "subtitle": "You earn points by promoting your participation in the event as an exhibitor. Use the promo materials we have prepared for you. Every click on your customized link to the E-commerce Berlin Expo website equals 1 point. \n\n> The ranking refreshes once a day. The points can be collected until 11:59 PM CET on the 4th of February, 2020. The final results will be announced at 1:00 PM CET on the 5th of February, 2020.\n\n\nDue to the local nature of the event and the fact that competition indirectly serves the idea of inviting new participants who are able to personally attend the Expo, we only count votes originating from countries that are currently represented by the top 80% of registered visitors. \n\nUsage of any automated scripting/services, paid mass services or another automatic device, program, algorithm or technology which perform the same action, as well as any kind of automation executed by a third party in the voting process will result in the removal of the submission and canceling of the participation in the contest and will be immediately executed by the Organizer.",
                 "fields": {
                     "stats": "Points",
                     "domain": "Domain",
@@ -1348,8 +1348,8 @@ const languages = {
             "rewards": {
                 "menu": "Preise",
                 "name": "Preise",
-                "body_text_1": "",
-                "body_text_2": "",
+                "body_text_1": "To participate in the",
+                "body_text_2": "and be able to win rewards you must use dedicated tracking link.",
                 "body_text_3": " for details."
             },
             "logistics": {
@@ -1360,7 +1360,7 @@ const languages = {
                 "menu": "Platzierung",
                 "name": "Platzierung",
                 "limit": "",
-                "subtitle": "Du gewinnst Punkte, indem du deine Teilnahme an der Expo als Aussteller promotest. Nutze das Werbematerial, welches wir vorbereitet haben. Jeder Klick auf die E-commerce Berlin Expo Website mit deinem persönlich angestellten Link ergibt ein Punkt.\n\n> *Das Ranking wird täglich aktualisiert. Die Position deines Unternehmens am letzten Tag des Wettbewerbes (6:00 Uhr Morgens, am 5.02.20) entscheidet darüber, welchen Preis ihr bekommt.",
+                "subtitle": "Du gewinnst Punkte, indem du deine Teilnahme an der Expo als Aussteller promotest. Nutze das Werbematerial, welches wir vorbereitet haben. Jeder Klick auf die E-commerce Berlin Expo Website mit deinem persönlich angestellten Link ergibt ein Punkt.\n\n> The ranking refreshes once a day. The points can be collected until 11:59 PM CET on the 4th of February, 2020. The final results will be announced at 1:00 PM CET on the 5th of February, 2020.\n\n\nDue to the local nature of the event and the fact that competition indirectly serves the idea of inviting new participants who are able to personally attend the Expo, we only count votes originating from countries that are currently represented by the top 80% of registered visitors. \n\nUsage of any automated scripting/services, paid mass services or another automatic device, program, algorithm or technology which perform the same action, as well as any kind of automation executed by a third party in the voting process will result in the removal of the submission and canceling of the participation in the contest and will be immediately executed by the Organizer.",
                 "fields": {
                     "stats": "Punkte",
                     "domain": "Domain",
