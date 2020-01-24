@@ -399,7 +399,7 @@ const languages = {
                         "specs": "Only this service allows you to connect devices with high power consumption! e.g. coffee machine"
                     },
                     "partyticket": {
-                        "spec": "",
+                        "specs": "",
                         "description": "Your exhibitor package includes two guaranteed tickets for the E-commerce Germany Awards and Networking Party. If you are planning to bring more than two people you need to purchase additional tickets in the amount corresponding to the number of participants. Every ticket on top of the guaranteed two needs to be purchased and confirmed.",
                         "name": "Tickets for the Networking Party"
                     }
@@ -1206,7 +1206,7 @@ const languages = {
                         "specs": "Nur mit der 3kw Leistung wäre es möglich, eine Kaffeemaschine problemlos laufen zu lassen. Eine kleiner Stromleitung, wie z.B. 1kW, ermöglich dies nicht."
                     },
                     "partyticket": {
-                        "spec": "",
+                        "specs": "",
                         "description": "Dein Ausstellerpaket beinhaltet zwei garantierte Tickets für die E-commerce Germany Awards und Networking Party. Falls ihr vorhabt mit mehreren Leuten dabei zu sein, dann müssen Extratickets exakt zu der Anzahl der kommenden Leute erworben werden. Jedes weitere Ticket zu den zwei garantierten muss erworben und bestätigt werden.",
                         "name": "Tickets für die Networking Party"
                     }
