@@ -221,9 +221,6 @@ const languages = {
                 "description": "One-time inclusion of your company content on https://ecommercegermany.com/. The article will be promoted 1x in the newsletter and 1x on the social media channels (Facebook, Linked, Twitter) of the E-commerce Berlin Expo.",
                 "image": ""
             },
-            "badgesponsor": {
-                "title": "Logotype on the visitors badge"
-            },
             "badges": {
                 "title": "Logotype on the visitors badge",
                 "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020."
@@ -396,12 +393,15 @@ const languages = {
                     "lanyards": {
                         "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
                     },
-                    "stagepatron": "Stage Patronage",
                     "electricity3kw": {
-                        "0": "3kW electricity connection",
                         "name": "3000 Watts electricity connection",
                         "description": "Attention!  The electricity in the regular offer is 500W. If you want to plug-in more items we recommend you to increase the power up to 3kw",
                         "specs": "Only this service allows you to connect devices with high power consumption! e.g. coffee machine"
+                    },
+                    "partyticket": {
+                        "spec": "",
+                        "description": "Your exhibitor package includes two guaranteed tickets for the E-commerce Germany Awards and Networking Party. If you are planning to bring more than two people you need to purchase additional tickets in the amount corresponding to the number of participants. Every ticket on top of the guaranteed two needs to be purchased and confirmed.",
+                        "name": "Tickets for the Networking Party"
                     }
                 },
                 "actions": {
@@ -536,7 +536,7 @@ const languages = {
             "rewards": {
                 "menu": "Rewards",
                 "name": "Rewards",
-                "body_text_1": "To participate in the ",
+                "body_text_1": "To participate in the &amp;",
                 "body_text_2": " and be able to win rewards you must use dedicated tracking link. See ",
                 "body_text_3": " for details."
             },
@@ -804,11 +804,6 @@ const languages = {
             "form": {
                 "submit": "REGISTER FOR FREE"
             }
-        },
-        " prizes": {
-            "badgesponsor": {
-                "description": "Exclusive branded visitor badges with the Winner's logo. The badges will be handed out to all of the visitors (7000+) during the E-commerce Berlin Expo 2020.\n"
-            }
         }
     },
     "de": {
@@ -1033,9 +1028,6 @@ const languages = {
                 "description": "Einmaliger Artikel bezüglich deines Unternehmens auf https://ecommercegermany.com/. Der Artikel wird 1x im Newsletter promotet, sowie 1x auf den Social Media Kanälen (Facebook, LinkedIn, Twitter) der E-commerce Berlin Expo.",
                 "image": ""
             },
-            "badgesponsor": {
-                "title": "Exklusives Branding der Besucherpässe"
-            },
             "badges": {
                 "title": "Exklusives Branding der Besucherpässe",
                 "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt."
@@ -1208,12 +1200,15 @@ const languages = {
                     "lanyards": {
                         "description": "Hand out to every attendee during registration. \n\n\n*cost of production and delivery are born by the sponsor"
                     },
-                    "stagepatron": "Stage Patronage",
                     "electricity3kw": {
-                        "0": "3kW electricity connection",
                         "name": "3000W Stromleistung",
                         "description": "Bitte beachten! Im regulären Fall enthält dein Paket eine Stromleistung in Höhe von 500W. Falls mehrere Geräte angeschlossen werden sollen, empfehlen wir ein Upgrade der Stromleistung. Falls die Geräte mehr Strom verbrauchen, dann empfehlen wir das Stromupgrade in Höhe von 3kW",
                         "specs": "Nur mit der 3kw Leistung wäre es möglich, eine Kaffeemaschine problemlos laufen zu lassen. Eine kleiner Stromleitung, wie z.B. 1kW, ermöglich dies nicht."
+                    },
+                    "partyticket": {
+                        "spec": "",
+                        "description": "Dein Ausstellerpaket beinhaltet zwei garantierte Tickets für die E-commerce Germany Awards und Networking Party. Falls ihr vorhabt mit mehreren Leuten dabei zu sein, dann müssen Extratickets exakt zu der Anzahl der kommenden Leute erworben werden. Jedes weitere Ticket zu den zwei garantierten muss erworben und bestätigt werden.",
+                        "name": "Tickets für die Networking Party"
                     }
                 },
                 "actions": {
@@ -1348,8 +1343,8 @@ const languages = {
             "rewards": {
                 "menu": "Preise",
                 "name": "Preise",
-                "body_text_1": "To participate in the",
-                "body_text_2": "and be able to win rewards you must use dedicated tracking link.",
+                "body_text_1": "To participate in the &amp;",
+                "body_text_2": "&amp; and be able to win rewards you must use dedicated tracking link.",
                 "body_text_3": " for details."
             },
             "logistics": {
@@ -1582,26 +1577,26 @@ const languages = {
                 "menu": "Teilnehmer finden",
                 "name": "Teilnehmer finden",
                 "tabs": {
-                    "invitation": "",
-                    "subject": "",
+                    "invitation": "Send invitation",
+                    "subject": "Subject",
                     "message": "Nachricht"
                 },
                 "actions": {
                     "invite": "EINLADEN"
                 },
                 "fields": {
-                    "creative": "",
+                    "creative": "Select newsletter",
                     "profile": {
                         "fname": "Vorname",
                         "lname": "Nachname",
                         "cname2": "Firma",
-                        "position": "",
-                        "domain": ""
+                        "position": "Position",
+                        "domain": "Domain"
                     }
                 }
             },
             "participants-by-code": {
-                "name": ""
+                "name": "Participants"
             },
             "purchases": {
                 "menu": "Bestellung"
@@ -1616,13 +1611,8 @@ const languages = {
             "form": {
                 "submit": "KOSTENLOS REGISTRIEREN"
             }
-        },
-        " prizes": {
-            "badgesponsor": {
-                "description": "Exklusives Branding der Besucherpässe mit dem Logo des Gewinners. Die Badges werden an die Besucher (7000+) der E-commerce Berlin Expo 2020 verteilt."
-            }
         }
     }
 }
 
-export default languages
+export default languages;
