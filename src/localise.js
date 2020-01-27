@@ -1,4 +1,4 @@
-{
+const languages = {
     "en": {
         "aor": {
             "action": {
@@ -1644,3 +1644,5 @@
         }
     }
 }
+
+export default languages;
