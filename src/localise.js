@@ -1,4 +1,4 @@
-const languages = {
+{
     "en": {
         "aor": {
             "action": {
@@ -527,7 +527,7 @@ const languages = {
                         "fname": "First name",
                         "lname": "Last name",
                         "position": "Position",
-                        "phone": "Phone",
+                        "phone": "Phone number",
                         "email": "E-mail address"
                     }
                 },
@@ -793,6 +793,21 @@ const languages = {
             },
             "purchases": {
                 "menu": "Purchases"
+            },
+            "party": {
+                "fields": {
+                    "profile": {
+                        "fname": "Name",
+                        "lname": "Last name",
+                        "position": "Position",
+                        "phone": "Phone number",
+                        "email": "E-mail address"
+                    }
+                },
+                "noresults": "You haven't add any representative to the party!",
+                "menu": "Add party representatives",
+                "subtitle": "If you plan to take more than 2 people to the party, please add them to the guest list and we will get in touch with you in relation to issue the invoice for any additional guest (above 2). \n\nEach additional ticket is 49€ worth. ",
+                "name": "Add your company representatives to attend the Party on 12 February 2020."
             }
         },
         "tutorials": {
@@ -1334,7 +1349,7 @@ const languages = {
                         "fname": "Vorname",
                         "lname": "Nachname",
                         "position": "Position",
-                        "phone": "Phone",
+                        "phone": "Telefonnummer",
                         "email": "E-mail adresse"
                     }
                 },
@@ -1600,6 +1615,21 @@ const languages = {
             },
             "purchases": {
                 "menu": "Bestellung"
+            },
+            "party": {
+                "fields": {
+                    "profile": {
+                        "fname": "Vorname",
+                        "lname": "Nachname",
+                        "position": "Position",
+                        "phone": "Telefonnummer",
+                        "email": "E-Mail-Adresse"
+                    }
+                },
+                "noresults": "Keine Vertreter Eures Unternehemens sind auf der Gästeliste der Party zu sehen",
+                "menu": "Partygäste hinzufügen",
+                "subtitle": "Falls du planst, mehr als zwei Gäste auf die Party mitzunehmen, dann füge diese zur Gästeliste hinzu. Wir werden uns im Anschluss bei dir wegen der Rechnung melden für jedes weitere Ticket zu den bereits zwei vorhandenen. \n\nJedes weitere Ticket kostet 49€.",
+                "name": "Füge die Firmenvertreter auf die Gästeliste bei der Networking Party am 12.02.2020 hinzu."
             }
         },
         "tutorials": {
@@ -1614,5 +1644,3 @@ const languages = {
         }
     }
 }
-
-export default languages;
