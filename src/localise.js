@@ -664,7 +664,7 @@ const languages = {
                 "menu": "RSVPs",
                 "name": "RSVPs",
                 "limit": " %{limit} invite(s) left.",
-                "subtitle": "At the beginning, you have 30 invitations. If you participate in the contest, which is integrated in the dashboard and you achieve at least 50 points, you get a mega package of invitations (50 additional invitations). You can add it up to 200 records (for 200 points), which is a limit per company. \n\n > *The maximum limit of invitations per company: 200 records.",
+                "subtitle": "At the beginning, you have 30 invitations. If you participate in the contest, which is integrated in the dashboard and you achieve at least 50 points, you get a mega package of invitations (50 additional invitations).",
                 "noresults": "Navigate to Browse participants to invite some people.",
                 "noresultsmore": "",
                 "fields": {
@@ -1486,7 +1486,7 @@ const languages = {
                 "menu": "RSVPs",
                 "name": "RSVPs",
                 "limit": " %{limit} Einladung(en) übrig",
-                "subtitle": "Am Anfang hast du 15 Einladungen. Wenn du im Wettbewerb, welcher innerhalb des Dashboards gerade läuft, mindestens 20 Punkte erreichst, erhältst du das sog. Mega Paket an Einladungen (50 Stück.) Somit wärst du bei 65 Einladungen. \n\nFür jede weitere 5 Punkte bekommst du eine Einladung dazu. \nErreicht jemand 50 Punkte, dann hat man 75 Einladungen insgesam\n",
+                "subtitle": "Am Anfang hast du 30 Einladungen. Wenn du im Wettbewerb, welcher innerhalb des Dashboards gerade läuft, mindestens 50 Punkte erreichst, erhältst du das sog. Mega Paket an Einladungen (50 Stück.) Somit wärst du bei 80 Einladungen. \n\nFür jede weitere 50 Punkte bekommst du 50 Einladungen dazu.",
                 "noresults": "Navigate to Browse participants to invite some people.",
                 "noresultsmore": "",
                 "fields": {
