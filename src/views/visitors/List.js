@@ -9,7 +9,7 @@ const VisitorFilter = props => (
   <Filter {...props}>
     <TextInput label="pos.search" source="q" alwaysOn />
   </Filter>
-);
+); 
 
 const ViewList = props => (
   <List
@@ -33,10 +33,15 @@ const ViewList = props => (
         }
       }
     >
+
+      <TextField source="profile.cname2" sortable={false} />
+      <TextField source="profile.nip" sortable={false} />
+      
       <TextField source="profile.fname"  sortable={false} />
       <TextField source="profile.lname"  sortable={false} />
-      <TextField source="profile.cname2" sortable={false} />
       <TextField source="profile.position" sortable={false} />
+
+    
       {/* <TextField source="profile.domain" sortable={false} /> */}
 
       <InviteButton />
