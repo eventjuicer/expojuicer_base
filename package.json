@@ -23,7 +23,7 @@
     "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "prettier": "^1.10.1",
-    "react-scripts": "1.1.0",
+    "react-scripts": "5.0.1",
     "source-map-explorer": "^1.5.0"
   },
   "dependencies": {
